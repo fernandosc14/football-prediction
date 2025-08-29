@@ -9,9 +9,11 @@ import logging
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
+if not api_key:
+    raise EnvironmentError("API_KEY not found in environment variables.")
 
 SESSION = requests.Session()
-TIMEOUT = 10
+TIMEOUT = (10, 30)
 
 
 def get_leagues_id(json_path=None):
@@ -46,7 +48,7 @@ def get_historical_data(leagues_id=None, weeks=3):
         query = {"league_id": league_id, "auth_token": api_key}
         headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
         try:
-            response = requests.get(url, headers=headers, params=query)
+            response = SESSION.get(url, headers=headers, params=query, timeout=TIMEOUT)
             data = response.json()
         except Exception as e:
             logging.error(f"[ERROR] Request or JSON decode failed for league {league_id}: {e}")
@@ -100,7 +102,7 @@ def get_matches_details(match_id):
     url = "https://api.soccerdataapi.com/match/"
     querystring = {"match_id": match_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
-    response = requests.get(url, headers=headers, params=querystring)
+    response = SESSION.get(url, headers=headers, params=querystring, timeout=TIMEOUT)
     try:
         return response.json()
     except Exception as e:
