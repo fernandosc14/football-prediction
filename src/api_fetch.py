@@ -17,14 +17,16 @@ TIMEOUT = 10
 def get_leagues_id(json_path=None):
     """Returns a list of league IDs from the specified JSON configuration file."""
 
-    if json_path is None:
-        json_path = "config/leagues.json"
     path = Path(json_path)
     if not path.exists():
-        print("[ERROR] leagues json file not found.")
+        logging.error("[ERROR] leagues json file not found: %s", path)
         return []
-    with open(path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        logging.exception("Invalid JSON in leagues file %s: %s", path, e)
+        return []
     return [lg["id"] for lg in data]
 
 
@@ -128,7 +130,6 @@ def get_h2h(team1_id, team2_id):
 def get_standings(league_id):
     """Fetches the current standings for a specific league by its ID."""
 
-    leagues = get_leagues_id()
     url = "https://api.soccerdataapi.com/standing/"
     query = {"league_id": league_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
@@ -140,16 +141,15 @@ def get_standings(league_id):
         logging.error(f"[ERROR] JSON decode failed for standings of league {league_id}: {e}")
         return []
     try:
-        if int(league_id) in leagues:
-            if (
-                isinstance(data, dict)
-                and "stage" in data
-                and data["stage"]
-                and "standings" in data["stage"][0]
-            ):
-                return data["stage"][0]["standings"]
-    except Exception as e:
-        logging.error(f"[ERROR] Unexpected data format for standings of league {league_id}: {e}")
+        if (
+            isinstance(data, dict)
+            and data.get("stage")
+            and isinstance(data["stage"][0], dict)
+            and "standings" in data["stage"][0]
+        ):
+            return data["stage"][0]["standings"]
+    except Exception:
+        logging.exception("Unexpected data format for standings of league %s", league_id)
     return []
 
 
@@ -261,7 +261,7 @@ def main():
                 if is_cup is True:
                     essential_fields = [v for k, v in match_data.items() if k not in rank_indexes]
                 else:
-                    essential_fields = [v for k, v in match_data.items() if k not in []]
+                    essential_fields = list(match_data.values())
                 if all(str(x).strip() != "" for x in essential_fields):
                     saved_matches.append(match_data)
                     total_saved += 1
@@ -270,8 +270,8 @@ def main():
                     empty_fields = [
                         k
                         for k, v in match_data.items()
-                        if str(v).strip() == ""
-                        and (is_cup is True and k not in rank_indexes or is_cup is not True)
+                        if (str(v).strip() == "")
+                        and ((is_cup is True and k not in rank_indexes) or (is_cup is not True))
                     ]
                     logging.info(
                         f"[SKIPPED] Match {team1} vs {team2} | Empty essential fields: {empty_fields}"
