@@ -1,8 +1,12 @@
+# Ambiente e variáveis
 .env
 .env.*
 *.env
 .envrc
-.DS_Store
+.venv/
+venv/
+
+# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -10,16 +14,26 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+*.egg-info/
+build/
+dist/
+
+# IDE/editor
 .vscode/
 .idea/
-.venv/
-venv/
+.DS_Store
 
 # Notebooks
 .ipynb_checkpoints/
+**/*.nbconvert.ipynb
 
-# Data & models (commit small samples explicitly if needed)
+# Logs e temporários
+*.log
+*.tmp
+
+# Dados e modelos
 data/raw/
 data/processed/
+data/feature/
 artifacts/
 models/
