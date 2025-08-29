@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Premier League",
+        "id": 228
+    },
+    {
+        "name": "FA Cup",
+        "id": 230
+    },
+    {
+        "name": "Ligue 1",
+        "id": 235
+    },
+    {
+        "name": "Bundesliga",
+        "id": 241
+    },
+    {
+        "name": "Serie A",
+        "id": 253
+    },
+    {
+        "name": "Eredivisie",
+        "id": 268
+    },
+    {
+        "name": "Primeira Liga",
+        "id": 280
+    },
+    {
+        "name": "Championship",
+        "id": 229
+    },
+    {
+        "name": "La Liga",
+        "id": 297
+    },
+    {
+        "name": "UEFA Champions League",
+        "id": 310
+    },
+    {
+        "name": "Europa Conference League",
+        "id": 198
+    },
+    {
+        "name": "Europa League",
+        "id": 326
+    }
+]

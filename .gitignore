@@ -1,0 +1,25 @@
+.env
+.env.*
+*.env
+.envrc
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+.venv/
+venv/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data & models (commit small samples explicitly if needed)
+data/raw/
+data/processed/
+artifacts/
+models/
