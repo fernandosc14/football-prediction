@@ -11,7 +11,10 @@ import logging
 load_dotenv()
 api_key = os.getenv("API_KEY")
 
+
 def get_leagues_id(json_path=None):
+    """Returns a list of league IDs from the specified JSON configuration file."""
+
     if json_path is None:
         json_path = "config/leagues.json"
     path = Path(json_path)
@@ -22,7 +25,10 @@ def get_leagues_id(json_path=None):
         data = json.load(f)
     return [lg["id"] for lg in data]
 
+
 def get_historical_data(leagues_id=None, weeks=3):
+    """Fetches historical match data from the SoccerDataAPI for the specified leagues and time frame."""
+
     if leagues_id is None:
         leagues_id = get_leagues_id()
 
@@ -33,22 +39,23 @@ def get_historical_data(leagues_id=None, weeks=3):
 
     for league_id in leagues_id:
         url = "https://api.soccerdataapi.com/matches/"
-        query = {'league_id': league_id, 'auth_token': api_key}
-        headers = {
-            'Accept-Encoding': 'gzip',
-            'Content-Type': 'application/json'
-        }
+        query = {"league_id": league_id, "auth_token": api_key}
+        headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
         try:
             response = requests.get(url, headers=headers, params=query)
             data = response.json()
         except Exception as e:
-            logging.error(f"[ERROR] Request or JSON decode failed for league {league_id}: {e}")
+            logging.error(
+                f"[ERROR] Request or JSON decode failed for league {league_id}: {e}"
+            )
             continue
 
         if isinstance(data, dict):
             data = [data]
         elif not isinstance(data, list):
-            logging.warning(f"[WARNING] Unexpected data type: {type(data)} for league {league_id}")
+            logging.warning(
+                f"[WARNING] Unexpected data type: {type(data)} for league {league_id}"
+            )
             continue
 
         for obj in data:
@@ -63,83 +70,95 @@ def get_historical_data(leagues_id=None, weeks=3):
                     try:
                         match_date = datetime.strptime(match_date_str, "%d/%m/%Y")
                     except Exception as e:
-                        logging.warning(f"[WARNING] Date parsing failed: {match_date_str} ({e})")
+                        logging.warning(
+                            f"[WARNING] Date parsing failed: {match_date_str} ({e})"
+                        )
                         continue
                     if start_dt.date() <= match_date.date() <= now.date():
                         home_team = match.get("teams", {}).get("home", {})
                         away_team = match.get("teams", {}).get("away", {})
-                        is_cup = match.get('is_cup')
+                        is_cup = match.get("is_cup")
                         if is_cup is None:
-                            is_cup = obj.get('is_cup')
-                        games.append({
-                            'date': match['date'],
-                            'time': match.get('time', ''),
-                            'home_name': home_team.get('name', '?'),
-                            'away_name': away_team.get('name', '?'),
-                            'home_id': home_team.get('id', '?'),
-                            'away_id': away_team.get('id', '?'),
-                            'match_id': match.get('id'),
-                            'league_id': league_id,
-                            'is_cup': is_cup
-                        })
+                            is_cup = obj.get("is_cup")
+                        games.append(
+                            {
+                                "date": match["date"],
+                                "time": match.get("time", ""),
+                                "home_name": home_team.get("name", "?"),
+                                "away_name": away_team.get("name", "?"),
+                                "home_id": home_team.get("id", "?"),
+                                "away_id": away_team.get("id", "?"),
+                                "match_id": match.get("id"),
+                                "league_id": league_id,
+                                "is_cup": is_cup,
+                            }
+                        )
     return games
 
+
 def get_matches_details(match_id):
+    """Fetches detailed information for a specific match by its ID."""
+
     url = "https://api.soccerdataapi.com/match/"
-    querystring = {'match_id': match_id, 'auth_token': api_key}
-    headers = {
-        'Accept-Encoding': 'gzip',
-        'Content-Type': 'application/json'
-    }
+    querystring = {"match_id": match_id, "auth_token": api_key}
+    headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
     response = requests.get(url, headers=headers, params=querystring)
     try:
         return response.json()
     except Exception as e:
         logging.error(f"[ERROR] JSON decode failed for match {match_id}: {e}")
         return None
-    
+
+
 def get_h2h(team1_id, team2_id):
+    """Fetches head-to-head statistics between two teams by their IDs."""
+
     url = "https://api.soccerdataapi.com/head-to-head/"
-    querystring = {
-        "team_1_id": team1_id,
-        "team_2_id": team2_id,
-        "auth_token": api_key
-    }
-    headers = {
-        'Accept-Encoding': 'gzip',
-        'Content-Type': 'application/json'
-    }
+    querystring = {"team_1_id": team1_id, "team_2_id": team2_id, "auth_token": api_key}
+    headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
     response = requests.get(url, headers=headers, params=querystring)
     try:
         data = response.json()
     except Exception as e:
         return []
-    
-    return data.get('stats', {})
+
+    return data.get("stats", {})
+
 
 def get_standings(league_id):
+    """Fetches the current standings for a specific league by its ID."""
+
     leagues = get_leagues_id()
     url = "https://api.soccerdataapi.com/standing/"
-    query = {'league_id': league_id, 'auth_token': api_key}
-    headers = {
-        'Accept-Encoding': 'gzip',
-        'Content-Type': 'application/json'
-    }
+    query = {"league_id": league_id, "auth_token": api_key}
+    headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
     response = requests.get(url, headers=headers, params=query)
     try:
         data = response.json()
     except Exception as e:
-        logging.error(f"[ERROR] JSON decode failed for standings of league {league_id}: {e}")
+        logging.error(
+            f"[ERROR] JSON decode failed for standings of league {league_id}: {e}"
+        )
         return []
     try:
         if int(league_id) in leagues:
-            if isinstance(data, dict) and 'stage' in data and data['stage'] and 'standings' in data['stage'][0]:
-                return data['stage'][0]['standings']
+            if (
+                isinstance(data, dict)
+                and "stage" in data
+                and data["stage"]
+                and "standings" in data["stage"][0]
+            ):
+                return data["stage"][0]["standings"]
     except Exception as e:
-        logging.error(f"[ERROR] Unexpected data format for standings of league {league_id}: {e}")
+        logging.error(
+            f"[ERROR] Unexpected data format for standings of league {league_id}: {e}"
+        )
     return []
 
+
 def main():
+    """Main function to fetch historical match data and save it to a JSON file."""
+
     matches = get_historical_data()
     logging.info(f"Fetched {len(matches)} historical matches.")
 
@@ -153,7 +172,7 @@ def main():
     try:
         for match in matches:
             try:
-                match_id = match['match_id']
+                match_id = match["match_id"]
                 is_cup = match.get("is_cup")
                 details = get_matches_details(match_id)
                 if not details or details.get("status") != "finished":
@@ -169,7 +188,6 @@ def main():
                 team1_id = details.get("teams", {}).get("home", {}).get("id", None)
                 team2_id = details.get("teams", {}).get("away", {}).get("id", None)
 
-
                 team1_rank = team2_rank = ""
                 league_id = details.get("league", {}).get("id", None)
                 standings = []
@@ -177,7 +195,9 @@ def main():
                     try:
                         standings = get_standings(league_id)
                     except Exception as e:
-                        logging.warning(f"Error getting standings for league_id {league_id}: {e}")
+                        logging.warning(
+                            f"Error getting standings for league_id {league_id}: {e}"
+                        )
                 if standings:
                     for team in standings:
                         if team1_id and str(team.get("team_id")) == str(team1_id):
@@ -193,25 +213,29 @@ def main():
                 h2h_team2_home_scored = h2h_team2_home_conceded = ""
                 if team1_id and team2_id:
                     h2h_data = get_h2h(team1_id, team2_id)
-                    stats = h2h_data.get('overall', {}) if isinstance(h2h_data, dict) else {}
-                    h2h_games_played = stats.get('overall_games_played', "")
-                    h2h_team1_wins = stats.get('overall_team1_wins', "")
-                    h2h_team2_wins = stats.get('overall_team2_wins', "")
-                    h2h_draws = stats.get('overall_draws', "")
-                    h2h_team1_scored = stats.get('overall_team1_scored', "")
-                    h2h_team2_scored = stats.get('overall_team2_scored', "")
-                    t1_home = h2h_data.get('team1_at_home', {})
-                    h2h_team1_home_wins = t1_home.get('team1_wins_at_home', "")
-                    h2h_team1_home_draws = t1_home.get('team1_draws_at_home', "")
-                    h2h_team1_home_losses = t1_home.get('team1_losses_at_home', "")
-                    h2h_team1_home_scored = t1_home.get('team1_scored_at_home', "")
-                    h2h_team1_home_conceded = t1_home.get('team1_conceded_at_home', "")
-                    t2_home = h2h_data.get('team2_at_home', {})
-                    h2h_team2_home_wins = t2_home.get('team2_wins_at_home', "")
-                    h2h_team2_home_draws = t2_home.get('team2_draws_at_home', "")
-                    h2h_team2_home_losses = t2_home.get('team2_losses_at_home', "")
-                    h2h_team2_home_scored = t2_home.get('team2_scored_at_home', "")
-                    h2h_team2_home_conceded = t2_home.get('team2_conceded_at_home', "")
+                    stats = (
+                        h2h_data.get("overall", {})
+                        if isinstance(h2h_data, dict)
+                        else {}
+                    )
+                    h2h_games_played = stats.get("overall_games_played", "")
+                    h2h_team1_wins = stats.get("overall_team1_wins", "")
+                    h2h_team2_wins = stats.get("overall_team2_wins", "")
+                    h2h_draws = stats.get("overall_draws", "")
+                    h2h_team1_scored = stats.get("overall_team1_scored", "")
+                    h2h_team2_scored = stats.get("overall_team2_scored", "")
+                    t1_home = h2h_data.get("team1_at_home", {})
+                    h2h_team1_home_wins = t1_home.get("team1_wins_at_home", "")
+                    h2h_team1_home_draws = t1_home.get("team1_draws_at_home", "")
+                    h2h_team1_home_losses = t1_home.get("team1_losses_at_home", "")
+                    h2h_team1_home_scored = t1_home.get("team1_scored_at_home", "")
+                    h2h_team1_home_conceded = t1_home.get("team1_conceded_at_home", "")
+                    t2_home = h2h_data.get("team2_at_home", {})
+                    h2h_team2_home_wins = t2_home.get("team2_wins_at_home", "")
+                    h2h_team2_home_draws = t2_home.get("team2_draws_at_home", "")
+                    h2h_team2_home_losses = t2_home.get("team2_losses_at_home", "")
+                    h2h_team2_home_scored = t2_home.get("team2_scored_at_home", "")
+                    h2h_team2_home_conceded = t2_home.get("team2_conceded_at_home", "")
 
                 match_data = {
                     "date": date,
@@ -239,12 +263,14 @@ def main():
                     "h2h_team2_home_draws": h2h_team2_home_draws,
                     "h2h_team2_home_losses": h2h_team2_home_losses,
                     "h2h_team2_home_scored": h2h_team2_home_scored,
-                    "h2h_team2_home_conceded": h2h_team2_home_conceded
+                    "h2h_team2_home_conceded": h2h_team2_home_conceded,
                 }
 
                 rank_indexes = ["team1_rank", "team2_rank"]
                 if is_cup is True:
-                    essential_fields = [v for k, v in match_data.items() if k not in rank_indexes]
+                    essential_fields = [
+                        v for k, v in match_data.items() if k not in rank_indexes
+                    ]
                 else:
                     essential_fields = [v for k, v in match_data.items() if k not in []]
                 if all(str(x).strip() != "" for x in essential_fields):
@@ -252,10 +278,23 @@ def main():
                     total_saved += 1
                 else:
                     total_ignored += 1
-                    empty_fields = [k for k, v in match_data.items() if str(v).strip() == "" and (is_cup is True and k not in rank_indexes or is_cup is not True)]
-                    logging.info(f"[SKIPPED] Match {team1} vs {team2} | Empty essential fields: {empty_fields}")
+                    empty_fields = [
+                        k
+                        for k, v in match_data.items()
+                        if str(v).strip() == ""
+                        and (
+                            is_cup is True
+                            and k not in rank_indexes
+                            or is_cup is not True
+                        )
+                    ]
+                    logging.info(
+                        f"[SKIPPED] Match {team1} vs {team2} | Empty essential fields: {empty_fields}"
+                    )
             except Exception as e:
-                logging.error(f"[ERROR] Unexpected error processing match {match.get('match_id', '?')}: {e}")
+                logging.error(
+                    f"[ERROR] Unexpected error processing match {match.get('match_id', '?')}: {e}"
+                )
         with open(output_path, "w", encoding="utf-8") as f:
             print("Writing data to", output_path)
             json.dump(saved_matches, f, ensure_ascii=False, indent=2)
@@ -264,9 +303,11 @@ def main():
     except Exception as e:
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
+
 def fetch_upcoming_matches():
-    
+
     return
+
 
 if __name__ == "__main__":
     main()
