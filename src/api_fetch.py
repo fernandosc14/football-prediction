@@ -4,12 +4,14 @@ from datetime import datetime, timedelta
 
 import os
 import json
-import pandas as pd
 import requests
 import logging
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
+
+SESSION = requests.Session()
+TIMEOUT = 10
 
 
 def get_leagues_id(json_path=None):
@@ -45,17 +47,13 @@ def get_historical_data(leagues_id=None, weeks=3):
             response = requests.get(url, headers=headers, params=query)
             data = response.json()
         except Exception as e:
-            logging.error(
-                f"[ERROR] Request or JSON decode failed for league {league_id}: {e}"
-            )
+            logging.error(f"[ERROR] Request or JSON decode failed for league {league_id}: {e}")
             continue
 
         if isinstance(data, dict):
             data = [data]
         elif not isinstance(data, list):
-            logging.warning(
-                f"[WARNING] Unexpected data type: {type(data)} for league {league_id}"
-            )
+            logging.warning(f"[WARNING] Unexpected data type: {type(data)} for league {league_id}")
             continue
 
         for obj in data:
@@ -70,9 +68,7 @@ def get_historical_data(leagues_id=None, weeks=3):
                     try:
                         match_date = datetime.strptime(match_date_str, "%d/%m/%Y")
                     except Exception as e:
-                        logging.warning(
-                            f"[WARNING] Date parsing failed: {match_date_str} ({e})"
-                        )
+                        logging.warning(f"[WARNING] Date parsing failed: {match_date_str} ({e})")
                         continue
                     if start_dt.date() <= match_date.date() <= now.date():
                         home_team = match.get("teams", {}).get("home", {})
@@ -116,13 +112,17 @@ def get_h2h(team1_id, team2_id):
     url = "https://api.soccerdataapi.com/head-to-head/"
     querystring = {"team_1_id": team1_id, "team_2_id": team2_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
-    response = requests.get(url, headers=headers, params=querystring)
     try:
-        data = response.json()
+        resp = SESSION.get(url, headers=headers, params=querystring, timeout=TIMEOUT)
+        resp.raise_for_status()
+        data = resp.json()
     except Exception as e:
-        return []
-
-    return data.get("stats", {})
+        logging.error(f"[ERROR] H2H request failed for {team1_id} vs {team2_id}: {e}")
+        return {}
+    if isinstance(data, dict):
+        return data.get("stats", {})
+    logging.warning(f"[WARNING] Unexpected H2H payload type: {type(data)}")
+    return {}
 
 
 def get_standings(league_id):
@@ -132,13 +132,12 @@ def get_standings(league_id):
     url = "https://api.soccerdataapi.com/standing/"
     query = {"league_id": league_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
-    response = requests.get(url, headers=headers, params=query)
+    response = SESSION.get(url, headers=headers, params=query, timeout=TIMEOUT)
     try:
+        response.raise_for_status()
         data = response.json()
     except Exception as e:
-        logging.error(
-            f"[ERROR] JSON decode failed for standings of league {league_id}: {e}"
-        )
+        logging.error(f"[ERROR] JSON decode failed for standings of league {league_id}: {e}")
         return []
     try:
         if int(league_id) in leagues:
@@ -150,9 +149,7 @@ def get_standings(league_id):
             ):
                 return data["stage"][0]["standings"]
     except Exception as e:
-        logging.error(
-            f"[ERROR] Unexpected data format for standings of league {league_id}: {e}"
-        )
+        logging.error(f"[ERROR] Unexpected data format for standings of league {league_id}: {e}")
     return []
 
 
@@ -195,9 +192,7 @@ def main():
                     try:
                         standings = get_standings(league_id)
                     except Exception as e:
-                        logging.warning(
-                            f"Error getting standings for league_id {league_id}: {e}"
-                        )
+                        logging.warning(f"Error getting standings for league_id {league_id}: {e}")
                 if standings:
                     for team in standings:
                         if team1_id and str(team.get("team_id")) == str(team1_id):
@@ -213,11 +208,7 @@ def main():
                 h2h_team2_home_scored = h2h_team2_home_conceded = ""
                 if team1_id and team2_id:
                     h2h_data = get_h2h(team1_id, team2_id)
-                    stats = (
-                        h2h_data.get("overall", {})
-                        if isinstance(h2h_data, dict)
-                        else {}
-                    )
+                    stats = h2h_data.get("overall", {}) if isinstance(h2h_data, dict) else {}
                     h2h_games_played = stats.get("overall_games_played", "")
                     h2h_team1_wins = stats.get("overall_team1_wins", "")
                     h2h_team2_wins = stats.get("overall_team2_wins", "")
@@ -268,9 +259,7 @@ def main():
 
                 rank_indexes = ["team1_rank", "team2_rank"]
                 if is_cup is True:
-                    essential_fields = [
-                        v for k, v in match_data.items() if k not in rank_indexes
-                    ]
+                    essential_fields = [v for k, v in match_data.items() if k not in rank_indexes]
                 else:
                     essential_fields = [v for k, v in match_data.items() if k not in []]
                 if all(str(x).strip() != "" for x in essential_fields):
@@ -282,11 +271,7 @@ def main():
                         k
                         for k, v in match_data.items()
                         if str(v).strip() == ""
-                        and (
-                            is_cup is True
-                            and k not in rank_indexes
-                            or is_cup is not True
-                        )
+                        and (is_cup is True and k not in rank_indexes or is_cup is not True)
                     ]
                     logging.info(
                         f"[SKIPPED] Match {team1} vs {team2} | Empty essential fields: {empty_fields}"
@@ -305,9 +290,5 @@ def main():
 
 
 def fetch_upcoming_matches():
-
+    # TODO: implement this function to fetch upcoming matches
     return
-
-
-if __name__ == "__main__":
-    main()
