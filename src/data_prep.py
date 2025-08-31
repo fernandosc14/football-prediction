@@ -1,6 +1,8 @@
-from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from features import apply_all_features
+from utils import load_json
+
 import pandas as pd
-import numpy as np
 import joblib
 import logging
 import json
@@ -10,12 +12,21 @@ import os
 def preprocess_data(targets=None):
     """Preprocess historical match data for ML. Returns DataFrame, feature columns, and optionally targets."""
 
+    models_dir = "models"
+    if os.path.exists(models_dir):
+        for fname in ["le_league.pkl", "feature_scaler.pkl", "feature_columns.json"]:
+            fpath = os.path.join(models_dir, fname)
+            if os.path.exists(fpath):
+                try:
+                    os.remove(fpath)
+                except Exception as e:
+                    logging.warning(f"Could not delete {fpath}: {e}")
+
     path = "data/raw/matches_raw.json"
     if not os.path.exists(path):
         raise FileNotFoundError(f"Missing data file: {path}")
     try:
-        with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_json(path)
     except json.JSONDecodeError as e:
         raise ValueError(f"Invalid JSON in {path}: {e}") from e
 
@@ -32,6 +43,8 @@ def preprocess_data(targets=None):
     for gcol in ("Team1Goals", "Team2Goals"):
         df[gcol] = pd.to_numeric(df[gcol], errors="coerce")
     df = df.dropna(subset=["Team1Goals", "Team2Goals"])
+
+    df, le_league = apply_all_features(df)
 
     h2h_cols = [
         "team1_rank",
@@ -64,45 +77,6 @@ def preprocess_data(targets=None):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    df["Winner"] = np.where(
-        df["Team1Goals"] > df["Team2Goals"],
-        "1",
-        np.where(df["Team1Goals"] < df["Team2Goals"], "2", "X"),
-    )
-    df["Rank_Diff"] = df["team1_rank"] - df["team2_rank"]
-
-    df["BTTS"] = ((df["Team1Goals"] > 0) & (df["Team2Goals"] > 0)).astype(int)
-    df["Over_1_5"] = ((df["Team1Goals"] + df["Team2Goals"]) > 1.5).astype(int)
-    df["Over_2_5"] = ((df["Team1Goals"] + df["Team2Goals"]) > 2.5).astype(int)
-
-    denom = df["h2h_games_played"].replace(0, np.nan)
-    df["H2H_Team1_Win_Rate"] = df["h2h_team1_wins"] / denom
-    df["H2H_Team2_Win_Rate"] = df["h2h_team2_wins"] / denom
-    df["H2H_Draw_Rate"] = df["h2h_draws"] / denom
-
-    df["H2H_Team1_Goals_Per_Game"] = df["h2h_team1_scored"] / df["h2h_games_played"]
-    df["H2H_Team2_Goals_Per_Game"] = df["h2h_team2_scored"] / df["h2h_games_played"]
-
-    t1_home_total = (
-        df["h2h_team1_home_wins"] + df["h2h_team1_home_draws"] + df["h2h_team1_home_losses"]
-    ).replace(0, np.nan)
-    t2_home_total = (
-        df["h2h_team2_home_wins"] + df["h2h_team2_home_draws"] + df["h2h_team2_home_losses"]
-    ).replace(0, np.nan)
-    df["H2H_Team1_Home_Win_Rate"] = df["h2h_team1_home_wins"] / t1_home_total
-    df["H2H_Team2_Home_Win_Rate"] = df["h2h_team2_home_wins"] / t2_home_total
-
-    df["H2H_Team1_Home_Goals_Per_Game"] = df["h2h_team1_home_scored"] / t1_home_total
-    df["H2H_Team2_Home_Goals_Per_Game"] = df["h2h_team2_home_scored"] / t2_home_total
-
-    df["H2H_Total_Goals"] = df["h2h_team1_scored"] + df["h2h_team2_scored"]
-
-    df["Double_Chance"] = df["Winner"].map({"1": "1X", "2": "X2", "X": "1X"})
-    df["Goal_Difference"] = df["Team1Goals"] - df["Team2Goals"]
-
-    le_league = LabelEncoder()
-    df["League_Encoded"] = le_league.fit_transform(df["League"])
-
     feature_columns = [
         "team1_rank",
         "team2_rank",
@@ -122,6 +96,7 @@ def preprocess_data(targets=None):
         "h2h_team2_home_scored",
         "h2h_team2_home_conceded",
         "Goal_Difference",
+        "Rank_Diff",
         "League_Encoded",
     ]
 

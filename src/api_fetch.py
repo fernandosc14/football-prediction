@@ -1,22 +1,18 @@
-from dotenv import load_dotenv
 from pathlib import Path
 from datetime import datetime, timedelta
+from utils import get_api_key, load_json
 
-import os
 import json
 import requests
 import logging
 
-load_dotenv()
-api_key = os.getenv("API_KEY")
-if not api_key:
-    raise EnvironmentError("API_KEY not found in environment variables.")
+api_key = get_api_key()
 
 SESSION = requests.Session()
 TIMEOUT = (10, 30)
 
 
-def get_leagues_id(json_path=None):
+def get_leagues_id(json_path="config/leagues.json"):
     """Returns a list of league IDs from the specified JSON configuration file."""
 
     path = Path(json_path)
@@ -24,8 +20,7 @@ def get_leagues_id(json_path=None):
         logging.error("[ERROR] leagues json file not found: %s", path)
         return []
     try:
-        with path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
+        data = load_json(json_path)
     except json.JSONDecodeError as e:
         logging.exception("Invalid JSON in leagues file %s: %s", path, e)
         return []
@@ -294,3 +289,7 @@ def main():
 def fetch_upcoming_matches():
     # TODO: implement this function to fetch upcoming matches
     return
+
+
+if __name__ == "__main__":
+    main()
