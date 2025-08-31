@@ -9,18 +9,18 @@ import json
 import os
 
 
-def preprocess_data(targets=None):
+def preprocess_data(targets=None, cleanup_models=True):
     """Preprocess historical match data for ML. Returns DataFrame, feature columns, and optionally targets."""
-
-    models_dir = "models"
-    if os.path.exists(models_dir):
-        for fname in ["le_league.pkl", "feature_scaler.pkl", "feature_columns.json"]:
-            fpath = os.path.join(models_dir, fname)
-            if os.path.exists(fpath):
-                try:
-                    os.remove(fpath)
-                except Exception as e:
-                    logging.warning(f"Could not delete {fpath}: {e}")
+    if cleanup_models:
+        models_dir = "models"
+        if os.path.exists(models_dir):
+            for fname in ["le_league.pkl", "feature_scaler.pkl", "feature_columns.json"]:
+                fpath = os.path.join(models_dir, fname)
+                if os.path.exists(fpath):
+                    try:
+                        os.remove(fpath)
+                    except Exception as e:
+                        logging.warning(f"Could not delete {fpath}: {e}")
 
     path = "data/raw/matches_raw.json"
     if not os.path.exists(path):

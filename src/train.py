@@ -5,7 +5,7 @@ import logging
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 from utils import setup_logging, save_json
-from src.data_prep import preprocess_data
+from .data_prep import preprocess_data
 
 setup_logging()
 

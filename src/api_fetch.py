@@ -6,29 +6,23 @@ import json
 import requests
 import logging
 
-api_key = get_api_key()
-
 SESSION = requests.Session()
 TIMEOUT = (10, 30)
 
 
 def get_leagues_id(json_path="config/leagues.json"):
-    """Returns a list of league IDs from the specified JSON configuration file."""
+    """Load league IDs from a JSON configuration file."""
 
-    path = Path(json_path)
-    if not path.exists():
-        logging.error("[ERROR] leagues json file not found: %s", path)
-        return []
-    try:
-        data = load_json(json_path)
-    except json.JSONDecodeError as e:
-        logging.exception("Invalid JSON in leagues file %s: %s", path, e)
-        return []
+    data = load_json(json_path)
+    if not isinstance(data, list) or not all("id" in lg for lg in data):
+        raise ValueError("Leagues JSON must be a list of dicts with 'id' key.")
     return [lg["id"] for lg in data]
 
 
 def get_historical_data(leagues_id=None, weeks=3):
     """Fetches historical match data from the SoccerDataAPI for the specified leagues and time frame."""
+
+    api_key = get_api_key()
 
     if leagues_id is None:
         leagues_id = get_leagues_id()
@@ -94,6 +88,8 @@ def get_historical_data(leagues_id=None, weeks=3):
 def get_matches_details(match_id):
     """Fetches detailed information for a specific match by its ID."""
 
+    api_key = get_api_key()
+
     url = "https://api.soccerdataapi.com/match/"
     querystring = {"match_id": match_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
@@ -107,6 +103,8 @@ def get_matches_details(match_id):
 
 def get_h2h(team1_id, team2_id):
     """Fetches head-to-head statistics between two teams by their IDs."""
+
+    api_key = get_api_key()
 
     url = "https://api.soccerdataapi.com/head-to-head/"
     querystring = {"team_1_id": team1_id, "team_2_id": team2_id, "auth_token": api_key}
@@ -126,6 +124,8 @@ def get_h2h(team1_id, team2_id):
 
 def get_standings(league_id):
     """Fetches the current standings for a specific league by its ID."""
+
+    api_key = get_api_key()
 
     url = "https://api.soccerdataapi.com/standing/"
     query = {"league_id": league_id, "auth_token": api_key}
