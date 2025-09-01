@@ -1,6 +1,7 @@
 import joblib
 import os
 import logging
+import numpy as np
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
@@ -31,8 +32,17 @@ def train_model():
             y = le.fit_transform(y)
             joblib.dump(le, f"models/le_{target}.pkl")
 
+        unique_classes = np.unique(y)
+        if unique_classes.shape[0] > 1:
+            stratify_param = y
+        else:
+            stratify_param = None
+            logging.warning(
+                f"Stratify disabled for target '{target}' (only one class present: {unique_classes}). Check your data!"
+            )
+
         X_train, X_val, y_train, y_val = train_test_split(
-            X, y, test_size=0.2, random_state=42, stratify=y if len(set(y)) > 1 else None
+            X, y, test_size=0.2, random_state=42, stratify=stratify_param
         )
 
         model = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -41,8 +51,8 @@ def train_model():
         train_acc = model.score(X_train, y_train)
         val_acc = model.score(X_val, y_val)
         metrics[target] = {"train_accuracy": train_acc, "val_accuracy": val_acc}
-        logging.info(f"Train accuracy for {target}: {train_acc:.4f}")
-        logging.info(f"Validation accuracy for {target}: {val_acc:.4f}")
+        logging.info(f"[INFO] Train accuracy for {target}: {train_acc:.4f}")
+        logging.info(f"[INFO] Validation accuracy for {target}: {val_acc:.4f}")
 
         joblib.dump(
             {"model": model, "feature_columns": feature_columns}, f"models/model_{target}.pkl"
@@ -52,9 +62,9 @@ def train_model():
         )
 
     save_json(metrics, "models/train_metrics.json")
-    logging.info("Training metrics saved in models/train_metrics.json.")
+    logging.info("[INFO] Training metrics saved in models/train_metrics.json.")
 
-    logging.info("Training completed for all targets.")
+    logging.info("[INFO] Training completed for all targets.")
 
 
 if __name__ == "__main__":

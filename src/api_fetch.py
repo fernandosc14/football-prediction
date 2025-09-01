@@ -28,7 +28,7 @@ def get_historical_data(leagues_id=None, weeks=3):
         try:
             leagues_id = get_leagues_id()
         except ValueError as e:
-            logging.error(f"Erro ao carregar ligas: {e}")
+            logging.error(f"[Error] loading leagues: {e}")
             raise ValueError(f"Leagues configuration is invalid: {e}")
 
     today_dt = datetime.now()
@@ -158,7 +158,7 @@ def main():
     """Main function to fetch historical match data and save it to a JSON file."""
 
     matches = get_historical_data()
-    logging.info(f"Fetched {len(matches)} historical matches.")
+    logging.info(f"[INFO] Fetched {len(matches)} historical matches.")
 
     output_path = Path("data/raw/matches_raw.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -284,8 +284,8 @@ def main():
         with open(output_path, "w", encoding="utf-8") as f:
             print("Writing data to", output_path)
             json.dump(saved_matches, f, ensure_ascii=False, indent=2)
-        logging.info(f"Total saved matches: {total_saved}")
-        logging.info(f"Total games skipped: {total_ignored}")
+        logging.info(f"[INFO] Total saved matches: {total_saved}")
+        logging.info(f"[INFO] Total games skipped: {total_ignored}")
     except Exception as e:
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
