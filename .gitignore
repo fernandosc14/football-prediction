@@ -37,3 +37,16 @@ data/processed/
 data/feature/
 artifacts/
 models/
+
+# Temporary files created by testing / analysis scripts
+leagues_data/Serie_A.json
+leagues_data/Primeira_Liga.json
+leagues_data/Premier_League.json
+leagues_data/Ligue_1.json
+leagues_data/La_Liga.json
+leagues_data/Eredivisie.json
+leagues_data/Bundesliga.json
+leagues_data/Championship.json
+test_api.py
+analyze_json_leagues.py
+analyze_dates.py

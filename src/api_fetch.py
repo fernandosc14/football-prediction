@@ -1,42 +1,35 @@
-from dotenv import load_dotenv
 from pathlib import Path
 from datetime import datetime, timedelta
+from utils import get_api_key, load_json
 
-import os
 import json
 import requests
 import logging
-
-load_dotenv()
-api_key = os.getenv("API_KEY")
-if not api_key:
-    raise EnvironmentError("API_KEY not found in environment variables.")
 
 SESSION = requests.Session()
 TIMEOUT = (10, 30)
 
 
-def get_leagues_id(json_path=None):
-    """Returns a list of league IDs from the specified JSON configuration file."""
+def get_leagues_id(json_path="config/leagues.json"):
+    """Load league IDs from a JSON configuration file."""
 
-    path = Path(json_path)
-    if not path.exists():
-        logging.error("[ERROR] leagues json file not found: %s", path)
-        return []
-    try:
-        with path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-    except json.JSONDecodeError as e:
-        logging.exception("Invalid JSON in leagues file %s: %s", path, e)
-        return []
+    data = load_json(json_path)
+    if not isinstance(data, list) or not all("id" in lg for lg in data):
+        raise ValueError("Leagues JSON must be a list of dicts with 'id' key.")
     return [lg["id"] for lg in data]
 
 
 def get_historical_data(leagues_id=None, weeks=3):
     """Fetches historical match data from the SoccerDataAPI for the specified leagues and time frame."""
 
+    api_key = get_api_key()
+
     if leagues_id is None:
-        leagues_id = get_leagues_id()
+        try:
+            leagues_id = get_leagues_id()
+        except ValueError as e:
+            logging.error(f"[Error] loading leagues: {e}")
+            raise ValueError(f"Leagues configuration is invalid: {e}")
 
     today_dt = datetime.now()
     now = today_dt - timedelta(hours=1)
@@ -99,6 +92,8 @@ def get_historical_data(leagues_id=None, weeks=3):
 def get_matches_details(match_id):
     """Fetches detailed information for a specific match by its ID."""
 
+    api_key = get_api_key()
+
     url = "https://api.soccerdataapi.com/match/"
     querystring = {"match_id": match_id, "auth_token": api_key}
     headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
@@ -112,6 +107,8 @@ def get_matches_details(match_id):
 
 def get_h2h(team1_id, team2_id):
     """Fetches head-to-head statistics between two teams by their IDs."""
+
+    api_key = get_api_key()
 
     url = "https://api.soccerdataapi.com/head-to-head/"
     querystring = {"team_1_id": team1_id, "team_2_id": team2_id, "auth_token": api_key}
@@ -131,6 +128,8 @@ def get_h2h(team1_id, team2_id):
 
 def get_standings(league_id):
     """Fetches the current standings for a specific league by its ID."""
+
+    api_key = get_api_key()
 
     url = "https://api.soccerdataapi.com/standing/"
     query = {"league_id": league_id, "auth_token": api_key}
@@ -159,7 +158,7 @@ def main():
     """Main function to fetch historical match data and save it to a JSON file."""
 
     matches = get_historical_data()
-    logging.info(f"Fetched {len(matches)} historical matches.")
+    logging.info(f"[INFO] Fetched {len(matches)} historical matches.")
 
     output_path = Path("data/raw/matches_raw.json")
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -285,8 +284,8 @@ def main():
         with open(output_path, "w", encoding="utf-8") as f:
             print("Writing data to", output_path)
             json.dump(saved_matches, f, ensure_ascii=False, indent=2)
-        logging.info(f"Total saved matches: {total_saved}")
-        logging.info(f"Total games skipped: {total_ignored}")
+        logging.info(f"[INFO] Total saved matches: {total_saved}")
+        logging.info(f"[INFO] Total games skipped: {total_ignored}")
     except Exception as e:
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
@@ -294,3 +293,7 @@ def main():
 def fetch_upcoming_matches():
     # TODO: implement this function to fetch upcoming matches
     return
+
+
+if __name__ == "__main__":
+    main()
