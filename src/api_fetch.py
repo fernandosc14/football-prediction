@@ -25,7 +25,11 @@ def get_historical_data(leagues_id=None, weeks=3):
     api_key = get_api_key()
 
     if leagues_id is None:
-        leagues_id = get_leagues_id()
+        try:
+            leagues_id = get_leagues_id()
+        except ValueError as e:
+            logging.error(f"Erro ao carregar ligas: {e}")
+            raise ValueError(f"Leagues configuration is invalid: {e}")
 
     today_dt = datetime.now()
     now = today_dt - timedelta(hours=1)

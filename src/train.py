@@ -4,6 +4,7 @@ import logging
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 from utils import setup_logging, save_json
 from .data_prep import preprocess_data
 
@@ -29,15 +30,26 @@ def train_model():
             le = LabelEncoder()
             y = le.fit_transform(y)
             joblib.dump(le, f"models/le_{target}.pkl")
+
+        X_train, X_val, y_train, y_val = train_test_split(
+            X, y, test_size=0.2, random_state=42, stratify=y if len(set(y)) > 1 else None
+        )
+
         model = RandomForestClassifier(n_estimators=100, random_state=42)
-        model.fit(X, y)
+        model.fit(X_train, y_train)
 
-        train_acc = model.score(X, y)
-        metrics[target] = {"train_accuracy": train_acc}
+        train_acc = model.score(X_train, y_train)
+        val_acc = model.score(X_val, y_val)
+        metrics[target] = {"train_accuracy": train_acc, "val_accuracy": val_acc}
         logging.info(f"Train accuracy for {target}: {train_acc:.4f}")
+        logging.info(f"Validation accuracy for {target}: {val_acc:.4f}")
 
-        joblib.dump(model, f"models/model_{target}.pkl")
-        logging.info(f"Model saved for target '{target}' in models/model_{target}.pkl")
+        joblib.dump(
+            {"model": model, "feature_columns": feature_columns}, f"models/model_{target}.pkl"
+        )
+        logging.info(
+            f"Model and feature_columns saved for target '{target}' in models/model_{target}.pkl"
+        )
 
     save_json(metrics, "models/train_metrics.json")
     logging.info("Training metrics saved in models/train_metrics.json.")
