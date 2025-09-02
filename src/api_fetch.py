@@ -1,6 +1,6 @@
 from pathlib import Path
 from datetime import datetime, timedelta
-from utils import get_api_key, load_json
+from src.utils import get_api_key, load_json
 
 import json
 import requests
@@ -70,7 +70,10 @@ def get_historical_data(leagues_id=None, weeks=3):
                     if start_dt.date() <= match_date.date() <= now.date():
                         home_team = match.get("teams", {}).get("home", {})
                         away_team = match.get("teams", {}).get("away", {})
+
                         is_cup = match.get("is_cup")
+
+                        odds = match.get("odds", {}).get("match_winner", {})
                         if is_cup is None:
                             is_cup = obj.get("is_cup")
                         games.append(
@@ -84,6 +87,7 @@ def get_historical_data(leagues_id=None, weeks=3):
                                 "match_id": match.get("id"),
                                 "league_id": league_id,
                                 "is_cup": is_cup,
+                                "odds": odds,
                             }
                         )
     return games
@@ -290,9 +294,80 @@ def main():
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
 
-def fetch_upcoming_matches():
-    # TODO: implement this function to fetch upcoming matches
-    return
+def fetch_upcoming_matches(leagues_id=None, weeks=1):
+    """Fetch upcoming match data from the API for specified leagues over the next given weeks."""
+    api_key = get_api_key()
+    if leagues_id is None:
+        try:
+            leagues_id = get_leagues_id()
+        except ValueError as e:
+            logging.error(f"[Error] loading leagues: {e}")
+            raise ValueError(f"Leagues configuration is invalid: {e}")
+
+    today_dt = datetime.now()
+    now = today_dt - timedelta(hours=1)
+    finish_dt = today_dt + timedelta(weeks=weeks)
+    games = []
+
+    for league_id in leagues_id:
+        url = "https://api.soccerdataapi.com/matches/"
+        query = {"league_id": league_id, "auth_token": api_key}
+        headers = {"Accept-Encoding": "gzip", "Content-Type": "application/json"}
+
+        try:
+            response = SESSION.get(url, headers=headers, params=query, timeout=TIMEOUT)
+            data = response.json()
+        except Exception as e:
+            logging.error(f"[ERROR] Request or JSON decode failed for league {league_id}: {e}")
+            continue
+
+        if isinstance(data, dict):
+            data = [data]
+        elif not isinstance(data, list):
+            logging.warning(f"[WARNING] Unexpected data type: {type(data)} for league {league_id}")
+            continue
+
+        for obj in data:
+            if not isinstance(obj, dict):
+                logging.warning(f"[WARNING] Unexpected data format: {obj}")
+                continue
+
+            for stage in obj.get("stage", []):
+                for match in stage.get("matches", []):
+                    match_date_str = match.get("date")
+                    if not match_date_str:
+                        continue
+                    try:
+                        match_date = datetime.strptime(match_date_str, "%d/%m/%Y")
+                    except Exception as e:
+                        logging.warning(f"[WARNING] Date parsing failed: {match_date_str} ({e})")
+                        continue
+                    if now.date() <= match_date.date() <= finish_dt.date():
+                        home_team = match.get("teams", {}).get("home", {})
+                        away_team = match.get("teams", {}).get("away", {})
+
+                        is_cup = match.get("is_cup")
+
+                        odds = match.get("odds", {}).get("match_winner", {})
+                        if not isinstance(odds, dict):
+                            odds = None
+                        if is_cup is None:
+                            is_cup = obj.get("is_cup")
+                        games.append(
+                            {
+                                "date": match["date"],
+                                "time": match.get("time", ""),
+                                "home_name": home_team.get("name", "?"),
+                                "away_name": away_team.get("name", "?"),
+                                "home_id": home_team.get("id", "?"),
+                                "away_id": away_team.get("id", "?"),
+                                "match_id": match.get("id"),
+                                "league_id": league_id,
+                                "is_cup": is_cup,
+                                "odds": odds,
+                            }
+                        )
+    return games
 
 
 if __name__ == "__main__":

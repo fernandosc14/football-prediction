@@ -1,6 +1,7 @@
 from sklearn.preprocessing import LabelEncoder
 
 import numpy as np
+import pandas as pd
 
 
 def add_winner_feature(df):
@@ -10,12 +11,6 @@ def add_winner_feature(df):
         "1",
         np.where(df["Team1Goals"] < df["Team2Goals"], "2", "X"),
     )
-    return df
-
-
-def add_goal_difference_feature(df):
-    """Add a feature representing the goal difference."""
-    df["Goal_Difference"] = df["Team1Goals"] - df["Team2Goals"]
     return df
 
 
@@ -77,14 +72,111 @@ def encode_league(df):
     return df, le_league
 
 
+def add_recent_form_features(df, n_games=5):
+    """Add features based on recent form of both teams, grouped by league and season."""
+    df = df.copy()
+    required_cols = {"date", "team1", "team2", "Team1Goals", "Team2Goals", "League"}
+    missing = [c for c in required_cols if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns for recent form: {missing}")
+    if not np.issubdtype(df["date"].dtype, np.datetime64):
+        df["date"] = pd.to_datetime(df["date"], errors="coerce", dayfirst=True)
+
+    df = df.dropna(subset=["date"])
+
+    season_col = None
+    for col in ["season", "ano", "year"]:
+        if col in df.columns:
+            season_col = col
+            break
+
+    group_cols = ["League"]
+    if season_col:
+        group_cols.append(season_col)
+
+    df = df.sort_values(group_cols + ["date"])
+
+    team1_form, team2_form = [], []
+    team1_goals, team2_goals = [], []
+    for idx, row in df.iterrows():
+        t1 = row["team1"]
+        t2 = row["team2"]
+        date = row["date"]
+        league = row["League"]
+        season_val = row[season_col] if season_col else None
+
+        mask_t1 = df["League"] == league
+        mask_t2 = df["League"] == league
+        if season_col:
+            mask_t1 &= df[season_col] == season_val
+            mask_t2 &= df[season_col] == season_val
+
+        prev_t1 = df[
+            mask_t1 & ((df["team1"] == t1) | (df["team2"] == t1)) & (df["date"] < date)
+        ].tail(n_games)
+        prev_t2 = df[
+            mask_t2 & ((df["team1"] == t2) | (df["team2"] == t2)) & (df["date"] < date)
+        ].tail(n_games)
+
+        def calc_stats(prev, team):
+            if prev.empty:
+                return 0, 0
+            points = 0
+            goals = 0
+            for _, g in prev.iterrows():
+                if g["team1"] == team:
+                    goals += g["Team1Goals"]
+                    if g["Team1Goals"] > g["Team2Goals"]:
+                        points += 3
+                    elif g["Team1Goals"] == g["Team2Goals"]:
+                        points += 1
+                else:
+                    goals += g["Team2Goals"]
+                    if g["Team2Goals"] > g["Team1Goals"]:
+                        points += 3
+                    elif g["Team2Goals"] == g["Team1Goals"]:
+                        points += 1
+            return points / n_games, goals / n_games
+
+        t1_points, t1_avg_goals = calc_stats(prev_t1, t1)
+        t2_points, t2_avg_goals = calc_stats(prev_t2, t2)
+        team1_form.append(t1_points)
+        team2_form.append(t2_points)
+        team1_goals.append(t1_avg_goals)
+        team2_goals.append(t2_avg_goals)
+    df["team1_last5_avg_points"] = team1_form
+    df["team2_last5_avg_points"] = team2_form
+    df["team1_last5_avg_goals"] = team1_goals
+    df["team2_last5_avg_goals"] = team2_goals
+    return df
+
+
+def add_odds_features(df):
+    """Add features derived from odds: ratios, min/max, implied probabilities, etc."""
+    if all(col in df.columns for col in ["home_win", "draw", "away_win"]):
+        df["odds_ratio_home_away"] = df["home_win"] / df["away_win"].replace(0, np.nan)
+        df["odds_min"] = df[["home_win", "draw", "away_win"]].min(axis=1)
+        df["odds_max"] = df[["home_win", "draw", "away_win"]].max(axis=1)
+        df["odds_sum"] = df[["home_win", "draw", "away_win"]].sum(axis=1)
+
+        df["implied_prob_home"] = 1 / df["home_win"].replace(0, np.nan)
+        df["implied_prob_draw"] = 1 / df["draw"].replace(0, np.nan)
+        df["implied_prob_away"] = 1 / df["away_win"].replace(0, np.nan)
+        df["implied_prob_sum"] = (
+            df["implied_prob_home"] + df["implied_prob_draw"] + df["implied_prob_away"]
+        )
+        df["implied_prob_diff"] = df["implied_prob_home"] - df["implied_prob_away"]
+    return df
+
+
 def apply_all_features(df):
     """Apply all feature engineering functions to the DataFrame."""
     df = add_winner_feature(df)
-    df = add_goal_difference_feature(df)
     df = add_double_chance_feature(df)
     df = add_over_feature(df)
     df = add_btts_feature(df)
     df = add_rank_diff_feature(df)
     df = add_h2h_feature(df)
+    df = add_odds_features(df)
     df, le_league = encode_league(df)
     return df, le_league

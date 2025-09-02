@@ -1,7 +1,8 @@
-import argparse
-from src.api_fetch import get_historical_data, fetch_upcoming_matches
+from src.api_fetch import fetch_upcoming_matches
 from src.train import train_model
 from src.predict import predict_upcoming
+
+import argparse
 
 """
 python main.py --mode train
@@ -14,8 +15,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.mode == "train":
-        print("Fetching historical data...")
-        get_historical_data()
+        # print("Fetching historical data...")
+        # main()
         print("Training model...")
         train_model()
 
