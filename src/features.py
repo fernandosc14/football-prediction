@@ -75,8 +75,14 @@ def encode_league(df):
 def add_recent_form_features(df, n_games=5):
     """Add features based on recent form of both teams, grouped by league and season."""
     df = df.copy()
+    required_cols = {"date", "team1", "team2", "Team1Goals", "Team2Goals", "League"}
+    missing = [c for c in required_cols if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns for recent form: {missing}")
     if not np.issubdtype(df["date"].dtype, np.datetime64):
         df["date"] = pd.to_datetime(df["date"], errors="coerce", dayfirst=True)
+
+    df = df.dropna(subset=["date"])
 
     season_col = None
     for col in ["season", "ano", "year"]:

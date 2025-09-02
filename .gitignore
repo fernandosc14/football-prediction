@@ -32,8 +32,6 @@ dist/
 *.tmp
 
 # Dados e modelos
-data/raw/
-data/processed/
-data/feature/
+data/
 artifacts/
 models/

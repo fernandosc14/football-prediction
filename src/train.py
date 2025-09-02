@@ -2,6 +2,7 @@ import joblib
 import os
 import logging
 import numpy as np
+import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
@@ -18,16 +19,11 @@ def train_model():
 
     df, feature_columns, target_df = preprocess_data(targets=targets)
 
-    odds_cols = [
-        "home_win",
-        "draw",
-        "away_win",
-    ]
+    odds_cols = ["home_win", "draw", "away_win"]
 
-    def has_odds(row):
-        return any(row.get(col) is not None for col in odds_cols)
+    mask = df[odds_cols].apply(pd.to_numeric, errors="coerce").notna().all(axis=1)
+    df = df[mask]
 
-    df = df[df.apply(has_odds, axis=1)]
     target_df = target_df.loc[df.index]
 
     os.makedirs("models", exist_ok=True)

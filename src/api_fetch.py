@@ -349,6 +349,8 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                         is_cup = match.get("is_cup")
 
                         odds = match.get("odds", {}).get("match_winner", {})
+                        if not isinstance(odds, dict):
+                            odds = None
                         if is_cup is None:
                             is_cup = obj.get("is_cup")
                         games.append(
