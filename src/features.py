@@ -128,9 +128,9 @@ def add_odds_features(df):
         df["odds_max"] = df[["home_win", "draw", "away_win"]].max(axis=1)
         df["odds_sum"] = df[["home_win", "draw", "away_win"]].sum(axis=1)
 
-        df["implied_prob_home"] = 1 / df["home_win"]
-        df["implied_prob_draw"] = 1 / df["draw"]
-        df["implied_prob_away"] = 1 / df["away_win"]
+        df["implied_prob_home"] = 1 / df["home_win"].replace(0, np.nan)
+        df["implied_prob_draw"] = 1 / df["draw"].replace(0, np.nan)
+        df["implied_prob_away"] = 1 / df["away_win"].replace(0, np.nan)
         df["implied_prob_sum"] = (
             df["implied_prob_home"] + df["implied_prob_draw"] + df["implied_prob_away"]
         )
