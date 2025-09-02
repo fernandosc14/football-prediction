@@ -76,12 +76,8 @@ def train_model():
         logging.info(f"[INFO] Train accuracy for {target}: {train_acc:.4f}")
         logging.info(f"[INFO] Validation accuracy for {target}: {val_acc:.4f}")
 
-        joblib.dump(
-            {"model": model, "feature_columns": feature_columns}, f"models/model_{target}.pkl"
-        )
-        logging.info(
-            f"Model and feature_columns saved for target '{target}' in models/model_{target}.pkl"
-        )
+        joblib.dump(model, f"models/model_{target}.pkl")
+        logging.info(f"Model saved for target '{target}' in models/model_{target}.pkl")
 
     save_json(metrics, "models/train_metrics.json")
     logging.info("[INFO] Training metrics saved in models/train_metrics.json.")

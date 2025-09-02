@@ -1,6 +1,6 @@
 from src.api_fetch import fetch_upcoming_matches
 from src.train import train_model
-from src.predict import predict_upcoming
+from src.predict import main
 
 import argparse
 
@@ -24,5 +24,5 @@ if __name__ == "__main__":
         print("Fetching upcoming matches...")
         fetch_upcoming_matches()
         print("Making predictions...")
-        preds = predict_upcoming()
+        preds = main()
         print("Predictions: ", preds)
