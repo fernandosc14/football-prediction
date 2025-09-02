@@ -1,6 +1,7 @@
 from sklearn.preprocessing import LabelEncoder
 
 import numpy as np
+import pandas as pd
 
 
 def add_winner_feature(df):
@@ -72,20 +73,44 @@ def encode_league(df):
 
 
 def add_recent_form_features(df, n_games=5):
-    """Add features based on recent form of both teams."""
-    df = df.sort_values(by="date")
+    """Add features based on recent form of both teams, grouped by league and season."""
+    df = df.copy()
+    if not np.issubdtype(df["date"].dtype, np.datetime64):
+        df["date"] = pd.to_datetime(df["date"], errors="coerce", dayfirst=True)
+
+    season_col = None
+    for col in ["season", "ano", "year"]:
+        if col in df.columns:
+            season_col = col
+            break
+
+    group_cols = ["League"]
+    if season_col:
+        group_cols.append(season_col)
+
+    df = df.sort_values(group_cols + ["date"])
+
     team1_form, team2_form = [], []
     team1_goals, team2_goals = [], []
     for idx, row in df.iterrows():
         t1 = row["team1"]
         t2 = row["team2"]
         date = row["date"]
-        prev_t1 = df[((df["team1"] == t1) | (df["team2"] == t1)) & (df["date"] < date)].tail(
-            n_games
-        )
-        prev_t2 = df[((df["team1"] == t2) | (df["team2"] == t2)) & (df["date"] < date)].tail(
-            n_games
-        )
+        league = row["League"]
+        season_val = row[season_col] if season_col else None
+
+        mask_t1 = df["League"] == league
+        mask_t2 = df["League"] == league
+        if season_col:
+            mask_t1 &= df[season_col] == season_val
+            mask_t2 &= df[season_col] == season_val
+
+        prev_t1 = df[
+            mask_t1 & ((df["team1"] == t1) | (df["team2"] == t1)) & (df["date"] < date)
+        ].tail(n_games)
+        prev_t2 = df[
+            mask_t2 & ((df["team1"] == t2) | (df["team2"] == t2)) & (df["date"] < date)
+        ].tail(n_games)
 
         def calc_stats(prev, team):
             if prev.empty:
