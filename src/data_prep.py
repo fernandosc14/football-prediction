@@ -1,6 +1,6 @@
 from sklearn.preprocessing import StandardScaler
-from features import apply_all_features
-from utils import load_json
+from src.features import add_recent_form_features, apply_all_features
+from src.utils import load_json
 
 import pandas as pd
 import joblib
@@ -45,6 +45,7 @@ def preprocess_data(targets=None, cleanup_models=True):
     df = df.dropna(subset=["Team1Goals", "Team2Goals"])
 
     df, le_league = apply_all_features(df)
+    df = add_recent_form_features(df, n_games=5)
 
     h2h_cols = [
         "team1_rank",
@@ -95,10 +96,34 @@ def preprocess_data(targets=None, cleanup_models=True):
         "h2h_team2_home_losses",
         "h2h_team2_home_scored",
         "h2h_team2_home_conceded",
-        "Goal_Difference",
         "Rank_Diff",
         "League_Encoded",
+        "team1_last5_avg_points",
+        "team2_last5_avg_points",
+        "team1_last5_avg_goals",
+        "team2_last5_avg_goals",
+        "home_win",
+        "draw",
+        "away_win",
+        "odds_ratio_home_away",
+        "odds_min",
+        "odds_max",
+        "odds_sum",
+        "implied_prob_home",
+        "implied_prob_draw",
+        "implied_prob_away",
+        "implied_prob_sum",
+        "implied_prob_diff",
     ]
+
+    if "odds" in df.columns:
+        odds_cols = [
+            ("home_win", "home_win"),
+            ("draw", "draw"),
+            ("away_win", "away_win"),
+        ]
+        for k, col in odds_cols:
+            df[col] = df["odds"].apply(lambda x: x.get(k) if isinstance(x, dict) else None)
 
     feature_columns_valid = [
         col for col in feature_columns if col in df.columns and not df[col].isna().all()

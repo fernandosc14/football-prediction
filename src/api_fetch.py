@@ -1,6 +1,6 @@
 from pathlib import Path
 from datetime import datetime, timedelta
-from utils import get_api_key, load_json
+from src.utils import get_api_key, load_json
 
 import json
 import requests
