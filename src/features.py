@@ -123,7 +123,7 @@ def add_recent_form_features(df, n_games=5):
 def add_odds_features(df):
     """Add features derived from odds: ratios, min/max, implied probabilities, etc."""
     if all(col in df.columns for col in ["home_win", "draw", "away_win"]):
-        df["odds_ratio_home_away"] = df["home_win"] / df["away_win"]
+        df["odds_ratio_home_away"] = df["home_win"] / df["away_win"].replace(0, np.nan)
         df["odds_min"] = df[["home_win", "draw", "away_win"]].min(axis=1)
         df["odds_max"] = df[["home_win", "draw", "away_win"]].max(axis=1)
         df["odds_sum"] = df[["home_win", "draw", "away_win"]].sum(axis=1)

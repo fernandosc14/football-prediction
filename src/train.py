@@ -76,7 +76,7 @@ def train_model():
 
         train_acc = model.score(X_train, y_train)
         val_acc = model.score(X_val, y_val)
-        metrics[target] = {"train_accuracy": train_acc, "val_accuracy": val_acc}
+        metrics[target].update({"train_accuracy": train_acc, "val_accuracy": val_acc})
         logging.info(f"[INFO] Train accuracy for {target}: {train_acc:.4f}")
         logging.info(f"[INFO] Validation accuracy for {target}: {val_acc:.4f}")
 
