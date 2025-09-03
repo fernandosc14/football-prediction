@@ -31,7 +31,11 @@ def prepare_features(games, feature_columns, scaler=None, encoders=None):
             lambda x: x.get(key) if isinstance(x, dict) and key in x else None
         )
     if encoders and "le_league" in encoders:
-        df["League_Encoded"] = encoders["le_league"].transform(df["League"])
+        le = encoders["le_league"]
+        known = set(le.classes_)
+        placeholder = next(iter(known)) if len(known) else None
+        safe_leagues = df["League"].where(df["League"].isin(known), placeholder)
+        df["League_Encoded"] = le.transform(safe_leagues)
     else:
         raise RuntimeError("Missing league encoder in prediction bundle.")
     with open("data/raw/matches_raw.json", encoding="utf-8") as f:
@@ -47,6 +51,9 @@ def prepare_features(games, feature_columns, scaler=None, encoders=None):
         for odd_col in ["home_win", "draw", "away_win"]:
             if odd_col in df.columns:
                 game[odd_col] = df.loc[i, odd_col]
+    missing = [c for c in feature_columns if c not in df.columns]
+    for c in missing:
+        df[c] = 0
     X = df[feature_columns].copy()
     if scaler:
         X = pd.DataFrame(scaler.transform(X), columns=feature_columns)
@@ -57,7 +64,16 @@ def main():
     """Load models and make predictions on upcoming matches."""
 
     targets = ["Winner", "Over_2_5", "Over_1_5", "Double_Chance", "BTTS"]
-    bundles = {t: joblib.load(f"models/bundle_{t}.pkl") for t in targets}
+    bundles = {}
+    for t in targets:
+        path = f"models/bundle_{t}.pkl"
+        try:
+            bundles[t] = joblib.load(path)
+        except Exception as e:
+            logging.error(f"[ERROR] Could not load model bundle for {t}: {e}")
+    if not bundles:
+        logging.critical("[CRITICAL] No models loaded. Exiting prediction.")
+        return
     games = fetch_upcoming_matches()
     if not games:
         logging.warning("[WARNING] No upcoming matches found.")

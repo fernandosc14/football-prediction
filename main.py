@@ -1,6 +1,6 @@
 from src.api_fetch import fetch_upcoming_matches
 from src.train import train_model
-from src.predict import main
+from src.predict import main as run_predictions
 
 import argparse
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print("Fetching upcoming matches...")
         fetch_upcoming_matches()
         print("Making predictions...")
-        preds = main()
+        preds = run_predictions()
         print("Predictions: ", preds)
 
     elif args.mode == "full":
@@ -32,5 +32,5 @@ if __name__ == "__main__":
         print("Training model...")
         train_model()
         print("Making predictions...")
-        preds = main()
+        preds = run_predictions()
         print("Predictions: ", preds)
