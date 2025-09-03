@@ -1,9 +1,7 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 from pydantic import BaseModel
 from typing import Optional
 from fastapi import HTTPException
-
-import json
 
 router = APIRouter()
 
@@ -25,32 +23,17 @@ class MatchInput(BaseModel):
 
 
 @router.get("/predictions", tags=["Predictions"])
-def get_predictions():
+def get_predictions(request: Request):
     """Get all predictions"""
-    try:
-        with open("data/predict/predictions.json", encoding="utf-8") as f:
-            predictions = json.load(f)
-        return predictions
-    except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Predictions file not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error reading predictions file: {e}")
+    return request.app.state.predictions
 
 
 @router.get(
     "/predictions/{match_id}", tags=["Predictions"], summary="Get prediction for a specific match"
 )
-def get_prediction_by_id(match_id: int):
+def get_prediction_by_id(match_id: int, request: Request):
     """Get prediction for a specific match by match_id"""
-    try:
-        with open("data/predict/predictions.json", encoding="utf-8") as f:
-            predictions = json.load(f)
-    except FileNotFoundError:
-        raise HTTPException(status_code=500, detail="Predictions file not found.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error reading predictions file: {e}")
-
-    for match in predictions:
-        if match.get("match_id") == match_id:
+    for match in request.app.state.predictions:
+        if str(match.get("match_id")) == str(match_id):
             return match
     raise HTTPException(status_code=404, detail="Prediction for this match_id not found.")
