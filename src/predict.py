@@ -53,106 +53,99 @@ def prepare_features(games, feature_columns, scaler=None, encoders=None):
 def main():
     """Load models and make predictions on upcoming matches."""
 
-    with open("models/feature_columns.json") as f:
-        with open("models/feature_columns.json") as f:
-            feature_columns = json.load(f)
-        scaler = joblib.load("models/feature_scaler.pkl")
-        models = {
-            "Winner": joblib.load("models/model_Winner.pkl"),
-            "Over_2_5": joblib.load("models/model_Over_2_5.pkl"),
-            "Over_1_5": joblib.load("models/model_Over_1_5.pkl"),
-            "Double_Chance": joblib.load("models/model_Double_Chance.pkl"),
-            "BTTS": joblib.load("models/model_BTTS.pkl"),
-        }
-        games = fetch_upcoming_matches()
-        if not games:
-            print("No upcoming matches found.")
-            return
-        X = prepare_features(games, feature_columns, scaler=scaler)
-        for name, model in models.items():
-            try:
-                probs = model.predict_proba(X)
-                preds = model.classes_[probs.argmax(axis=1)]
-                confs = probs.max(axis=1)
-            except Exception as e:
-                print(f"Error predicting {name}: {e}")
-                preds = [None] * len(games)
-                confs = [0.0] * len(games)
-            for i, game in enumerate(games):
-                game[f"prediction_{name}"] = preds[i]
-                game[f"confidence_{name}"] = confs[i]
-        with open("config/leagues.json", encoding="utf-8") as f:
-            leagues = json.load(f)
-        id_to_name = {str(lg["id"]): lg["name"] for lg in leagues}
-        for game in games:
-            game["League"] = id_to_name.get(str(game["league_id"]), "?")
-        results = []
-        for game in games:
-            result = {
-                "date": game.get("date"),
-                "time": game.get("time"),
-                "league": game.get("League"),
-                "home_team": game.get("home_name"),
-                "away_team": game.get("away_name"),
-                "odds": {
-                    "home": game.get("home_win"),
-                    "draw": game.get("draw"),
-                    "away": game.get("away_win"),
-                },
-                "predictions": {
-                    "winner": {
-                        "class": (
-                            int(game.get("prediction_Winner", -1))
-                            if game.get("prediction_Winner") is not None
-                            else None
-                        ),
-                        "confidence": float(game.get("confidence_Winner", 0)),
-                    },
-                    "over_2_5": {
-                        "class": (
-                            int(game.get("prediction_Over_2_5", -1))
-                            if game.get("prediction_Over_2_5") is not None
-                            else None
-                        ),
-                        "confidence": float(game.get("confidence_Over_2_5", 0)),
-                    },
-                    "over_1_5": {
-                        "class": (
-                            int(game.get("prediction_Over_1_5", -1))
-                            if game.get("prediction_Over_1_5") is not None
-                            else None
-                        ),
-                        "confidence": float(game.get("confidence_Over_1_5", 0)),
-                    },
-                    "double_chance": {
-                        "class": (
-                            int(game.get("prediction_Double_Chance", -1))
-                            if game.get("prediction_Double_Chance") is not None
-                            else None
-                        ),
-                        "confidence": float(game.get("confidence_Double_Chance", 0)),
-                    },
-                    "btts": {
-                        "class": (
-                            int(game.get("prediction_BTTS", -1))
-                            if game.get("prediction_BTTS") is not None
-                            else None
-                        ),
-                        "confidence": float(game.get("confidence_BTTS", 0)),
-                    },
-                },
-            }
-            results.append(result)
-        output_dir = os.path.join("data", "predict")
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, "predictions.json")
-        try:
-            with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(results, f, ensure_ascii=False, indent=2)
-            print(f"Predictions saved to {output_path}")
-        except Exception as e:
-            print(f"Error saving predictions: {e}")
+    targets = ["Winner", "Over_2_5", "Over_1_5", "Double_Chance", "BTTS"]
+    bundles = {t: joblib.load(f"models/bundle_{t}.pkl") for t in targets}
+    feature_columns = bundles["Winner"]["feature_columns"]
+    scaler = bundles["Winner"]["scaler"]
+    games = fetch_upcoming_matches()
+    if not games:
+        print("No upcoming matches found.")
         return
+    X = prepare_features(games, feature_columns, scaler=scaler)
+    for name, bundle in bundles.items():
+        model = bundle["model"]
+        try:
+            probs = model.predict_proba(X)
+            preds = model.classes_[probs.argmax(axis=1)]
+            confs = probs.max(axis=1)
+        except Exception as e:
+            print(f"Error predicting {name}: {e}")
+            preds = [None] * len(games)
+            confs = [0.0] * len(games)
+        for i, game in enumerate(games):
+            game[f"prediction_{name}"] = preds[i]
+            game[f"confidence_{name}"] = confs[i]
+    with open("config/leagues.json", encoding="utf-8") as f:
+        leagues = json.load(f)
+    id_to_name = {str(lg["id"]): lg["name"] for lg in leagues}
+    for game in games:
+        game["League"] = id_to_name.get(str(game["league_id"]), "?")
+    results = []
+    for game in games:
+        result = {
+            "date": game.get("date"),
+            "time": game.get("time"),
+            "league": game.get("League"),
+            "home_team": game.get("home_name"),
+            "away_team": game.get("away_name"),
+            "odds": {
+                "home": game.get("home_win"),
+                "draw": game.get("draw"),
+                "away": game.get("away_win"),
+            },
+            "predictions": {
+                "winner": {
+                    "class": (
+                        int(game.get("prediction_Winner", -1))
+                        if game.get("prediction_Winner") is not None
+                        else None
+                    ),
+                    "confidence": float(game.get("confidence_Winner", 0)),
+                },
+                "over_2_5": {
+                    "class": (
+                        int(game.get("prediction_Over_2_5", -1))
+                        if game.get("prediction_Over_2_5") is not None
+                        else None
+                    ),
+                    "confidence": float(game.get("confidence_Over_2_5", 0)),
+                },
+                "over_1_5": {
+                    "class": (
+                        int(game.get("prediction_Over_1_5", -1))
+                        if game.get("prediction_Over_1_5") is not None
+                        else None
+                    ),
+                    "confidence": float(game.get("confidence_Over_1_5", 0)),
+                },
+                "double_chance": {
+                    "class": (
+                        int(game.get("prediction_Double_Chance", -1))
+                        if game.get("prediction_Double_Chance") is not None
+                        else None
+                    ),
+                    "confidence": float(game.get("confidence_Double_Chance", 0)),
+                },
+                "btts": {
+                    "class": (
+                        int(game.get("prediction_BTTS", -1))
+                        if game.get("prediction_BTTS") is not None
+                        else None
+                    ),
+                    "confidence": float(game.get("confidence_BTTS", 0)),
+                },
+            },
+        }
+        results.append(result)
+    output_dir = os.path.join("data", "predict")
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, "predictions.json")
+    try:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"Predictions saved to {output_path}")
+    except Exception as e:
+        print(f"Error saving predictions: {e}")
     return
 
 

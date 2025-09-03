@@ -35,10 +35,10 @@ def train_model():
         logging.info(f"Training model for target: {target}")
         y = target_df[target]
 
+        encoder = None
         if y.dtype == object or y.dtype.name == "category":
-            le = LabelEncoder()
-            y = le.fit_transform(y)
-            joblib.dump(le, f"models/le_{target}.pkl")
+            encoder = LabelEncoder()
+            y = encoder.fit_transform(y)
 
         model_cv = RandomForestClassifier(
             n_estimators=100, max_depth=5, min_samples_leaf=10, random_state=42
@@ -76,8 +76,15 @@ def train_model():
         logging.info(f"[INFO] Train accuracy for {target}: {train_acc:.4f}")
         logging.info(f"[INFO] Validation accuracy for {target}: {val_acc:.4f}")
 
-        joblib.dump(model, f"models/model_{target}.pkl")
-        logging.info(f"Model saved for target '{target}' in models/model_{target}.pkl")
+        bundle = {
+            "model": model,
+            "feature_columns": feature_columns,
+            "scaler": joblib.load("models/feature_scaler.pkl"),
+            "le_league": joblib.load("models/le_league.pkl"),
+            "encoder": encoder,
+        }
+        joblib.dump(bundle, f"models/bundle_{target}.pkl")
+        logging.info(f"Bundle saved for target '{target}' in models/bundle_{target}.pkl")
 
     save_json(metrics, "models/train_metrics.json")
     logging.info("[INFO] Training metrics saved in models/train_metrics.json.")
