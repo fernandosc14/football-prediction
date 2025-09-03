@@ -1,22 +1,21 @@
 from src.api_fetch import fetch_upcoming_matches
 from src.train import train_model
-from src.predict import predict_upcoming
+from src.predict import main as run_predictions
 
 import argparse
 
 """
 python main.py --mode train
 python main.py --mode predict
+python main.py --mode full
 """
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mode", choices=["train", "predict"], required=True)
+    parser.add_argument("--mode", choices=["train", "predict", "full"], required=True)
     args = parser.parse_args()
 
     if args.mode == "train":
-        # print("Fetching historical data...")
-        # main()
         print("Training model...")
         train_model()
 
@@ -24,5 +23,14 @@ if __name__ == "__main__":
         print("Fetching upcoming matches...")
         fetch_upcoming_matches()
         print("Making predictions...")
-        preds = predict_upcoming()
+        preds = run_predictions()
+        print("Predictions: ", preds)
+
+    elif args.mode == "full":
+        print("Fetching upcoming matches...")
+        fetch_upcoming_matches()
+        print("Training model...")
+        train_model()
+        print("Making predictions...")
+        preds = run_predictions()
         print("Predictions: ", preds)

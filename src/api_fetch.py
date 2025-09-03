@@ -19,7 +19,7 @@ def get_leagues_id(json_path="config/leagues.json"):
     return [lg["id"] for lg in data]
 
 
-def get_historical_data(leagues_id=None, weeks=3):
+def get_historical_data(leagues_id=None, weeks=1):
     """Fetches historical match data from the SoccerDataAPI for the specified leagues and time frame."""
 
     api_key = get_api_key()
@@ -154,7 +154,9 @@ def get_standings(league_id):
         ):
             return data["stage"][0]["standings"]
     except Exception:
-        logging.exception("Unexpected data format for standings of league %s", league_id)
+        logging.exception(
+            "[Exception] Unexpected data format for standings of league %s", league_id
+        )
     return []
 
 
@@ -234,6 +236,7 @@ def main():
                     h2h_team2_home_conceded = t2_home.get("team2_conceded_at_home", "")
 
                 match_data = {
+                    "match_id": match_id,
                     "date": date,
                     "time": time,
                     "league": league,
@@ -286,7 +289,7 @@ def main():
                     f"[ERROR] Unexpected error processing match {match.get('match_id', '?')}: {e}"
                 )
         with open(output_path, "w", encoding="utf-8") as f:
-            print("Writing data to", output_path)
+            logging.info(f"[INFO] Writing data to {output_path}")
             json.dump(saved_matches, f, ensure_ascii=False, indent=2)
         logging.info(f"[INFO] Total saved matches: {total_saved}")
         logging.info(f"[INFO] Total games skipped: {total_ignored}")
@@ -347,12 +350,68 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                         away_team = match.get("teams", {}).get("away", {})
 
                         is_cup = match.get("is_cup")
-
                         odds = match.get("odds", {}).get("match_winner", {})
                         if not isinstance(odds, dict):
                             odds = None
                         if is_cup is None:
                             is_cup = obj.get("is_cup")
+
+                        team1_rank = team2_rank = ""
+                        standings = []
+                        try:
+                            standings = get_standings(league_id)
+                        except Exception as e:
+                            logging.warning(
+                                f"Error getting standings for league_id {league_id}: {e}"
+                            )
+                        if standings:
+                            for team in standings:
+                                if str(team.get("team_id")) == str(home_team.get("id")):
+                                    team1_rank = team.get("position", "")
+                                if str(team.get("team_id")) == str(away_team.get("id")):
+                                    team2_rank = team.get("position", "")
+                                if team1_rank and team2_rank:
+                                    break
+
+                        h2h_games_played = h2h_team1_wins = h2h_team2_wins = h2h_draws = ""
+                        h2h_team1_scored = h2h_team2_scored = ""
+                        h2h_team1_home_wins = h2h_team1_home_draws = h2h_team1_home_losses = ""
+                        h2h_team1_home_scored = h2h_team1_home_conceded = ""
+                        h2h_team2_home_wins = h2h_team2_home_draws = h2h_team2_home_losses = ""
+                        h2h_team2_home_scored = h2h_team2_home_conceded = ""
+                        home_id = home_team.get("id")
+                        away_id = away_team.get("id")
+                        if home_id and away_id:
+                            h2h_data = get_h2h(home_id, away_id)
+                            h2h_data = h2h_data if isinstance(h2h_data, dict) else {}
+                            stats = h2h_data.get("overall", {})
+                            stats = stats if isinstance(stats, dict) else {}
+
+                            def safe_get(d, k):
+                                v = d.get(k, 0) if isinstance(d, dict) else 0
+                                return v if isinstance(v, (int, float)) else 0
+
+                            h2h_games_played = safe_get(stats, "overall_games_played")
+                            h2h_team1_wins = safe_get(stats, "overall_team1_wins")
+                            h2h_team2_wins = safe_get(stats, "overall_team2_wins")
+                            h2h_draws = safe_get(stats, "overall_draws")
+                            h2h_team1_scored = safe_get(stats, "overall_team1_scored")
+                            h2h_team2_scored = safe_get(stats, "overall_team2_scored")
+                            t1_home = h2h_data.get("team1_at_home", {})
+                            t1_home = t1_home if isinstance(t1_home, dict) else {}
+                            h2h_team1_home_wins = safe_get(t1_home, "team1_wins_at_home")
+                            h2h_team1_home_draws = safe_get(t1_home, "team1_draws_at_home")
+                            h2h_team1_home_losses = safe_get(t1_home, "team1_losses_at_home")
+                            h2h_team1_home_scored = safe_get(t1_home, "team1_scored_at_home")
+                            h2h_team1_home_conceded = safe_get(t1_home, "team1_conceded_at_home")
+                            t2_home = h2h_data.get("team2_at_home", {})
+                            t2_home = t2_home if isinstance(t2_home, dict) else {}
+                            h2h_team2_home_wins = safe_get(t2_home, "team2_wins_at_home")
+                            h2h_team2_home_draws = safe_get(t2_home, "team2_draws_at_home")
+                            h2h_team2_home_losses = safe_get(t2_home, "team2_losses_at_home")
+                            h2h_team2_home_scored = safe_get(t2_home, "team2_scored_at_home")
+                            h2h_team2_home_conceded = safe_get(t2_home, "team2_conceded_at_home")
+
                         games.append(
                             {
                                 "date": match["date"],
@@ -365,6 +424,24 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                                 "league_id": league_id,
                                 "is_cup": is_cup,
                                 "odds": odds,
+                                "team1_rank": team1_rank,
+                                "team2_rank": team2_rank,
+                                "h2h_games_played": h2h_games_played,
+                                "h2h_team1_wins": h2h_team1_wins,
+                                "h2h_team2_wins": h2h_team2_wins,
+                                "h2h_draws": h2h_draws,
+                                "h2h_team1_scored": h2h_team1_scored,
+                                "h2h_team2_scored": h2h_team2_scored,
+                                "h2h_team1_home_wins": h2h_team1_home_wins,
+                                "h2h_team1_home_draws": h2h_team1_home_draws,
+                                "h2h_team1_home_losses": h2h_team1_home_losses,
+                                "h2h_team1_home_scored": h2h_team1_home_scored,
+                                "h2h_team1_home_conceded": h2h_team1_home_conceded,
+                                "h2h_team2_home_wins": h2h_team2_home_wins,
+                                "h2h_team2_home_draws": h2h_team2_home_draws,
+                                "h2h_team2_home_losses": h2h_team2_home_losses,
+                                "h2h_team2_home_scored": h2h_team2_home_scored,
+                                "h2h_team2_home_conceded": h2h_team2_home_conceded,
                             }
                         )
     return games

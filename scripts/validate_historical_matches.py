@@ -1,6 +1,6 @@
 from pathlib import Path
-
 import json
+import logging
 
 
 def validate_historical_matches():
@@ -46,12 +46,12 @@ def validate_historical_matches():
                 warnings.append(f"[WARNING] Empty field: {field} in match {i+1}")
     if errors:
         for err in errors:
-            print(err)
-        raise ValueError("Validation failed due to missing fields.")
+            logging.error(err)
+        raise ValueError("[ERROR] Validation failed due to missing fields.")
     if warnings:
         for warn in warnings:
-            print(warn)
-    print("Validation completed successfully.")
+            logging.warning(warn)
+    logging.info("[INFO] Validation completed successfully.")
 
 
 if __name__ == "__main__":

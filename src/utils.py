@@ -1,8 +1,15 @@
 from dotenv import load_dotenv
 
+
+import yaml
 import json
 import os
 import logging
+
+
+def load_config(path="config/config.yaml"):
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 def get_api_key(var_name="API_KEY"):

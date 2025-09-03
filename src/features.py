@@ -180,3 +180,73 @@ def apply_all_features(df):
     df = add_odds_features(df)
     df, le_league = encode_league(df)
     return df, le_league
+
+
+def add_recent_form_to_upcoming(upcoming_df, historical_df, n_games=5):
+    """Add recent form features to upcoming matches based on historical data."""
+    historical_df = historical_df.copy()
+    upcoming_df = upcoming_df.copy()
+    historical_df["date"] = pd.to_datetime(historical_df["date"], errors="coerce", dayfirst=True)
+    upcoming_df["date"] = pd.to_datetime(upcoming_df["date"], errors="coerce", dayfirst=True)
+
+    team1_form, team2_form = [], []
+    team1_goals, team2_goals = [], []
+
+    for idx, row in upcoming_df.iterrows():
+        t1 = row["home_name"]
+        t2 = row["away_name"]
+        date = row["date"]
+        league = row["League"]
+
+        prev_t1 = (
+            historical_df[
+                (historical_df["League"] == league)
+                & ((historical_df["team1"] == t1) | (historical_df["team2"] == t1))
+                & (historical_df["date"] < date)
+            ]
+            .sort_values("date")
+            .tail(n_games)
+        )
+
+        prev_t2 = (
+            historical_df[
+                (historical_df["League"] == league)
+                & ((historical_df["team1"] == t2) | (historical_df["team2"] == t2))
+                & (historical_df["date"] < date)
+            ]
+            .sort_values("date")
+            .tail(n_games)
+        )
+
+        def calc_stats(prev, team):
+            if prev.empty:
+                return 0, 0
+            points = 0
+            goals = 0
+            for _, g in prev.iterrows():
+                if g["team1"] == team:
+                    goals += g["Team1Goals"]
+                    if g["Team1Goals"] > g["Team2Goals"]:
+                        points += 3
+                    elif g["Team1Goals"] == g["Team2Goals"]:
+                        points += 1
+                else:
+                    goals += g["Team2Goals"]
+                    if g["Team2Goals"] > g["Team1Goals"]:
+                        points += 3
+                    elif g["Team2Goals"] == g["Team1Goals"]:
+                        points += 1
+            return points / n_games, goals / n_games
+
+        t1_points, t1_avg_goals = calc_stats(prev_t1, t1)
+        t2_points, t2_avg_goals = calc_stats(prev_t2, t2)
+        team1_form.append(t1_points)
+        team2_form.append(t2_points)
+        team1_goals.append(t1_avg_goals)
+        team2_goals.append(t2_avg_goals)
+
+    upcoming_df["team1_last5_avg_points"] = team1_form
+    upcoming_df["team2_last5_avg_points"] = team2_form
+    upcoming_df["team1_last5_avg_goals"] = team1_goals
+    upcoming_df["team2_last5_avg_goals"] = team2_goals
+    return upcoming_df

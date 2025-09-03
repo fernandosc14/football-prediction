@@ -20,7 +20,7 @@ def preprocess_data(targets=None, cleanup_models=True):
                     try:
                         os.remove(fpath)
                     except Exception as e:
-                        logging.warning(f"Could not delete {fpath}: {e}")
+                        logging.warning(f"[WARNING] Could not delete {fpath}: {e}")
 
     path = "data/raw/matches_raw.json"
     if not os.path.exists(path):
@@ -145,8 +145,9 @@ def preprocess_data(targets=None, cleanup_models=True):
         json.dump(feature_columns_valid, f)
 
     if targets is not None:
-        return df, feature_columns_valid, df[targets]
-    return df, feature_columns_valid
+        target_aligned = df.loc[:, targets].copy()
+        return df, feature_columns_valid, target_aligned, scaler, le_league
+    return df, feature_columns_valid, scaler, le_league
 
 
 if __name__ == "__main__":

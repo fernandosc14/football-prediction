@@ -1,0 +1,20 @@
+random_seed: 42
+
+paths:
+  data_raw: data/raw/matches_raw.json
+  model_dir: models/
+  leagues: config/leagues.json
+
+train_params:
+  n_estimators: 100
+  max_depth: 5
+  min_samples_leaf: 10
+  test_size: 0.2
+  cv_folds: 5
+
+targets:
+  - Winner
+  - BTTS
+  - Over_1_5
+  - Over_2_5
+  - Double_Chance
