@@ -29,8 +29,10 @@ def prepare_features(games, feature_columns, scaler=None, encoders=None):
         df[col] = df["odds"].apply(
             lambda x: x.get(key) if isinstance(x, dict) and key in x else None
         )
-    le_league = joblib.load("models/le_league.pkl")
-    df["League_Encoded"] = le_league.transform(df["League"])
+    if encoders and "le_league" in encoders:
+        df["League_Encoded"] = encoders["le_league"].transform(df["League"])
+    else:
+        raise RuntimeError("Missing league encoder in prediction bundle.")
     with open("data/raw/matches_raw.json", encoding="utf-8") as f:
         historical = pd.DataFrame(json.load(f))
     if "League" not in historical.columns and "league" in historical.columns:
@@ -55,16 +57,19 @@ def main():
 
     targets = ["Winner", "Over_2_5", "Over_1_5", "Double_Chance", "BTTS"]
     bundles = {t: joblib.load(f"models/bundle_{t}.pkl") for t in targets}
-    feature_columns = bundles["Winner"]["feature_columns"]
-    scaler = bundles["Winner"]["scaler"]
     games = fetch_upcoming_matches()
     if not games:
         print("No upcoming matches found.")
         return
-    X = prepare_features(games, feature_columns, scaler=scaler)
     for name, bundle in bundles.items():
         model = bundle["model"]
+        feature_columns = bundle.get("feature_columns", [])
+        scaler = bundle.get("scaler", None)
+        le_league = bundle.get("le_league", None)
         try:
+            X = prepare_features(
+                games, feature_columns, scaler=scaler, encoders={"le_league": le_league}
+            )
             probs = model.predict_proba(X)
             preds = model.classes_[probs.argmax(axis=1)]
             confs = probs.max(axis=1)

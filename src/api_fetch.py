@@ -367,6 +367,8 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                                     team1_rank = team.get("position", "")
                                 if str(team.get("team_id")) == str(away_team.get("id")):
                                     team2_rank = team.get("position", "")
+                                if team1_rank and team2_rank:
+                                    break
 
                         h2h_games_played = h2h_team1_wins = h2h_team2_wins = h2h_draws = ""
                         h2h_team1_scored = h2h_team2_scored = ""
@@ -378,27 +380,34 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                         away_id = away_team.get("id")
                         if home_id and away_id:
                             h2h_data = get_h2h(home_id, away_id)
-                            stats = (
-                                h2h_data.get("overall", {}) if isinstance(h2h_data, dict) else {}
-                            )
-                            h2h_games_played = stats.get("overall_games_played", "")
-                            h2h_team1_wins = stats.get("overall_team1_wins", "")
-                            h2h_team2_wins = stats.get("overall_team2_wins", "")
-                            h2h_draws = stats.get("overall_draws", "")
-                            h2h_team1_scored = stats.get("overall_team1_scored", "")
-                            h2h_team2_scored = stats.get("overall_team2_scored", "")
+                            h2h_data = h2h_data if isinstance(h2h_data, dict) else {}
+                            stats = h2h_data.get("overall", {})
+                            stats = stats if isinstance(stats, dict) else {}
+
+                            def safe_get(d, k):
+                                v = d.get(k, 0) if isinstance(d, dict) else 0
+                                return v if isinstance(v, (int, float)) else 0
+
+                            h2h_games_played = safe_get(stats, "overall_games_played")
+                            h2h_team1_wins = safe_get(stats, "overall_team1_wins")
+                            h2h_team2_wins = safe_get(stats, "overall_team2_wins")
+                            h2h_draws = safe_get(stats, "overall_draws")
+                            h2h_team1_scored = safe_get(stats, "overall_team1_scored")
+                            h2h_team2_scored = safe_get(stats, "overall_team2_scored")
                             t1_home = h2h_data.get("team1_at_home", {})
-                            h2h_team1_home_wins = t1_home.get("team1_wins_at_home", "")
-                            h2h_team1_home_draws = t1_home.get("team1_draws_at_home", "")
-                            h2h_team1_home_losses = t1_home.get("team1_losses_at_home", "")
-                            h2h_team1_home_scored = t1_home.get("team1_scored_at_home", "")
-                            h2h_team1_home_conceded = t1_home.get("team1_conceded_at_home", "")
+                            t1_home = t1_home if isinstance(t1_home, dict) else {}
+                            h2h_team1_home_wins = safe_get(t1_home, "team1_wins_at_home")
+                            h2h_team1_home_draws = safe_get(t1_home, "team1_draws_at_home")
+                            h2h_team1_home_losses = safe_get(t1_home, "team1_losses_at_home")
+                            h2h_team1_home_scored = safe_get(t1_home, "team1_scored_at_home")
+                            h2h_team1_home_conceded = safe_get(t1_home, "team1_conceded_at_home")
                             t2_home = h2h_data.get("team2_at_home", {})
-                            h2h_team2_home_wins = t2_home.get("team2_wins_at_home", "")
-                            h2h_team2_home_draws = t2_home.get("team2_draws_at_home", "")
-                            h2h_team2_home_losses = t2_home.get("team2_losses_at_home", "")
-                            h2h_team2_home_scored = t2_home.get("team2_scored_at_home", "")
-                            h2h_team2_home_conceded = t2_home.get("team2_conceded_at_home", "")
+                            t2_home = t2_home if isinstance(t2_home, dict) else {}
+                            h2h_team2_home_wins = safe_get(t2_home, "team2_wins_at_home")
+                            h2h_team2_home_draws = safe_get(t2_home, "team2_draws_at_home")
+                            h2h_team2_home_losses = safe_get(t2_home, "team2_losses_at_home")
+                            h2h_team2_home_scored = safe_get(t2_home, "team2_scored_at_home")
+                            h2h_team2_home_conceded = safe_get(t2_home, "team2_conceded_at_home")
 
                         games.append(
                             {

@@ -145,8 +145,8 @@ def preprocess_data(targets=None, cleanup_models=True):
         json.dump(feature_columns_valid, f)
 
     if targets is not None:
-        return df, feature_columns_valid, df[targets]
-    return df, feature_columns_valid
+        return df, feature_columns_valid, df[targets], scaler, le_league
+    return df, feature_columns_valid, scaler, le_league
 
 
 if __name__ == "__main__":

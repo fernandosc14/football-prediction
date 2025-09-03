@@ -17,7 +17,7 @@ def train_model():
 
     targets = ["Winner", "BTTS", "Over_1_5", "Over_2_5", "Double_Chance"]
 
-    df, feature_columns, target_df = preprocess_data(targets=targets)
+    df, feature_columns, target_df, scaler, le_league = preprocess_data(targets=targets)
 
     odds_cols = ["home_win", "draw", "away_win"]
 
@@ -79,8 +79,8 @@ def train_model():
         bundle = {
             "model": model,
             "feature_columns": feature_columns,
-            "scaler": joblib.load("models/feature_scaler.pkl"),
-            "le_league": joblib.load("models/le_league.pkl"),
+            "scaler": scaler,
+            "le_league": le_league,
             "encoder": encoder,
         }
         joblib.dump(bundle, f"models/bundle_{target}.pkl")
