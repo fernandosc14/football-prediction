@@ -20,7 +20,7 @@ def preprocess_data(targets=None, cleanup_models=True):
                     try:
                         os.remove(fpath)
                     except Exception as e:
-                        logging.warning(f"Could not delete {fpath}: {e}")
+                        logging.warning(f"[WARNING] Could not delete {fpath}: {e}")
 
     path = "data/raw/matches_raw.json"
     if not os.path.exists(path):

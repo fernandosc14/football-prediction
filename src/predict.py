@@ -3,6 +3,7 @@ import sys
 import json
 import joblib
 import pandas as pd
+import logging
 from src.api_fetch import fetch_upcoming_matches
 from src.features import (
     add_rank_diff_feature,
@@ -59,7 +60,7 @@ def main():
     bundles = {t: joblib.load(f"models/bundle_{t}.pkl") for t in targets}
     games = fetch_upcoming_matches()
     if not games:
-        print("No upcoming matches found.")
+        logging.warning("[WARNING] No upcoming matches found.")
         return
     for name, bundle in bundles.items():
         model = bundle["model"]
@@ -74,7 +75,7 @@ def main():
             preds = model.classes_[probs.argmax(axis=1)]
             confs = probs.max(axis=1)
         except Exception as e:
-            print(f"Error predicting {name}: {e}")
+            logging.error(f"[ERROR] Error predicting {name}: {e}")
             preds = [None] * len(games)
             confs = [0.0] * len(games)
         for i, game in enumerate(games):
@@ -148,9 +149,9 @@ def main():
     try:
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
-        print(f"Predictions saved to {output_path}")
+        logging.info(f"[INFO] Predictions saved to {output_path}")
     except Exception as e:
-        print(f"Error saving predictions: {e}")
+        logging.error(f"[ERROR] Error saving predictions: {e}")
     return
 
 

@@ -19,7 +19,7 @@ def get_leagues_id(json_path="config/leagues.json"):
     return [lg["id"] for lg in data]
 
 
-def get_historical_data(leagues_id=None, weeks=3):
+def get_historical_data(leagues_id=None, weeks=1):
     """Fetches historical match data from the SoccerDataAPI for the specified leagues and time frame."""
 
     api_key = get_api_key()
@@ -154,7 +154,9 @@ def get_standings(league_id):
         ):
             return data["stage"][0]["standings"]
     except Exception:
-        logging.exception("Unexpected data format for standings of league %s", league_id)
+        logging.exception(
+            "[Exception] Unexpected data format for standings of league %s", league_id
+        )
     return []
 
 
@@ -286,7 +288,7 @@ def main():
                     f"[ERROR] Unexpected error processing match {match.get('match_id', '?')}: {e}"
                 )
         with open(output_path, "w", encoding="utf-8") as f:
-            print("Writing data to", output_path)
+            logging.info(f"[INFO] Writing data to {output_path}")
             json.dump(saved_matches, f, ensure_ascii=False, indent=2)
         logging.info(f"[INFO] Total saved matches: {total_saved}")
         logging.info(f"[INFO] Total games skipped: {total_ignored}")
