@@ -89,6 +89,7 @@ def main():
     results = []
     for game in games:
         result = {
+            "match_id": game.get("match_id"),
             "date": game.get("date"),
             "time": game.get("time"),
             "league": game.get("League"),
@@ -143,15 +144,31 @@ def main():
             },
         }
         results.append(result)
+
+    results_sorted = sorted(
+        results, key=lambda x: x["predictions"]["winner"]["confidence"], reverse=True
+    )
+    top_results = results_sorted[:6]
     output_dir = os.path.join("data", "predict")
     os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, "predictions.json")
+    predictions_path = os.path.join(output_dir, "predictions.json")
+    with open(predictions_path, "w", encoding="utf-8") as f:
+        json.dump(top_results, f, ensure_ascii=False, indent=2)
+    logging.info(f"[INFO] Predictions saved to {predictions_path} (top 6 by confidence)")
+
+    history_path = os.path.join(output_dir, "predictions_history.json")
     try:
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
-        logging.info(f"[INFO] Predictions saved to {output_path}")
+        if os.path.exists(history_path):
+            with open(history_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+        else:
+            existing = []
+        existing.extend(top_results)
+        with open(history_path, "w", encoding="utf-8") as f:
+            json.dump(existing, f, ensure_ascii=False, indent=2)
+        logging.info(f"[INFO] Appended top 6 predictions to {history_path}")
     except Exception as e:
-        logging.error(f"[ERROR] Error saving predictions: {e}")
+        logging.error(f"[ERROR] Error saving predictions history: {e}")
     return
 
 

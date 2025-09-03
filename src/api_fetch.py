@@ -236,6 +236,7 @@ def main():
                     h2h_team2_home_conceded = t2_home.get("team2_conceded_at_home", "")
 
                 match_data = {
+                    "match_id": match_id,
                     "date": date,
                     "time": time,
                     "league": league,
