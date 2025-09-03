@@ -1,6 +1,8 @@
 import { PredictionItem, Match } from "@/components/ui/PredictionItem";
 import { getPredictions } from "@/services/api";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const prediction = await getPredictions();
 
