@@ -49,7 +49,7 @@ export function PredictionItem({ match } : { match: Match}) {
                     return (
                         <li key={key}>
                             {label}: {classToText(key, field.class)}{" "}
-                            <span className="text-gray-500">({(field.confidence * 100).toFixed(0)}%)</span>
+                            <span className="text-card">({(field.confidence * 100).toFixed(0)}%)</span>
                         </li>
                     );
                 })}
