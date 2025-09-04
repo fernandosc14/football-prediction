@@ -171,9 +171,20 @@ def main():
 
     total_saved = 0
     total_ignored = 0
-    saved_matches = []
 
     try:
+        if output_path.exists():
+            try:
+                with open(output_path, "r", encoding="utf-8") as f:
+                    existing_matches = json.load(f)
+            except Exception as e:
+                logging.warning(f"[WARNING] Could not read existing matches: {e}")
+                existing_matches = []
+        else:
+            existing_matches = []
+
+        existing_ids = set(str(m.get("match_id")) for m in existing_matches if "match_id" in m)
+
         for match in matches:
             try:
                 match_id = match["match_id"]
@@ -271,8 +282,15 @@ def main():
                 else:
                     essential_fields = list(match_data.values())
                 if all(str(x).strip() != "" for x in essential_fields):
-                    saved_matches.append(match_data)
-                    total_saved += 1
+                    if str(match_id) not in existing_ids:
+                        existing_matches.append(match_data)
+                        existing_ids.add(str(match_id))
+                        total_saved += 1
+                    else:
+                        total_ignored += 1
+                        logging.info(
+                            f"[SKIPPED] Duplicate match_id {match_id} | {team1} vs {team2}"
+                        )
                 else:
                     total_ignored += 1
                     empty_fields = [
@@ -290,7 +308,7 @@ def main():
                 )
         with open(output_path, "w", encoding="utf-8") as f:
             logging.info(f"[INFO] Writing data to {output_path}")
-            json.dump(saved_matches, f, ensure_ascii=False, indent=2)
+            json.dump(existing_matches, f, ensure_ascii=False, indent=2)
         logging.info(f"[INFO] Total saved matches: {total_saved}")
         logging.info(f"[INFO] Total games skipped: {total_ignored}")
     except Exception as e:
