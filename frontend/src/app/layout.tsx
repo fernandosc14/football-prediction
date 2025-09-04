@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,8 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${bebas.variable} antialiased bg-gray-950 text-gray-100`}>
+      <body className={`${inter.variable} ${bebas.variable} antialiased bg-gray-900 text-white`}>
         {children}
+        <Footer />
       </body>
     </html>
   );
