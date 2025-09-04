@@ -1,7 +1,7 @@
-import Header from "@/components/header";
 import { Trophy } from "lucide-react";
-import { PredictionItem, Match } from "@/components/ui/predictionItem";
 import { getPredictions } from "@/services/api";
+
+import Header from "@/components/header";
 import InfoCard from "@/components/infoCards";
 import TopPredictionCard from "@/components/topPredictionCard";
 import PredictionCard from "@/components/predictionCard";
