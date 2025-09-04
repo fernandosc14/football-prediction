@@ -164,13 +164,13 @@ def main():
     results_sorted = sorted(
         results, key=lambda x: x["predictions"]["winner"]["confidence"], reverse=True
     )
-    top_results = results_sorted[:6]
+    top_results = results_sorted[:7]
     output_dir = os.path.join("data", "predict")
     os.makedirs(output_dir, exist_ok=True)
     predictions_path = os.path.join(output_dir, "predictions.json")
     with open(predictions_path, "w", encoding="utf-8") as f:
         json.dump(top_results, f, ensure_ascii=False, indent=2)
-    logging.info(f"[INFO] Predictions saved to {predictions_path} (top 6 by confidence)")
+    logging.info(f"[INFO] Predictions saved to {predictions_path} (top 7 by confidence)")
 
     history_path = os.path.join(output_dir, "predictions_history.json")
     try:

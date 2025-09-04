@@ -315,7 +315,7 @@ def main():
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
 
-def fetch_upcoming_matches(leagues_id=None, weeks=1):
+def fetch_upcoming_matches(leagues_id=None, weeks=2):
     """Fetch upcoming match data from the API for specified leagues over the next given weeks."""
     api_key = get_api_key()
     if leagues_id is None:
@@ -399,6 +399,7 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                         h2h_team2_home_scored = h2h_team2_home_conceded = ""
                         home_id = home_team.get("id")
                         away_id = away_team.get("id")
+                        h2h_valid = True
                         if home_id and away_id:
                             h2h_data = get_h2h(home_id, away_id)
                             h2h_data = h2h_data if isinstance(h2h_data, dict) else {}
@@ -429,13 +430,27 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                             h2h_team2_home_losses = safe_get(t2_home, "team2_losses_at_home")
                             h2h_team2_home_scored = safe_get(t2_home, "team2_scored_at_home")
                             h2h_team2_home_conceded = safe_get(t2_home, "team2_conceded_at_home")
+                            if h2h_games_played == 0:
+                                h2h_valid = False
+                        else:
+                            h2h_valid = False
 
+                        home_name = home_team.get("name", "")
+                        away_name = away_team.get("name", "")
+                        if (
+                            not home_name
+                            or not away_name
+                            or not isinstance(odds, dict)
+                            or not odds
+                            or not h2h_valid
+                        ):
+                            continue
                         games.append(
                             {
                                 "date": match["date"],
                                 "time": match.get("time", ""),
-                                "home_name": home_team.get("name", "?"),
-                                "away_name": away_team.get("name", "?"),
+                                "home_name": home_name,
+                                "away_name": away_name,
                                 "home_id": home_team.get("id", "?"),
                                 "away_id": away_team.get("id", "?"),
                                 "match_id": match.get("id"),
