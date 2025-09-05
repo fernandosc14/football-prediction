@@ -74,8 +74,15 @@ def get_historical_data(leagues_id=None, weeks=1):
                         is_cup = match.get("is_cup")
 
                         odds = match.get("odds", {}).get("match_winner", {})
+                        if not isinstance(odds, dict):
+                            odds = None
+
                         if is_cup is None:
                             is_cup = obj.get("is_cup")
+
+                        if not home_team or not away_team or not isinstance(odds, dict) or not odds:
+                            continue
+
                         games.append(
                             {
                                 "date": match["date"],
@@ -189,6 +196,7 @@ def main():
             try:
                 match_id = match["match_id"]
                 is_cup = match.get("is_cup")
+                odds = match.get("odds", {})
                 details = get_matches_details(match_id)
                 if not details or details.get("status") != "finished":
                     continue
@@ -274,6 +282,7 @@ def main():
                     "h2h_team2_home_losses": h2h_team2_home_losses,
                     "h2h_team2_home_scored": h2h_team2_home_scored,
                     "h2h_team2_home_conceded": h2h_team2_home_conceded,
+                    "odds": odds,
                 }
 
                 rank_indexes = ["team1_rank", "team2_rank"]
@@ -315,7 +324,7 @@ def main():
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
 
-def fetch_upcoming_matches(leagues_id=None, weeks=1):
+def fetch_upcoming_matches(leagues_id=None, weeks=2):
     """Fetch upcoming match data from the API for specified leagues over the next given weeks."""
     api_key = get_api_key()
     if leagues_id is None:
@@ -399,43 +408,38 @@ def fetch_upcoming_matches(leagues_id=None, weeks=1):
                         h2h_team2_home_scored = h2h_team2_home_conceded = ""
                         home_id = home_team.get("id")
                         away_id = away_team.get("id")
+                        h2h_valid = True
+                        h2h_games_played = 0
                         if home_id and away_id:
                             h2h_data = get_h2h(home_id, away_id)
                             h2h_data = h2h_data if isinstance(h2h_data, dict) else {}
                             stats = h2h_data.get("overall", {})
                             stats = stats if isinstance(stats, dict) else {}
+                            raw_h2h = stats.get("overall_games_played", 0)
+                            try:
+                                h2h_games_played = int(raw_h2h)
+                            except (ValueError, TypeError):
+                                h2h_games_played = 0
+                            h2h_valid = h2h_games_played > 0
+                        else:
+                            h2h_valid = False
 
-                            def safe_get(d, k):
-                                v = d.get(k, 0) if isinstance(d, dict) else 0
-                                return v if isinstance(v, (int, float)) else 0
-
-                            h2h_games_played = safe_get(stats, "overall_games_played")
-                            h2h_team1_wins = safe_get(stats, "overall_team1_wins")
-                            h2h_team2_wins = safe_get(stats, "overall_team2_wins")
-                            h2h_draws = safe_get(stats, "overall_draws")
-                            h2h_team1_scored = safe_get(stats, "overall_team1_scored")
-                            h2h_team2_scored = safe_get(stats, "overall_team2_scored")
-                            t1_home = h2h_data.get("team1_at_home", {})
-                            t1_home = t1_home if isinstance(t1_home, dict) else {}
-                            h2h_team1_home_wins = safe_get(t1_home, "team1_wins_at_home")
-                            h2h_team1_home_draws = safe_get(t1_home, "team1_draws_at_home")
-                            h2h_team1_home_losses = safe_get(t1_home, "team1_losses_at_home")
-                            h2h_team1_home_scored = safe_get(t1_home, "team1_scored_at_home")
-                            h2h_team1_home_conceded = safe_get(t1_home, "team1_conceded_at_home")
-                            t2_home = h2h_data.get("team2_at_home", {})
-                            t2_home = t2_home if isinstance(t2_home, dict) else {}
-                            h2h_team2_home_wins = safe_get(t2_home, "team2_wins_at_home")
-                            h2h_team2_home_draws = safe_get(t2_home, "team2_draws_at_home")
-                            h2h_team2_home_losses = safe_get(t2_home, "team2_losses_at_home")
-                            h2h_team2_home_scored = safe_get(t2_home, "team2_scored_at_home")
-                            h2h_team2_home_conceded = safe_get(t2_home, "team2_conceded_at_home")
-
+                        home_name = home_team.get("name", "")
+                        away_name = away_team.get("name", "")
+                        if (
+                            not home_name
+                            or not away_name
+                            or not isinstance(odds, dict)
+                            or not odds
+                            or not h2h_valid
+                        ):
+                            continue
                         games.append(
                             {
                                 "date": match["date"],
                                 "time": match.get("time", ""),
-                                "home_name": home_team.get("name", "?"),
-                                "away_name": away_team.get("name", "?"),
+                                "home_name": home_name,
+                                "away_name": away_name,
                                 "home_id": home_team.get("id", "?"),
                                 "away_id": away_team.get("id", "?"),
                                 "match_id": match.get("id"),

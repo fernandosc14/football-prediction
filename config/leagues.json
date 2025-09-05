@@ -4,10 +4,6 @@
         "id": 228
     },
     {
-        "name": "FA Cup",
-        "id": 230
-    },
-    {
         "name": "Ligue 1",
         "id": 235
     },
@@ -34,17 +30,5 @@
     {
         "name": "La Liga",
         "id": 297
-    },
-    {
-        "name": "UEFA Champions League",
-        "id": 310
-    },
-    {
-        "name": "Europa Conference League",
-        "id": 198
-    },
-    {
-        "name": "Europa League",
-        "id": 326
     }
 ]

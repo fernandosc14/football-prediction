@@ -1,4 +1,4 @@
-from src.api_fetch import fetch_upcoming_matches
+from src.api_fetch import main as update_historical_data
 from src.train import train_model
 from src.predict import main as run_predictions
 
@@ -16,19 +16,19 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.mode == "train":
+        print("Updating historical data...")
+        update_historical_data()
         print("Training model...")
         train_model()
 
     elif args.mode == "predict":
-        print("Fetching upcoming matches...")
-        fetch_upcoming_matches()
         print("Making predictions...")
         preds = run_predictions()
         print("Predictions: ", preds)
 
     elif args.mode == "full":
-        print("Fetching upcoming matches...")
-        fetch_upcoming_matches()
+        print("Updating historical data...")
+        update_historical_data()
         print("Training model...")
         train_model()
         print("Making predictions...")
