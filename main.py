@@ -1,6 +1,7 @@
 from src.api_fetch import main as update_historical_data
 from src.train import train_model
 from src.predict import main as run_predictions
+from scripts.check_results import main as check_results
 
 import argparse
 
@@ -32,5 +33,5 @@ if __name__ == "__main__":
         print("Training model...")
         train_model()
         print("Making predictions...")
-        preds = run_predictions()
-        print("Predictions: ", preds)
+        run_predictions()
+        check_results()

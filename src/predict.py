@@ -158,6 +158,7 @@ def main():
                     "confidence": float(game.get("confidence_BTTS", 0)),
                 },
             },
+            "finished": False,
         }
         results.append(result)
 
