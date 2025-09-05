@@ -7,9 +7,13 @@ def save_last_update():
     meta_dir = os.path.join("data", "meta")
     os.makedirs(meta_dir, exist_ok=True)
     last_update_path = os.path.join(meta_dir, "last_update.json")
-    now = datetime.now().isoformat()
-    with open(last_update_path, "w", encoding="utf-8") as f:
+    tmp_path = last_update_path + ".tmp"
+    now = datetime.utcnow().isoformat() + "Z"
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump({"last_update": now}, f)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp_path, last_update_path)
     print(f"Last update saved: {now}")
 
 
