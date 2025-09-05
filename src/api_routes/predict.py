@@ -58,3 +58,22 @@ def get_prediction_stats():
         return Response(
             content=json.dumps({"error": str(e)}), media_type="application/json", status_code=500
         )
+
+
+@router.get("/meta/last-update", response_class=Response)
+def get_last_update():
+    last_update_path = os.path.join("data", "meta", "last_update.json")
+    try:
+        with open(last_update_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return Response(content=json.dumps(data), media_type="application/json")
+    except FileNotFoundError:
+        return Response(
+            content=json.dumps({"error": "Last update not found"}),
+            media_type="application/json",
+            status_code=404,
+        )
+    except Exception as e:
+        return Response(
+            content=json.dumps({"error": str(e)}), media_type="application/json", status_code=500
+        )
