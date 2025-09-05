@@ -35,6 +35,8 @@ def add_btts_feature(df):
 
 def add_rank_diff_feature(df):
     """Add a feature representing the rank difference between the two teams."""
+    df["team1_rank"] = pd.to_numeric(df["team1_rank"], errors="coerce")
+    df["team2_rank"] = pd.to_numeric(df["team2_rank"], errors="coerce")
     df["Rank_Diff"] = df["team1_rank"] - df["team2_rank"]
     return df
 
