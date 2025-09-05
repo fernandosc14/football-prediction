@@ -2,8 +2,10 @@ from fastapi import APIRouter, Request, Response
 from pydantic import BaseModel
 from typing import Optional
 from fastapi import HTTPException
+
 import os
 import json
+import config
 
 router = APIRouter()
 
@@ -58,3 +60,11 @@ def get_prediction_stats():
         return Response(
             content=json.dumps({"error": str(e)}), media_type="application/json", status_code=500
         )
+
+
+@router.get("/meta/last-update")
+def get_last_update():
+    timestamp = config.redis_client.get(config.LAST_UPDATE_KEY)
+    if timestamp is None:
+        raise HTTPException(status_code=404, detail="Not found")
+    return {"last_update": timestamp.decode("utf-8")}
