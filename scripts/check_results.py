@@ -20,9 +20,11 @@ def main():
     correct = {"winner": 0, "over_2_5": 0, "over_1_5": 0, "double_chance": 0, "btts": 0}
     total = {"winner": 0, "over_2_5": 0, "over_1_5": 0, "double_chance": 0, "btts": 0}
     for pred in predictions:
-        match_id = pred.get("match_id")
-        match = matches_by_id.get(match_id)
-        if match:
+        match = matches_by_id.get(pred.get("match_id"))
+        team1_goals = match.get("team1_goals") if match else None
+        team2_goals = match.get("team2_goals") if match else None
+
+        if team1_goals is not None and team2_goals is not None:
             pred["finished"] = True
             finished_count += 1
             team1_goals = match.get("team1_goals")
@@ -87,10 +89,14 @@ def main():
         percent = correct[key] / total[key] * 100 if total[key] else 0
         stats[key] = {"correct": correct[key], "total": total[key], "percent": round(percent, 2)}
 
-    best_type = max(stats, key=lambda k: stats[k]["percent"] if stats[k]["total"] > 0 else -1)
+    if any(stats[k]["total"] > 0 for k in stats):
+        best_type = max(stats, key=lambda k: stats[k]["percent"] if stats[k]["total"] > 0 else -1)
+    else:
+        best_type = None
     stats["best_type"] = best_type
 
     stats_path = os.path.join("data", "stats", "prediction_stats.json")
+    os.makedirs(os.path.dirname(stats_path), exist_ok=True)
     save_json(stats, stats_path)
 
 

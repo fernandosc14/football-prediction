@@ -48,6 +48,12 @@ def get_prediction_stats():
         with open(stats_path, "r", encoding="utf-8") as f:
             stats = json.load(f)
         return Response(content=json.dumps(stats), media_type="application/json")
+    except FileNotFoundError:
+        return Response(
+            content=json.dumps({"error": "Stats file not found"}),
+            media_type="application/json",
+            status_code=404,
+        )
     except Exception as e:
         return Response(
             content=json.dumps({"error": str(e)}), media_type="application/json", status_code=500
