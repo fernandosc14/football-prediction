@@ -156,7 +156,7 @@ export default function HomeClient() {
         </div>
         <div className="w-full text-center mt-10">
           {lastUpdate && (
-            <span className="text-xs text-gray-400">Última atualização: {lastUpdate}</span>
+            <span className="text-xs text-gray-400">Last Update: {lastUpdate}</span>
           )}
         </div>
       </main>
