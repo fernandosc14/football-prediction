@@ -1,0 +1,27 @@
+name: Run Weekly Script
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run weekly script
+        env:
+          REDIS_URL: ${{ secrets.REDIS_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python scripts/run_weekly.py
