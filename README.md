@@ -19,7 +19,7 @@
 ## Description
 
 Football Prediction is a modern, data-driven platform for forecasting football match outcomes.
-It leverages machine learning models and real-time data to provide accurate predictions, confidence scores, and insights for leagues worldwide.
+It leverages machine learning models and real-time data to provide accurate predictions, confidence scores, and insights for leagues.
 
 **Supported Leagues:**
 
