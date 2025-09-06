@@ -183,7 +183,7 @@ def main():
         existing.extend(top_results)
         with open(history_path, "w", encoding="utf-8") as f:
             json.dump(existing, f, ensure_ascii=False, indent=2)
-        logging.info(f"[INFO] Appended top 6 predictions to {history_path}")
+        logging.info(f"[INFO] Appended top 7 predictions to {history_path}")
     except Exception as e:
         logging.error(f"[ERROR] Error saving predictions history: {e}")
     return
