@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import InfoCard from "@/components/infoCards";
 import TopPredictionCard from "@/components/topPredictionCard";
 import PredictionCard from "@/components/predictionCard";
-import StatsAverage, { StatsType } from "@/components/statsAverage";
+import StatsAverage, { StatsType } from "@/components/StatsAverage";
 import CardSkeleton from "@/components/CardSkeleton";
 import StatsSkeleton from "@/components/StatsSkeleton";
 
