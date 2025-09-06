@@ -1,8 +1,10 @@
 # Football Prediction
 
-![Build Status](https://img.shields.io/github/workflow/status/fernandosc14/football-prediction/CI)
 ![License](https://img.shields.io/github/license/fernandosc14/football-prediction)
 ![Version](https://img.shields.io/badge/version-v0.9.0-blue)
+![Stars](https://img.shields.io/github/stars/fernandosc14/football-prediction?style=social)
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support%20me-yellow?logo=buy-me-a-coffee&style=flat)](https://buymeacoffee.com/fernandosc14)
 
 ## Table of Contents
 
