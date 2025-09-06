@@ -65,12 +65,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.variable} ${bebas.variable} antialiased bg-gray-900 text-white`}>
-        {children}
-        <Footer />
-      </body>
-    </html>
-  );
+    return (
+      <html lang="en">
+        <head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-XXXXXXXXXX');
+              `,
+            }}
+          />
+        </head>
+        <body className={`${inter.variable} ${bebas.variable} antialiased bg-gray-900 text-white`}>
+          {children}
+          <Footer />
+        </body>
+      </html>
+    );
 }
