@@ -15,6 +15,7 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yourdomain.com"),
   title: "Football Prediction AI | Accurate Soccer Tips & Stats",
   description: "Get the most accurate football predictions powered by AI. Check match tips, stats, and confidence levels for your favorite teams. Updated daily.",
   keywords: [
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Football Prediction AI | Accurate Soccer Tips & Stats",
     description: "Get the most accurate football predictions powered by AI. Check match tips, stats, and confidence levels for your favorite teams. Updated daily.",
-    url: "https://yourdomain.com",
+    url: "http://localhost:3000",
     siteName: "Football Prediction AI",
     images: [
       {
@@ -45,11 +46,6 @@ export const metadata: Metadata = {
     images: ["/public/file.svg"],
     creator: "@FernandoCasass_"
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -61,7 +57,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico"
   },
-  themeColor: "#111827",
   category: "sports",
 };
 
