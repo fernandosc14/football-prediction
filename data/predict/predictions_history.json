@@ -1,0 +1,254 @@
+[
+  {
+    "match_id": 964116,
+    "date": "14/09/2025",
+    "time": "15:00",
+    "league": "Primeira Liga",
+    "home_team": "Porto",
+    "away_team": "Nacional",
+    "odds": {
+      "home": 1.2,
+      "draw": 6.5,
+      "away": 14.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.863172281056538
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6871289791965105
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8736196903534912
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9506625450781067
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5145300352152344
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 961784,
+    "date": "14/09/2025",
+    "time": "16:00",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Valencia",
+    "odds": {
+      "home": 1.22,
+      "draw": 7.15,
+      "away": 11.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8202404798180482
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.710574948161076
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8480073054706098
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8996042315833916
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5818635136615277
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 964112,
+    "date": "12/09/2025",
+    "time": "19:15",
+    "league": "Primeira Liga",
+    "home_team": "Benfica",
+    "away_team": "Santa Clara",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.1,
+      "away": 12.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8060878908525715
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6870746355474765
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.845316523455507
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9237850532567262
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5183534402551861
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955917,
+    "date": "13/09/2025",
+    "time": "19:00",
+    "league": "Eredivisie",
+    "home_team": "Feyenoord",
+    "away_team": "Heerenveen",
+    "odds": {
+      "home": 1.34,
+      "draw": 5.25,
+      "away": 8.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7908521169032039
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6755909007294594
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.837926877993933
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8959180160097088
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5609991833859911
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955914,
+    "date": "13/09/2025",
+    "time": "14:30",
+    "league": "Eredivisie",
+    "home_team": "Ajax",
+    "away_team": "PEC Zwolle",
+    "odds": {
+      "home": 1.25,
+      "draw": 6.12,
+      "away": 11.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7735923174514777
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6928573146797811
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8531848911317317
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9498044109384998
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5523550755459609
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 957952,
+    "date": "14/09/2025",
+    "time": "15:00",
+    "league": "Ligue 1",
+    "home_team": "Marseille",
+    "away_team": "Lorient",
+    "odds": {
+      "home": 1.4,
+      "draw": 5.12,
+      "away": 7.6
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7177475221950929
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6107019691409321
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8119014488146322
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9142056504835514
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5459742040536025
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964114,
+    "date": "14/09/2025",
+    "time": "15:00",
+    "league": "Primeira Liga",
+    "home_team": "Famalicao",
+    "away_team": "Sporting Lisbon",
+    "odds": {
+      "home": 7.25,
+      "draw": 4.72,
+      "away": 1.41
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6915589545479147
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5999765567050201
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8213847248225795
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7012903603102602
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5095516145637484
+      }
+    },
+    "finished": false
+  }
+]

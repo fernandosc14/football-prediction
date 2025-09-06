@@ -32,6 +32,5 @@ dist/
 *.tmp
 
 # Dados e modelos
-data/
 artifacts/
 models/
