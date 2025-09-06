@@ -6,6 +6,7 @@ import TopPredictionCard from "@/components/topPredictionCard";
 import PredictionCard from "@/components/predictionCard";
 import StatsAverage, { StatsType } from "@/components/statsAverage";
 
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
 

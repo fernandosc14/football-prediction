@@ -15,12 +15,14 @@ interface Props {
 
 function getAveragePercent(stats: StatsType): number {
   const percents = [
-    stats.winner.percent,
-    stats.over_2_5.percent,
-    stats.over_1_5.percent,
-    stats.double_chance.percent,
-    stats.btts.percent,
-  ];
+    stats.winner?.percent,
+    stats.over_2_5?.percent,
+    stats.over_1_5?.percent,
+    stats.double_chance?.percent,
+    stats.btts?.percent,
+  ].filter((v): v is number => Number.isFinite(v));
+
+  if (percents.length === 0) return 0;
   const sum = percents.reduce((acc, val) => acc + val, 0);
   return Math.round(sum / percents.length);
 }
