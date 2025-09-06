@@ -44,3 +44,11 @@ export async function getPredictions() {
 export async function getPredictionById(matchId: string | number) {
     return fetchWithTimeout(`${getApiUrl()}/predictions/${matchId}`);
 }
+
+export async function getStats() {
+    return fetchWithTimeout(`${getApiUrl()}/stats`);
+}
+
+export async function getLastUpdate() {
+    return fetchWithTimeout(`${getApiUrl()}/meta/last-update`);
+}
