@@ -1,0 +1,32 @@
+{
+  "Winner": {
+    "cv_mean_accuracy": 0.5181065088757396,
+    "cv_std_accuracy": 0.018732647514707098,
+    "train_accuracy": 0.5431952662721894,
+    "val_accuracy": 0.49467455621301776
+  },
+  "BTTS": {
+    "cv_mean_accuracy": 0.5256804733727811,
+    "cv_std_accuracy": 0.039763313609467464,
+    "train_accuracy": 0.6224852071005917,
+    "val_accuracy": 0.5526627218934911
+  },
+  "Over_1_5": {
+    "cv_mean_accuracy": 0.7742011834319527,
+    "cv_std_accuracy": 0.007828561140137828,
+    "train_accuracy": 0.7781065088757396,
+    "val_accuracy": 0.7775147928994083
+  },
+  "Over_2_5": {
+    "cv_mean_accuracy": 0.5616568047337278,
+    "cv_std_accuracy": 0.034629087461264654,
+    "train_accuracy": 0.6381656804733727,
+    "val_accuracy": 0.5680473372781065
+  },
+  "Double_Chance": {
+    "cv_mean_accuracy": 0.726153846153846,
+    "cv_std_accuracy": 0.01096448267162174,
+    "train_accuracy": 0.7461538461538462,
+    "val_accuracy": 0.7384615384615385
+  }
+}
