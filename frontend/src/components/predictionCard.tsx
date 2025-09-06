@@ -27,16 +27,16 @@ export default function PredictionCard({ team1, team2, tips, date }: PredictionC
       if (classValue === 2) return "12 (Home or Away)";
     }
     if (name === "over 2.5") {
-      if (classValue === 0) return "Under 2.5";
-      if (classValue === 1) return "Over 2.5";
+      if (classValue === 0) return "Under 2.5: No";
+      if (classValue === 1) return "Over 2.5: Yes";
     }
     if (name === "over 1.5") {
-      if (classValue === 0) return "Under 1.5";
-      if (classValue === 1) return "Over 1.5";
+      if (classValue === 0) return "Under 1.5: No";
+      if (classValue === 1) return "Over 1.5: Yes";
     }
     if (name === "btts") {
-      if (classValue === 0) return "No";
-      if (classValue === 1) return "Yes";
+      if (classValue === 0) return "Both Teams to Score: No";
+      if (classValue === 1) return "Both Teams to Score: Yes";
     }
     return String(classValue);
   }
