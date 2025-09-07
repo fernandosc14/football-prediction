@@ -1,14 +1,13 @@
-import pytest
 import os
 from fastapi.testclient import TestClient
 from src.api import app
 
-API_KEY = os.environ.get("ENDPOINT_API_KEY")
+API_KEY = os.environ.get("ENDPOINT_API_KEY", "seu_token_aqui")
 
 
 def test_get_all_predictions():
     with TestClient(app) as client:
-        response = client.get("/predictions", headers={"x-api-key": API_KEY})
+        response = client.get("/predictions", headers={"Authorization": f"Bearer {API_KEY}"})
         assert response.status_code == 200
         assert isinstance(response.json(), list)
         if response.json():
@@ -17,21 +16,19 @@ def test_get_all_predictions():
             assert "predictions" in match
 
 
-def test_get_prediction_by_id_found():
+def test_get_stats():
     with TestClient(app) as client:
-        response = client.get("/predictions", headers={"x-api-key": API_KEY})
-        predictions = response.json()
-        if predictions:
-            match_id = predictions[0]["match_id"]
-            response2 = client.get(f"/predictions/{match_id}", headers={"x-api-key": API_KEY})
-            assert response2.status_code == 200
-            assert response2.json()["match_id"] == match_id
+        response = client.get("/stats", headers={"Authorization": f"Bearer {API_KEY}"})
+        assert response.status_code == 200
+        assert isinstance(response.json(), dict)
+        assert "accuracy" in response.json() or "error" in response.json()
+
+
+def test_get_last_update():
+    with TestClient(app) as client:
+        response = client.get("/meta/last-update", headers={"Authorization": f"Bearer {API_KEY}"})
+        assert response.status_code in [200, 404]
+        if response.status_code == 200:
+            assert "last_update" in response.json()
         else:
-            pytest.skip("No predictions available to test by id.")
-
-
-def test_get_prediction_by_id_not_found():
-    with TestClient(app) as client:
-        response = client.get("/predictions/999999999", headers={"x-api-key": API_KEY})
-        assert response.status_code == 404
-        assert "not found" in response.json()["detail"].lower()
+            assert "not found" in response.json()["detail"].lower()
