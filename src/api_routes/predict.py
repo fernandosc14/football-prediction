@@ -28,6 +28,8 @@ class MatchInput(BaseModel):
 
 
 def verify_api_key(x_api_key: str = Header(...)):
+    if ENDPOINT_API_KEY is None:
+        return
     if x_api_key != ENDPOINT_API_KEY:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
