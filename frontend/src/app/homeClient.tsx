@@ -28,9 +28,6 @@ export default function HomeClient() {
           getStats(),
           getLastUpdate(),
         ]);
-        console.log("Predictions:", preds);
-        console.log("Stats:", statsData);
-        console.log("LastUpdate:", lastUpdateObj);
         setPredictions(preds || []);
         setStats(statsData || null);
         const lastUpdateRaw = lastUpdateObj?.last_update;
@@ -42,7 +39,6 @@ export default function HomeClient() {
               dateObj.toLocaleTimeString("pt-PT", { hour: "2-digit", minute: "2-digit" })
           );
         }
-        // Só mostra erro se todos os dados vierem vazios
         if ((!preds || preds.length === 0) && (!statsData || Object.keys(statsData).length === 0)) {
           setError("No data available.");
         }

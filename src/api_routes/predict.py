@@ -1,13 +1,14 @@
-from fastapi import APIRouter, Request, Response
+from fastapi import APIRouter, Request, Response, Header, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional
-from fastapi import HTTPException
 
 import os
 import json
 import config
 
 router = APIRouter()
+
+ENDPOINT_API_KEY = os.environ.get("ENDPOINT_API_KEY")
 
 
 class Odds(BaseModel):
@@ -26,14 +27,22 @@ class MatchInput(BaseModel):
     odds: Optional[Odds] = None
 
 
-@router.get("/predictions", tags=["Predictions"])
+def verify_api_key(x_api_key: str = Header(...)):
+    if x_api_key != ENDPOINT_API_KEY:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+
+
+@router.get("/predictions", tags=["Predictions"], dependencies=[Depends(verify_api_key)])
 def get_predictions(request: Request):
     """Get all predictions"""
     return request.app.state.predictions
 
 
 @router.get(
-    "/predictions/{match_id}", tags=["Predictions"], summary="Get prediction for a specific match"
+    "/predictions/{match_id}",
+    tags=["Predictions"],
+    summary="Get prediction for a specific match",
+    dependencies=[Depends(verify_api_key)],
 )
 def get_prediction_by_id(match_id: int, request: Request):
     """Get prediction for a specific match by match_id"""
@@ -43,7 +52,7 @@ def get_prediction_by_id(match_id: int, request: Request):
     raise HTTPException(status_code=404, detail="Prediction for this match_id not found.")
 
 
-@router.get("/stats", response_class=Response)
+@router.get("/stats", response_class=Response, dependencies=[Depends(verify_api_key)])
 def get_prediction_stats():
     stats_path = os.path.join("data", "stats", "prediction_stats.json")
     try:
@@ -62,7 +71,7 @@ def get_prediction_stats():
         )
 
 
-@router.get("/meta/last-update")
+@router.get("/meta/last-update", dependencies=[Depends(verify_api_key)])
 def get_last_update():
     timestamp = config.redis_client.get(config.LAST_UPDATE_KEY)
     if timestamp is None:
