@@ -15,22 +15,22 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
-  title: "Football Prediction AI | Accurate Soccer Tips & Stats",
-  description: "Get the most accurate football predictions powered by AI. Check match tips, stats, and confidence levels for your favorite teams. Updated daily.",
+  metadataBase: new URL("https://football-prediction-murex.vercel.app"),
+  title: "Football Prediction AI | Accurate Soccer Tips",
+  description: "Get the most accurate football predictions powered by AI. Check match tips and confidence levels for your favorite teams. Updated daily.",
   keywords: [
     "football prediction", "soccer tips", "AI predictions", "match stats", "betting tips", "sports analytics", "football stats"
   ],
   authors: [{ name: "Fernando Casas", url: "https://github.com/fernandosc14" }],
   creator: "Fernando Casas",
   openGraph: {
-    title: "Football Prediction AI | Accurate Soccer Tips & Stats",
-    description: "Get the most accurate football predictions powered by AI. Check match tips, stats, and confidence levels for your favorite teams. Updated daily.",
-    url: "http://localhost:3000",
+    title: "Football Prediction AI | Accurate Soccer Tips",
+    description: "Get the most accurate football predictions powered by AI. Check match tips and confidence levels for your favorite teams. Updated daily.",
+    url: "https://football-prediction-murex.vercel.app",
     siteName: "Football Prediction AI",
     images: [
       {
-        url: "/public/file.svg",
+        url: "/public/file.png",
         width: 1200,
         height: 630,
         alt: "Football Prediction AI Logo"
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Football Prediction AI | Accurate Soccer Tips & Stats",
-    description: "Get the most accurate football predictions powered by AI. Check match tips, stats, and confidence levels for your favorite teams. Updated daily.",
-    images: ["/public/file.svg"],
+    title: "Football Prediction AI | Accurate Soccer Tips",
+    description: "Get the most accurate football predictions powered by AI. Check match tips and confidence levels for your favorite teams. Updated daily.",
+    images: ["/public/file.png"],
     creator: "@FernandoCasass_"
   },
   robots: {

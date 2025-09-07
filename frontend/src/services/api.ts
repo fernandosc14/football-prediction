@@ -13,22 +13,30 @@ async function fetchWithTimeout(
 ) {
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), timeout);
+
+    const headers = {
+        ...(options.headers || {})
+    };
+
     try {
-        const response = await fetch(url, { ...options, signal: controller.signal });
+        const response = await fetch(url, { ...options, headers, signal: controller.signal });
+
         let data;
         try {
             data = await response.json();
         } catch {
             throw new Error(`Failed to parse JSON from ${url}`);
         }
+
         if (!response.ok) {
             throw new Error(
                 `Fetch error: ${response.status} ${response.statusText} - ${JSON.stringify(data)}`
             );
         }
+
         return data;
     } catch (err: any) {
-        if (err.name === 'AbortError') {
+        if (err.name === "AbortError") {
             throw new Error(`Request to ${url} timed out after ${timeout}ms`);
         }
         throw err;
@@ -38,17 +46,13 @@ async function fetchWithTimeout(
 }
 
 export async function getPredictions() {
-    return fetchWithTimeout(`${getApiUrl()}/predictions`);
-}
-
-export async function getPredictionById(matchId: string | number) {
-    return fetchWithTimeout(`${getApiUrl()}/predictions/${matchId}`);
+  return fetchWithTimeout("/api/predictions");
 }
 
 export async function getStats() {
-    return fetchWithTimeout(`${getApiUrl()}/stats`);
+  return fetchWithTimeout("/api/stats");
 }
 
 export async function getLastUpdate() {
-    return fetchWithTimeout(`${getApiUrl()}/meta/last-update`);
+  return fetchWithTimeout("/api/last-update");
 }
