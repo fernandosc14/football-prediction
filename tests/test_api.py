@@ -1,8 +1,12 @@
-import os
 from fastapi.testclient import TestClient
 from src.api import app
+from dotenv import load_dotenv
 
-API_KEY = os.environ.get("ENDPOINT_API_KEY", "seu_token_aqui")
+import os
+
+load_dotenv()
+
+API_KEY = os.environ.get("ENDPOINT_API_KEY")
 
 
 def test_get_all_predictions():
