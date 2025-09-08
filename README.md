@@ -1,12 +1,18 @@
+
+<div align="center">
+
 # Football Prediction
 
 ![License](https://img.shields.io/github/license/fernandosc14/football-prediction)
-![Version](https://img.shields.io/badge/version-v0.9.0-blue)
+![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 ![Stars](https://img.shields.io/github/stars/fernandosc14/football-prediction?style=social)
-
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support%20me-yellow?logo=buy-me-a-coffee&style=flat)](https://buymeacoffee.com/fernandosc14)
 
-## Table of Contents
+</div>
+
+
+<details>
+   <summary>Table of Contents</summary>
 
 - [Description](#description)
 - [Installation](#installation)
@@ -16,23 +22,13 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
+</details>
+
+
 ## Description
 
 Football Prediction is a modern, data-driven platform for forecasting football match outcomes.
-It leverages machine learning models and real-time data to provide accurate predictions, confidence scores, and insights for leagues.
-
-**Supported Leagues:**
-
-<ul>
-   <li><strong>La Liga</strong></li>
-   <li><strong>Championship</strong></li>
-   <li><strong>Primeira Liga</strong></li>
-   <li><strong>Eredivisie</strong></li>
-   <li><strong>Serie A</strong></li>
-   <li><strong>Premier League</strong></li>
-   <li><strong>Bundesliga</strong></li>
-   <li><strong>Ligue 1</strong></li>
-</ul>
+It leverages machine learning models and real-time data to provide accurate predictions, confidence scores, and insights.
 
 **Key Features:**
 - Predict match results, double chance, over/under goals, and BTTS.
@@ -40,6 +36,12 @@ It leverages machine learning models and real-time data to provide accurate pred
 - Automated data fetching and model training.
 - REST API for integration and custom queries.
 - Scheduled updates via cloud automation.
+
+**New in v1.0.0:**
+- Improved authentication and API security
+- Custom 404 page with modern design
+- Enhanced error handling and startup validation
+- Stable production-ready configuration
 
 ## Installation
 
@@ -95,6 +97,7 @@ Set the following environment variables in your `.env` file:
 ```env
 REDIS_URL=your_redis_url
 API_KEY=your_api_key
+ENDPOINT_API_KEY=your_endpoint_api_key
 ```
 
 Other optional settings can be found in `config.yaml` and `frontend/.env.local`.
