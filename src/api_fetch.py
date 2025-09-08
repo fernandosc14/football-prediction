@@ -324,7 +324,7 @@ def main():
         logging.critical(f"[CRITICAL] Fatal error in main loop: {e}")
 
 
-def fetch_upcoming_matches(leagues_id=None, weeks=2):
+def fetch_upcoming_matches(leagues_id=None, weeks=1):
     """Fetch upcoming match data from the API for specified leagues over the next given weeks."""
     api_key = get_api_key()
     if leagues_id is None:
