@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
         <div className="bg-blue-700 rounded-full shadow-lg p-6 mb-6">
-        <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-gray">
+        <svg width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-white" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         </div>
