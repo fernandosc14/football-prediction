@@ -2,6 +2,8 @@ from fastapi import HTTPException, Header, status
 import os
 
 ENDPOINT_API_KEY = os.environ.get("ENDPOINT_API_KEY")
+if not ENDPOINT_API_KEY:
+    raise RuntimeError("ENDPOINT_API_KEY environment variable is not set")
 
 
 def verify_token(authorization: str = Header(None)):
