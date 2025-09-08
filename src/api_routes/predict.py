@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Request, Response
+from fastapi import APIRouter, Request, Response, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional
-from fastapi import HTTPException
+from src.auth import verify_token
 
 import os
 import json
@@ -27,24 +27,20 @@ class MatchInput(BaseModel):
 
 
 @router.get("/predictions", tags=["Predictions"])
-def get_predictions(request: Request):
-    """Get all predictions"""
+def get_predictions(request: Request, token: bool = Depends(verify_token)):
     return request.app.state.predictions
 
 
-@router.get(
-    "/predictions/{match_id}", tags=["Predictions"], summary="Get prediction for a specific match"
-)
-def get_prediction_by_id(match_id: int, request: Request):
-    """Get prediction for a specific match by match_id"""
+@router.get("/predictions/{match_id}", tags=["Predictions"])
+def get_prediction_by_id(match_id: int, request: Request, token: bool = Depends(verify_token)):
     for match in request.app.state.predictions:
         if str(match.get("match_id")) == str(match_id):
             return match
     raise HTTPException(status_code=404, detail="Prediction for this match_id not found.")
 
 
-@router.get("/stats", response_class=Response)
-def get_prediction_stats():
+@router.get("/stats", response_class=Response, tags=["Predictions"])
+def get_prediction_stats(token: bool = Depends(verify_token)):
     stats_path = os.path.join("data", "stats", "prediction_stats.json")
     try:
         with open(stats_path, "r", encoding="utf-8") as f:
@@ -62,8 +58,8 @@ def get_prediction_stats():
         )
 
 
-@router.get("/meta/last-update")
-def get_last_update():
+@router.get("/meta/last-update", tags=["Meta"])
+def get_last_update(token: bool = Depends(verify_token)):
     timestamp = config.redis_client.get(config.LAST_UPDATE_KEY)
     if timestamp is None:
         raise HTTPException(status_code=404, detail="Not found")
