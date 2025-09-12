@@ -39,7 +39,6 @@ It leverages machine learning models and real-time data to provide accurate pred
 
 **New in v1.0.0:**
 - Improved authentication and API security
-- Custom 404 page with modern design
 - Enhanced error handling and startup validation
 - Stable production-ready configuration
 
