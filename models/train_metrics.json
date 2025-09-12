@@ -1,32 +1,32 @@
 {
   "Winner": {
-    "cv_mean_accuracy": 0.5181065088757396,
-    "cv_std_accuracy": 0.018732647514707098,
-    "train_accuracy": 0.5431952662721894,
-    "val_accuracy": 0.49467455621301776
+    "cv_mean_accuracy": 0.5194954526520411,
+    "cv_std_accuracy": 0.01846818523031716,
+    "train_accuracy": 0.5439229843561973,
+    "val_accuracy": 0.5060096153846154
   },
   "BTTS": {
-    "cv_mean_accuracy": 0.5256804733727811,
-    "cv_std_accuracy": 0.039763313609467464,
-    "train_accuracy": 0.6224852071005917,
-    "val_accuracy": 0.5526627218934911
+    "cv_mean_accuracy": 0.5257408243080626,
+    "cv_std_accuracy": 0.040295995739544316,
+    "train_accuracy": 0.6233453670276775,
+    "val_accuracy": 0.5540865384615384
   },
   "Over_1_5": {
-    "cv_mean_accuracy": 0.7742011834319527,
-    "cv_std_accuracy": 0.007828561140137828,
-    "train_accuracy": 0.7781065088757396,
-    "val_accuracy": 0.7775147928994083
+    "cv_mean_accuracy": 0.7738200615569749,
+    "cv_std_accuracy": 0.009059281097718109,
+    "train_accuracy": 0.7782791817087846,
+    "val_accuracy": 0.7788461538461539
   },
   "Over_2_5": {
-    "cv_mean_accuracy": 0.5616568047337278,
-    "cv_std_accuracy": 0.034629087461264654,
-    "train_accuracy": 0.6381656804733727,
-    "val_accuracy": 0.5680473372781065
+    "cv_mean_accuracy": 0.5613556419513099,
+    "cv_std_accuracy": 0.029147041312243747,
+    "train_accuracy": 0.628158844765343,
+    "val_accuracy": 0.6177884615384616
   },
   "Double_Chance": {
-    "cv_mean_accuracy": 0.726153846153846,
-    "cv_std_accuracy": 0.01096448267162174,
-    "train_accuracy": 0.7461538461538462,
-    "val_accuracy": 0.7384615384615385
+    "cv_mean_accuracy": 0.7281067758955846,
+    "cv_std_accuracy": 0.011086570050485875,
+    "train_accuracy": 0.7430806257521059,
+    "val_accuracy": 0.7415865384615384
   }
 }
