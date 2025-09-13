@@ -8,29 +8,101 @@
     "away_team": "Nacional",
     "odds": {
       "home": 1.18,
-      "draw": 6.9,
-      "away": 15.0
+      "draw": 7.0,
+      "away": 15.75
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8913011472206197
+        "confidence": 0.87439598426129
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.718737468557567
+        "confidence": 0.7169769784758364
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.875798470662826
+        "confidence": 0.8807734749740801
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9669529407913319
+        "confidence": 0.9745291471846608
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5467904681461279
+        "confidence": 0.5348993663205187
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961798,
+    "date": "20/09/2025",
+    "time": "14:15",
+    "league": "La Liga",
+    "home_team": "Real Madrid",
+    "away_team": "Espanyol",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.5,
+      "away": 11.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8643835629194884
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6447604540336639
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8750250825790009
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9516113245000796
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5101885840762573
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960485,
+    "date": "13/09/2025",
+    "time": "16:30",
+    "league": "Bundesliga",
+    "home_team": "Bayern Munich",
+    "away_team": "Hamburg",
+    "odds": {
+      "home": 1.08,
+      "draw": 13.0,
+      "away": 26.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8245662732078162
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6195447533336236
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8222984772367482
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8947239635541028
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5575957420391969
       }
     },
     "finished": false
@@ -43,66 +115,30 @@
     "home_team": "Barcelona",
     "away_team": "Valencia",
     "odds": {
-      "home": 1.22,
-      "draw": 7.0,
-      "away": 11.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.8405549965032542
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.7209129842812145
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8583883873181803
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9126117978740649
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5490129659408158
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 955914,
-    "date": "13/09/2025",
-    "time": "14:30",
-    "league": "Eredivisie",
-    "home_team": "Ajax",
-    "away_team": "PEC Zwolle",
-    "odds": {
       "home": 1.28,
-      "draw": 6.0,
-      "away": 9.5
+      "draw": 6.14,
+      "away": 9.8
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8117942375760162
+        "confidence": 0.8062993405779454
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6923783271778576
+        "confidence": 0.6325539056574675
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8677800663489253
+        "confidence": 0.8550534225511668
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9496364682509489
+        "confidence": 0.9297987842071624
       },
       "btts": {
-        "class": 0,
-        "confidence": 0.5358657712167834
+        "class": 1,
+        "confidence": 0.5705301948837399
       }
     },
     "finished": false
@@ -115,66 +151,30 @@
     "home_team": "Feyenoord",
     "away_team": "Heerenveen",
     "odds": {
-      "home": 1.38,
-      "draw": 5.1,
-      "away": 7.5
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.8116695492556949
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6643827882193577
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8307980216913478
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9098446004920708
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5648870230344748
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954411,
-    "date": "13/09/2025",
-    "time": "11:30",
-    "league": "Premier League",
-    "home_team": "Arsenal",
-    "away_team": "Nottingham Forest",
-    "odds": {
       "home": 1.36,
-      "draw": 5.2,
-      "away": 8.4
+      "draw": 5.4,
+      "away": 7.6
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7941109210227255
+        "confidence": 0.7921438164339439
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6971404277315318
+        "confidence": 0.6368187760547392
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8536912615936025
+        "confidence": 0.8488029957538871
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9002235443155294
+        "confidence": 0.9103438716904515
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5520617601637943
+        "confidence": 0.581653669516865
       }
     },
     "finished": false
@@ -188,65 +188,65 @@
     "away_team": "Angers",
     "odds": {
       "home": 1.36,
-      "draw": 5.0,
-      "away": 8.1
+      "draw": 5.2,
+      "away": 8.4
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7687120677823591
+        "confidence": 0.7645676777256183
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6428461749888328
+        "confidence": 0.6531471541115694
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8625666775386214
+        "confidence": 0.8632890185169845
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9094810910791956
+        "confidence": 0.9198042836580312
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5218839771222568
+        "confidence": 0.5438735353892237
       }
     },
     "finished": false
   },
   {
-    "match_id": 960485,
+    "match_id": 955914,
     "date": "13/09/2025",
-    "time": "16:30",
-    "league": "Bundesliga",
-    "home_team": "Bayern Munich",
-    "away_team": "Hamburg",
+    "time": "14:30",
+    "league": "Eredivisie",
+    "home_team": "Ajax",
+    "away_team": "PEC Zwolle",
     "odds": {
-      "home": 1.07,
-      "draw": 13.0,
-      "away": 29.0
+      "home": 1.31,
+      "draw": 5.7,
+      "away": 9.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7553873819686525
+        "confidence": 0.7373251993420941
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6529602352743078
+        "confidence": 0.6776719087986597
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8537891050480008
+        "confidence": 0.864632262899289
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8797756604883046
+        "confidence": 0.9665171444043508
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5141196481338128
+        "confidence": 0.5057326669512646
       }
     },
     "finished": false
