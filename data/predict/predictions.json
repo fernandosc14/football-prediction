@@ -9,7 +9,7 @@
     "odds": {
       "home": 1.18,
       "draw": 6.9,
-      "away": 15.75
+      "away": 15.0
     },
     "predictions": {
       "winner": {
@@ -151,7 +151,7 @@
     "home_team": "Arsenal",
     "away_team": "Nottingham Forest",
     "odds": {
-      "home": 1.37,
+      "home": 1.36,
       "draw": 5.2,
       "away": 8.4
     },
@@ -162,7 +162,7 @@
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6906386192946377
+        "confidence": 0.6971404277315318
       },
       "over_1_5": {
         "class": 1,
@@ -223,7 +223,7 @@
     "home_team": "Bayern Munich",
     "away_team": "Hamburg",
     "odds": {
-      "home": 1.06,
+      "home": 1.07,
       "draw": 13.0,
       "away": 29.0
     },
