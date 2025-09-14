@@ -33,7 +33,7 @@
         "confidence": 0.5145300352152344
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961784,
@@ -141,7 +141,7 @@
         "confidence": 0.5609991833859911
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955914,
@@ -177,7 +177,7 @@
         "confidence": 0.5523550755459609
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 957952,
@@ -285,7 +285,7 @@
         "confidence": 0.5467904681461279
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961784,
@@ -357,7 +357,7 @@
         "confidence": 0.5358657712167834
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955917,
@@ -393,7 +393,7 @@
         "confidence": 0.5648870230344748
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954411,
@@ -501,7 +501,7 @@
         "confidence": 0.5141196481338128
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964116,
@@ -537,7 +537,7 @@
         "confidence": 0.5467904681461279
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961784,
@@ -609,7 +609,7 @@
         "confidence": 0.5358657712167834
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955917,
@@ -645,7 +645,7 @@
         "confidence": 0.5648870230344748
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954411,
@@ -753,7 +753,7 @@
         "confidence": 0.5141196481338128
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964116,
@@ -789,7 +789,7 @@
         "confidence": 0.5467904681461279
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961784,
@@ -861,7 +861,7 @@
         "confidence": 0.5358657712167834
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955917,
@@ -897,7 +897,7 @@
         "confidence": 0.5648870230344748
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954411,
@@ -1005,7 +1005,7 @@
         "confidence": 0.5141196481338128
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964116,
@@ -1041,7 +1041,7 @@
         "confidence": 0.5348993663205187
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961798,
@@ -1113,7 +1113,7 @@
         "confidence": 0.5575957420391969
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961784,
@@ -1185,7 +1185,7 @@
         "confidence": 0.581653669516865
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 957976,
@@ -1255,6 +1255,258 @@
       "btts": {
         "class": 0,
         "confidence": 0.5057326669512646
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 961798,
+    "date": "20/09/2025",
+    "time": "14:15",
+    "league": "La Liga",
+    "home_team": "Real Madrid",
+    "away_team": "Espanyol",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.5,
+      "away": 11.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8554905864461674
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6675517914194257
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.82297362634493
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9450705925579761
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5149851444337119
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961784,
+    "date": "14/09/2025",
+    "time": "19:00",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Valencia",
+    "odds": {
+      "home": 1.3,
+      "draw": 6.07,
+      "away": 9.3
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8231311914610743
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.679825089419653
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.830817758808108
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9393897111414615
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5704211617041275
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 957976,
+    "date": "19/09/2025",
+    "time": "18:45",
+    "league": "Ligue 1",
+    "home_team": "Lyon",
+    "away_team": "Angers",
+    "odds": {
+      "home": 1.36,
+      "draw": 5.0,
+      "away": 8.4
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7917707832009363
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6361398784872758
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8503903543154812
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9451284841627456
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5668348751284076
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961792,
+    "date": "21/09/2025",
+    "time": "16:00",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Getafe",
+    "odds": {
+      "home": 1.25,
+      "draw": 6.0,
+      "away": 12.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7902032031316649
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6281909245089085
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8070582693703041
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9603397466365916
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5108745017664735
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955923,
+    "date": "17/09/2025",
+    "time": "18:00",
+    "league": "Eredivisie",
+    "home_team": "Feyenoord",
+    "away_team": "Fortuna Sittard",
+    "odds": {
+      "home": 1.24,
+      "draw": 6.2,
+      "away": 11.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7747103018478169
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6147220399584732
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8121241419555606
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9581485116345378
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5413604043194082
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 957974,
+    "date": "21/09/2025",
+    "time": "15:00",
+    "league": "Ligue 1",
+    "home_team": "Monaco",
+    "away_team": "Metz",
+    "odds": {
+      "home": 1.28,
+      "draw": 6.2,
+      "away": 9.35
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7538664088710196
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6026518325661939
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8089579019933479
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9371674614739867
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5417078032566146
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954021,
+    "date": "21/09/2025",
+    "time": "06:00",
+    "league": "Serie A",
+    "home_team": "Inter Milan",
+    "away_team": "Sassuolo",
+    "odds": {
+      "home": 1.28,
+      "draw": 5.6,
+      "away": 10.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7392476998174543
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5915575350362442
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7941058470718058
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9127682069043545
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5483688723735234
       }
     },
     "finished": false
