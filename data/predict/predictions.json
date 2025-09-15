@@ -72,37 +72,37 @@
     "finished": false
   },
   {
-    "match_id": 961784,
-    "date": "14/09/2025",
-    "time": "19:00",
-    "league": "La Liga",
-    "home_team": "Barcelona",
-    "away_team": "Valencia",
+    "match_id": 964118,
+    "date": "21/09/2025",
+    "time": "15:00",
+    "league": "Primeira Liga",
+    "home_team": "Sporting Lisbon",
+    "away_team": "Moreirense",
     "odds": {
-      "home": 1.36,
-      "draw": 5.33,
-      "away": 7.5
+      "home": 1.18,
+      "draw": 6.85,
+      "away": 15.25
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7852937562717129
+        "confidence": 0.7921416712161192
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6902950758845939
+        "confidence": 0.7034680828197426
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8605863158427601
+        "confidence": 0.8606952352181694
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9215259324711055
+        "confidence": 0.9086686294295009
       },
       "btts": {
-        "class": 1,
-        "confidence": 0.5787392398302533
+        "class": 0,
+        "confidence": 0.5338187428695903
       }
     },
     "finished": false
@@ -117,7 +117,7 @@
     "odds": {
       "home": 1.35,
       "draw": 5.0,
-      "away": 8.4
+      "away": 8.5
     },
     "predictions": {
       "winner": {
@@ -188,8 +188,8 @@
     "away_team": "Fortuna Sittard",
     "odds": {
       "home": 1.31,
-      "draw": 5.4,
-      "away": 9.5
+      "draw": 5.35,
+      "away": 9.6
     },
     "predictions": {
       "winner": {
@@ -216,37 +216,37 @@
     "finished": false
   },
   {
-    "match_id": 957963,
-    "date": "14/09/2025",
-    "time": "15:15",
-    "league": "Ligue 1",
-    "home_team": "PSG",
-    "away_team": "Lens",
+    "match_id": 960510,
+    "date": "20/09/2025",
+    "time": "13:30",
+    "league": "Bundesliga",
+    "home_team": "Hoffenheim",
+    "away_team": "Bayern Munich",
     "odds": {
-      "home": 1.35,
-      "draw": 5.6,
-      "away": 7.55
+      "home": 7.0,
+      "draw": 5.4,
+      "away": 1.38
     },
     "predictions": {
       "winner": {
-        "class": 0,
-        "confidence": 0.7059902758637516
+        "class": 1,
+        "confidence": 0.7000616412949457
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6518396280778663
+        "confidence": 0.6482595213993488
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8582666986154734
+        "confidence": 0.8828064821562951
       },
       "double_chance": {
-        "class": 0,
-        "confidence": 0.8998453673363521
+        "class": 1,
+        "confidence": 0.6700999790809071
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5724270175814329
+        "confidence": 0.6465704480682365
       }
     },
     "finished": false
