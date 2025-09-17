@@ -9,12 +9,12 @@
     "odds": {
       "home": 1.21,
       "draw": 6.5,
-      "away": 12.0
+      "away": 13.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8295255970913878
+        "confidence": 0.8315832102601121
       },
       "over_2_5": {
         "class": 1,
@@ -22,7 +22,7 @@
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8358026313492659
+        "confidence": 0.8426101167818075
       },
       "double_chance": {
         "class": 0,
@@ -30,7 +30,7 @@
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5173508657482475
+        "confidence": 0.5158859391577092
       }
     },
     "finished": false
@@ -45,7 +45,7 @@
     "odds": {
       "home": 1.25,
       "draw": 6.0,
-      "away": 11.5
+      "away": 12.0
     },
     "predictions": {
       "winner": {
@@ -54,11 +54,11 @@
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.630244071825648
+        "confidence": 0.6229713445529208
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8347754759523204
+        "confidence": 0.8331347431729563
       },
       "double_chance": {
         "class": 0,
@@ -79,14 +79,14 @@
     "home_team": "Sporting Lisbon",
     "away_team": "Moreirense",
     "odds": {
-      "home": 1.19,
-      "draw": 6.5,
-      "away": 14.5
+      "home": 1.18,
+      "draw": 6.85,
+      "away": 14.02
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8014743341930878
+        "confidence": 0.8058448294532523
       },
       "over_2_5": {
         "class": 1,
@@ -115,14 +115,14 @@
     "home_team": "Monaco",
     "away_team": "Metz",
     "odds": {
-      "home": 1.27,
-      "draw": 6.2,
+      "home": 1.26,
+      "draw": 6.38,
       "away": 9.66
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7665915069027953
+        "confidence": 0.7728366195948769
       },
       "over_2_5": {
         "class": 1,
@@ -144,6 +144,42 @@
     "finished": false
   },
   {
+    "match_id": 957976,
+    "date": "19/09/2025",
+    "time": "18:45",
+    "league": "Ligue 1",
+    "home_team": "Lyon",
+    "away_team": "Angers",
+    "odds": {
+      "home": 1.4,
+      "draw": 4.95,
+      "away": 7.9
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7476068268120176
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6540394560490421
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8640911435284424
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9249714495524753
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5297928952456084
+      }
+    },
+    "finished": false
+  },
+  {
     "match_id": 955923,
     "date": "17/09/2025",
     "time": "18:00",
@@ -151,9 +187,9 @@
     "home_team": "Feyenoord",
     "away_team": "Fortuna Sittard",
     "odds": {
-      "home": 1.31,
+      "home": 1.3,
       "draw": 5.5,
-      "away": 9.6
+      "away": 9.7
     },
     "predictions": {
       "winner": {
@@ -180,42 +216,6 @@
     "finished": false
   },
   {
-    "match_id": 957976,
-    "date": "19/09/2025",
-    "time": "18:45",
-    "league": "Ligue 1",
-    "home_team": "Lyon",
-    "away_team": "Angers",
-    "odds": {
-      "home": 1.38,
-      "draw": 4.9,
-      "away": 7.8
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.7227816913976415
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.65307882506928
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8640911435284424
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9151473019475795
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5297928952456084
-      }
-    },
-    "finished": false
-  },
-  {
     "match_id": 954024,
     "date": "22/09/2025",
     "time": "18:45",
@@ -223,14 +223,14 @@
     "home_team": "Napoli",
     "away_team": "Pisa",
     "odds": {
-      "home": 1.26,
+      "home": 1.27,
       "draw": 5.5,
       "away": 12.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7138297946516046
+        "confidence": 0.7077247221878367
       },
       "over_2_5": {
         "class": 1,
