@@ -30,5 +30,13 @@
     {
         "name": "La Liga",
         "id": 297
+    },
+    {
+        "name": "UEFA Champions League",
+        "id": 310
+    },
+    {
+        "name": "Europa League",
+        "id": 326
     }
 ]
