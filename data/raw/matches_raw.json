@@ -139608,5 +139608,39 @@
       "draw": 3.1,
       "away": 3.5
     }
+  },
+  {
+    "match_id": 955923,
+    "date": "17/09/2025",
+    "time": "18:00",
+    "league": "Eredivisie",
+    "is_cup": false,
+    "team1": "Feyenoord",
+    "team2": "Fortuna Sittard",
+    "team1_goals": 2,
+    "team2_goals": 0,
+    "team1_rank": 4,
+    "team2_rank": 14,
+    "h2h_games_played": 26,
+    "h2h_team1_wins": 18,
+    "h2h_team2_wins": 5,
+    "h2h_draws": 3,
+    "h2h_team1_scored": 60,
+    "h2h_team2_scored": 33,
+    "h2h_team1_home_wins": 8,
+    "h2h_team1_home_draws": 2,
+    "h2h_team1_home_losses": 3,
+    "h2h_team1_home_scored": 28,
+    "h2h_team1_home_conceded": 16,
+    "h2h_team2_home_wins": 2,
+    "h2h_team2_home_draws": 1,
+    "h2h_team2_home_losses": 10,
+    "h2h_team2_home_scored": 17,
+    "h2h_team2_home_conceded": 32,
+    "odds": {
+      "home": 1.27,
+      "draw": 5.8,
+      "away": 10.4
+    }
   }
 ]
