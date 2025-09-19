@@ -1,5 +1,41 @@
 [
   {
+    "match_id": 964075,
+    "date": "23/09/2025",
+    "time": "19:15",
+    "league": "Primeira Liga",
+    "home_team": "Benfica",
+    "away_team": "Rio Ave",
+    "odds": {
+      "home": 1.13,
+      "draw": 8.0,
+      "away": 16.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8670180908878763
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6503336310072421
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8466348374941919
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9623775002557484
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5158382433217263
+      }
+    },
+    "finished": false
+  },
+  {
     "match_id": 961792,
     "date": "21/09/2025",
     "time": "19:00",
@@ -8,13 +44,13 @@
     "away_team": "Getafe",
     "odds": {
       "home": 1.25,
-      "draw": 6.0,
+      "draw": 6.2,
       "away": 11.5
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8492496360347072
+        "confidence": 0.8565480652127319
       },
       "over_2_5": {
         "class": 1,
@@ -44,21 +80,21 @@
     "away_team": "Espanyol",
     "odds": {
       "home": 1.21,
-      "draw": 6.6,
+      "draw": 7.0,
       "away": 13.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8448644156054363
+        "confidence": 0.8470715616727372
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.670129121684932
+        "confidence": 0.6768182084602258
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8374777850119203
+        "confidence": 0.8380900299098795
       },
       "double_chance": {
         "class": 0,
@@ -79,7 +115,7 @@
     "home_team": "Real Oviedo",
     "away_team": "Barcelona",
     "odds": {
-      "home": 9.0,
+      "home": 8.8,
       "draw": 6.0,
       "away": 1.29
     },
@@ -117,12 +153,12 @@
     "odds": {
       "home": 1.18,
       "draw": 6.5,
-      "away": 15.0
+      "away": 14.5
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7837022115990416
+        "confidence": 0.7825546706154349
       },
       "over_2_5": {
         "class": 1,
@@ -138,7 +174,43 @@
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5333042436722206
+        "confidence": 0.5352257508350055
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 965431,
+    "date": "26/09/2025",
+    "time": "18:30",
+    "league": "Bundesliga",
+    "home_team": "Bayern Munich",
+    "away_team": "Werder Bremen",
+    "odds": {
+      "home": 1.09,
+      "draw": 11.0,
+      "away": 21.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.751034949962778
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6058464647736127
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8439885092161289
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8678023148988676
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5536752709847732
       }
     },
     "finished": false
@@ -151,14 +223,14 @@
     "home_team": "Monaco",
     "away_team": "Metz",
     "odds": {
-      "home": 1.26,
-      "draw": 6.25,
-      "away": 9.5
+      "home": 1.28,
+      "draw": 6.2,
+      "away": 9.25
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7504096381737025
+        "confidence": 0.7457452228207845
       },
       "over_2_5": {
         "class": 1,
@@ -175,78 +247,6 @@
       "btts": {
         "class": 1,
         "confidence": 0.5452668097594698
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954024,
-    "date": "22/09/2025",
-    "time": "18:45",
-    "league": "Serie A",
-    "home_team": "Napoli",
-    "away_team": "Pisa",
-    "odds": {
-      "home": 1.25,
-      "draw": 5.5,
-      "away": 12.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.7398856793216777
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5935438993347638
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8783744850666403
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.913777583796425
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5136211039335002
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 957976,
-    "date": "19/09/2025",
-    "time": "18:45",
-    "league": "Ligue 1",
-    "home_team": "Lyon",
-    "away_team": "Angers",
-    "odds": {
-      "home": 1.4,
-      "draw": 4.95,
-      "away": 7.9
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.7308680034616784
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6718959295046107
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8633756250355457
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9064313769456669
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5576543166506446
       }
     },
     "finished": false
