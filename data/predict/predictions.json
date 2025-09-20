@@ -1,5 +1,41 @@
 [
   {
+    "match_id": 955935,
+    "date": "27/09/2025",
+    "time": "14:30",
+    "league": "Eredivisie",
+    "home_team": "Ajax",
+    "away_team": "NAC Breda",
+    "odds": {
+      "home": 1.14,
+      "draw": 8.5,
+      "away": 16.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8805481425757553
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6713631246129691
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.849545118673742
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9305100426800488
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5025999397045063
+      }
+    },
+    "finished": false
+  },
+  {
     "match_id": 964075,
     "date": "23/09/2025",
     "time": "19:15",
@@ -7,30 +43,30 @@
     "home_team": "Benfica",
     "away_team": "Rio Ave",
     "odds": {
-      "home": 1.13,
-      "draw": 8.0,
-      "away": 16.0
+      "home": 1.08,
+      "draw": 9.5,
+      "away": 27.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8670180908878763
+        "confidence": 0.8708079348656222
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6503336310072421
+        "confidence": 0.6679960056659963
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8466348374941919
+        "confidence": 0.8181737006078316
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9623775002557484
+        "confidence": 0.9254744412359089
       },
       "btts": {
-        "class": 1,
-        "confidence": 0.5158382433217263
+        "class": 0,
+        "confidence": 0.5113011742426519
       }
     },
     "finished": false
@@ -43,30 +79,66 @@
     "home_team": "Barcelona",
     "away_team": "Getafe",
     "odds": {
-      "home": 1.25,
-      "draw": 6.2,
-      "away": 11.5
+      "home": 1.23,
+      "draw": 6.25,
+      "away": 13.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8565480652127319
+        "confidence": 0.8336498664865816
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6492287042792665
+        "confidence": 0.6630703000702398
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8269647823319376
+        "confidence": 0.8609436097139077
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9665589120498241
+        "confidence": 0.9545924789251659
       },
       "btts": {
         "class": 1,
-        "confidence": 0.515645175779812
+        "confidence": 0.5108539047855728
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958005,
+    "date": "27/09/2025",
+    "time": "19:05",
+    "league": "Ligue 1",
+    "home_team": "PSG",
+    "away_team": "Auxerre",
+    "odds": {
+      "home": 1.18,
+      "draw": 7.5,
+      "away": 14.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8270642710307547
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6176788774044277
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8246763777810996
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9000979658198515
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5073056565003298
       }
     },
     "finished": false
@@ -79,66 +151,66 @@
     "home_team": "Real Madrid",
     "away_team": "Espanyol",
     "odds": {
-      "home": 1.21,
+      "home": 1.2,
       "draw": 7.0,
-      "away": 13.0
+      "away": 13.5
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8470715616727372
+        "confidence": 0.8196102441333585
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6768182084602258
+        "confidence": 0.6483760645985841
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8380900299098795
+        "confidence": 0.836475308701659
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9290801621961157
+        "confidence": 0.9183055058991957
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5247386700033821
+        "confidence": 0.5039789294423898
       }
     },
     "finished": false
   },
   {
-    "match_id": 961808,
-    "date": "25/09/2025",
-    "time": "19:30",
-    "league": "La Liga",
-    "home_team": "Real Oviedo",
-    "away_team": "Barcelona",
+    "match_id": 954425,
+    "date": "27/09/2025",
+    "time": "14:00",
+    "league": "Premier League",
+    "home_team": "Manchester City",
+    "away_team": "Burnley",
     "odds": {
-      "home": 8.8,
-      "draw": 6.0,
-      "away": 1.29
+      "home": 1.2,
+      "draw": 7.0,
+      "away": 13.26
     },
     "predictions": {
       "winner": {
-        "class": 1,
-        "confidence": 0.8073871415162085
+        "class": 0,
+        "confidence": 0.81560476855773
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.5617852737198897
+        "confidence": 0.6075762037039023
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.7991621948369477
+        "confidence": 0.8240016788413423
       },
       "double_chance": {
-        "class": 1,
-        "confidence": 0.7038322710771829
+        "class": 0,
+        "confidence": 0.8947103311184109
       },
       "btts": {
-        "class": 0,
-        "confidence": 0.533013301367517
+        "class": 1,
+        "confidence": 0.5329615413028891
       }
     },
     "finished": false
@@ -153,100 +225,28 @@
     "odds": {
       "home": 1.18,
       "draw": 6.5,
-      "away": 14.5
+      "away": 14.08
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7825546706154349
+        "confidence": 0.7906947590607781
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.7111977128441244
+        "confidence": 0.7301195880477301
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8477218894329458
+        "confidence": 0.892673563136928
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9151158149891578
+        "confidence": 0.9162191104756271
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5352257508350055
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 965431,
-    "date": "26/09/2025",
-    "time": "18:30",
-    "league": "Bundesliga",
-    "home_team": "Bayern Munich",
-    "away_team": "Werder Bremen",
-    "odds": {
-      "home": 1.09,
-      "draw": 11.0,
-      "away": 21.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.751034949962778
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6058464647736127
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8439885092161289
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.8678023148988676
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5536752709847732
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 957974,
-    "date": "21/09/2025",
-    "time": "15:15",
-    "league": "Ligue 1",
-    "home_team": "Monaco",
-    "away_team": "Metz",
-    "odds": {
-      "home": 1.28,
-      "draw": 6.2,
-      "away": 9.25
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.7457452228207845
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6076930580041491
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8090184967605688
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9140099843978348
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5452668097594698
+        "confidence": 0.5241589504908748
       }
     },
     "finished": false
