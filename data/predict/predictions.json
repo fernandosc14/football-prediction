@@ -1,72 +1,36 @@
 [
   {
-    "match_id": 964075,
-    "date": "23/09/2025",
-    "time": "19:15",
-    "league": "Primeira Liga",
-    "home_team": "Benfica",
-    "away_team": "Rio Ave",
+    "match_id": 958005,
+    "date": "27/09/2025",
+    "time": "19:05",
+    "league": "Ligue 1",
+    "home_team": "PSG",
+    "away_team": "Auxerre",
     "odds": {
-      "home": 1.14,
+      "home": 1.16,
       "draw": 8.3,
-      "away": 18.0
+      "away": 15.65
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8550602642281571
+        "confidence": 0.8260770784693094
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6431490803722478
+        "confidence": 0.6330939868861352
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8538519672252188
+        "confidence": 0.845407773835471
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9558590988300647
+        "confidence": 0.9485762245805428
       },
       "btts": {
-        "class": 0,
-        "confidence": 0.5408711036904862
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 961808,
-    "date": "25/09/2025",
-    "time": "19:30",
-    "league": "La Liga",
-    "home_team": "Real Oviedo",
-    "away_team": "Barcelona",
-    "odds": {
-      "home": 9.5,
-      "draw": 6.1,
-      "away": 1.25
-    },
-    "predictions": {
-      "winner": {
         "class": 1,
-        "confidence": 0.803197007352512
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5811559105275775
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.793080090429653
-      },
-      "double_chance": {
-        "class": 1,
-        "confidence": 0.7920756359734383
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5258472054013887
+        "confidence": 0.5157345816446219
       }
     },
     "finished": false
@@ -79,66 +43,30 @@
     "home_team": "Barcelona",
     "away_team": "Real Sociedad",
     "odds": {
-      "home": 1.32,
+      "home": 1.31,
       "draw": 5.5,
-      "away": 10.0
+      "away": 9.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8029340575026636
+        "confidence": 0.8234531675630687
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6372619965305562
+        "confidence": 0.6302872978288375
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8433326349081506
+        "confidence": 0.8655457221110892
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9312630571390506
+        "confidence": 0.9470917157332989
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5087447867789554
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 958005,
-    "date": "27/09/2025",
-    "time": "19:05",
-    "league": "Ligue 1",
-    "home_team": "PSG",
-    "away_team": "Auxerre",
-    "odds": {
-      "home": 1.18,
-      "draw": 7.8,
-      "away": 15.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.8012603386896601
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6455983108723113
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8569247928054725
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9218091429651593
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5232722420454199
+        "confidence": 0.5322177650430118
       }
     },
     "finished": false
@@ -153,28 +81,100 @@
     "odds": {
       "home": 1.25,
       "draw": 6.1,
-      "away": 9.91
+      "away": 9.9
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7990733730551963
+        "confidence": 0.8158969423424446
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6574369608353123
+        "confidence": 0.6505335206539152
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.869266605255769
+        "confidence": 0.8692356757103223
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9335590726895743
+        "confidence": 0.9531169307926908
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5092568871744292
+        "confidence": 0.5210752426525499
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964128,
+    "date": "27/09/2025",
+    "time": "19:30",
+    "league": "Primeira Liga",
+    "home_team": "Estoril",
+    "away_team": "Sporting Lisbon",
+    "odds": {
+      "home": 8.0,
+      "draw": 5.1,
+      "away": 1.33
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7907633391569449
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5727922165283638
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7947796470346428
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7310339119923442
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5210294592127303
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964135,
+    "date": "26/09/2025",
+    "time": "19:15",
+    "league": "Primeira Liga",
+    "home_team": "Benfica",
+    "away_team": "Gil Vicente",
+    "odds": {
+      "home": 1.24,
+      "draw": 5.85,
+      "away": 12.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.785806018398656
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6843230276478363
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8404756050163092
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9475861117890984
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5062208138519358
       }
     },
     "finished": false
@@ -189,64 +189,64 @@
     "odds": {
       "home": 1.18,
       "draw": 7.3,
-      "away": 14.56
+      "away": 14.54
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7918477270169977
+        "confidence": 0.7844439384917286
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6409776376768491
+        "confidence": 0.6531005650411142
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8397412904887345
+        "confidence": 0.8395898923007364
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.897737589518364
+        "confidence": 0.9072892005599759
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5761306205525271
+        "confidence": 0.5486784935638452
       }
     },
     "finished": false
   },
   {
-    "match_id": 964135,
+    "match_id": 965431,
     "date": "26/09/2025",
-    "time": "19:15",
-    "league": "Primeira Liga",
-    "home_team": "Benfica",
-    "away_team": "Gil Vicente",
+    "time": "18:30",
+    "league": "Bundesliga",
+    "home_team": "Bayern Munich",
+    "away_team": "Werder Bremen",
     "odds": {
-      "home": 1.19,
-      "draw": 6.75,
-      "away": 14.5
+      "home": 1.08,
+      "draw": 11.75,
+      "away": 21.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7890236816616415
+        "confidence": 0.7698184372774013
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.7014354882435575
+        "confidence": 0.6497609552632042
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8586878537933322
+        "confidence": 0.8409405693950179
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9477582225792799
+        "confidence": 0.8615335004195798
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5335156818322244
+        "confidence": 0.5191036394565747
       }
     },
     "finished": false
