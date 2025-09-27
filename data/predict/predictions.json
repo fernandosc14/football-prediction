@@ -1,36 +1,36 @@
 [
   {
-    "match_id": 958005,
-    "date": "27/09/2025",
-    "time": "19:05",
-    "league": "Ligue 1",
-    "home_team": "PSG",
-    "away_team": "Auxerre",
+    "match_id": 961810,
+    "date": "28/09/2025",
+    "time": "16:30",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Real Sociedad",
     "odds": {
-      "home": 1.16,
-      "draw": 8.5,
-      "away": 15.75
+      "home": 1.31,
+      "draw": 5.5,
+      "away": 10.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8124128469114958
+        "confidence": 0.80164827748599
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6404719146492055
+        "confidence": 0.6796331942436585
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8350719861456289
+        "confidence": 0.8348605191657811
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9280778197276112
+        "confidence": 0.9608884070600366
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5149931577110265
+        "confidence": 0.51933215800196
       }
     },
     "finished": false
@@ -43,30 +43,30 @@
     "home_team": "Manchester City",
     "away_team": "Burnley",
     "odds": {
-      "home": 1.18,
-      "draw": 7.5,
-      "away": 15.0
+      "home": 1.2,
+      "draw": 7.47,
+      "away": 13.91
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7967877935052674
+        "confidence": 0.7989019832718592
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6374943172499944
+        "confidence": 0.6379902849903988
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8501416097789054
+        "confidence": 0.8432849295685102
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9023679028972308
+        "confidence": 0.8960167147083337
       },
       "btts": {
         "class": 1,
-        "confidence": 0.538103471666409
+        "confidence": 0.5834214432610334
       }
     },
     "finished": false
@@ -80,65 +80,137 @@
     "away_team": "NAC Breda",
     "odds": {
       "home": 1.27,
-      "draw": 6.0,
-      "away": 9.5
+      "draw": 6.1,
+      "away": 9.6
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7928960398295432
+        "confidence": 0.7980192251314574
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6744097872227313
+        "confidence": 0.6762609094900136
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8711909045086726
+        "confidence": 0.8573996768394708
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9461989415616655
+        "confidence": 0.9501671175152265
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5233957844357993
+        "confidence": 0.5075827702552939
       }
     },
     "finished": false
   },
   {
-    "match_id": 965431,
-    "date": "26/09/2025",
-    "time": "18:30",
-    "league": "Bundesliga",
-    "home_team": "Bayern Munich",
-    "away_team": "Werder Bremen",
+    "match_id": 958005,
+    "date": "27/09/2025",
+    "time": "19:05",
+    "league": "Ligue 1",
+    "home_team": "PSG",
+    "away_team": "Auxerre",
     "odds": {
-      "home": 1.09,
-      "draw": 13.0,
-      "away": 24.0
+      "home": 1.17,
+      "draw": 8.3,
+      "away": 15.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7388944669058425
+        "confidence": 0.7866958247238093
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6631948688164955
+        "confidence": 0.6310589387995793
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.835196727963197
+        "confidence": 0.8214247221932027
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8313265433280006
+        "confidence": 0.9361938032230682
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5021985123665194
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 957355,
+    "date": "30/09/2025",
+    "time": "18:45",
+    "league": "Championship",
+    "home_team": "Birmingham City",
+    "away_team": "Sheffield Wednesday",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.2,
+      "away": 9.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7850829635561725
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6271421364043167
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8229591312194506
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8706572876402008
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5469174727924462
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964128,
+    "date": "27/09/2025",
+    "time": "19:30",
+    "league": "Primeira Liga",
+    "home_team": "Estoril",
+    "away_team": "Sporting Lisbon",
+    "odds": {
+      "home": 9.0,
+      "draw": 5.45,
+      "away": 1.31
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7518729599888485
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5551432782846887
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8157673148152775
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7527947837921788
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5563422954446617
+        "confidence": 0.550448838717113
       }
     },
     "finished": false
@@ -151,102 +223,30 @@
     "home_team": "Excelsior",
     "away_team": "PSV",
     "odds": {
-      "home": 10.0,
-      "draw": 6.58,
-      "away": 1.25
+      "home": 9.5,
+      "draw": 6.43,
+      "away": 1.26
     },
     "predictions": {
       "winner": {
         "class": 1,
-        "confidence": 0.7199929684913442
+        "confidence": 0.7231580767915069
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6261784338408058
+        "confidence": 0.6682129446303432
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8524242269880424
+        "confidence": 0.8775306054126939
       },
       "double_chance": {
         "class": 1,
-        "confidence": 0.7278840224287703
+        "confidence": 0.7082120878131459
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5522970095821952
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954029,
-    "date": "28/09/2025",
-    "time": "13:00",
-    "league": "Serie A",
-    "home_team": "Roma",
-    "away_team": "Verona",
-    "odds": {
-      "home": 1.46,
-      "draw": 4.35,
-      "away": 8.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.692759532475649
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5595313865133607
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.7919032922018221
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.8957435667144766
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5273213396828419
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954429,
-    "date": "27/09/2025",
-    "time": "19:00",
-    "league": "Premier League",
-    "home_team": "Tottenham Hotspur",
-    "away_team": "Wolverhampton Wanderers",
-    "odds": {
-      "home": 1.48,
-      "draw": 4.75,
-      "away": 6.5
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.6842955753827924
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5852839051922453
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.846140985212771
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.8600279667061389
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5597965487383167
+        "confidence": 0.5850341082097542
       }
     },
     "finished": false
