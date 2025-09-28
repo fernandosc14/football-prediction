@@ -3309,7 +3309,7 @@
         "confidence": 0.5025999397045063
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964075,
@@ -3489,7 +3489,7 @@
         "confidence": 0.5329615413028891
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964118,
@@ -3597,7 +3597,7 @@
         "confidence": 0.5034878599893667
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964135,
@@ -3669,7 +3669,7 @@
         "confidence": 0.544285115820553
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955937,
@@ -3705,7 +3705,7 @@
         "confidence": 0.5355929282262291
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961792,
@@ -3885,7 +3885,7 @@
         "confidence": 0.5667544855993849
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958005,
@@ -3957,7 +3957,7 @@
         "confidence": 0.507654355605301
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964128,
@@ -3993,7 +3993,7 @@
         "confidence": 0.5141122375947111
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954024,
@@ -4137,7 +4137,7 @@
         "confidence": 0.5087447867789554
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958005,
@@ -4209,7 +4209,7 @@
         "confidence": 0.5092568871744292
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954425,
@@ -4245,7 +4245,7 @@
         "confidence": 0.5761306205525271
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964135,
@@ -4353,7 +4353,7 @@
         "confidence": 0.5322177650430118
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955935,
@@ -4389,7 +4389,7 @@
         "confidence": 0.5210752426525499
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964128,
@@ -4425,7 +4425,7 @@
         "confidence": 0.5210294592127303
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964135,
@@ -4497,7 +4497,7 @@
         "confidence": 0.5486784935638452
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 965431,
@@ -4605,7 +4605,7 @@
         "confidence": 0.5281773349910684
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961810,
@@ -4641,7 +4641,7 @@
         "confidence": 0.5306102850217131
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964128,
@@ -4677,7 +4677,7 @@
         "confidence": 0.5286323424212452
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955935,
@@ -4713,7 +4713,7 @@
         "confidence": 0.5044043538995904
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961808,
@@ -4857,7 +4857,7 @@
         "confidence": 0.538103471666409
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955935,
@@ -4893,7 +4893,7 @@
         "confidence": 0.5233957844357993
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 965431,
@@ -4965,7 +4965,7 @@
         "confidence": 0.5522970095821952
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954029,
@@ -5001,7 +5001,7 @@
         "confidence": 0.5273213396828419
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954429,
@@ -5037,7 +5037,7 @@
         "confidence": 0.5597965487383167
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961810,
@@ -5073,7 +5073,7 @@
         "confidence": 0.51933215800196
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954425,
@@ -5109,7 +5109,7 @@
         "confidence": 0.5834214432610334
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955935,
@@ -5145,7 +5145,7 @@
         "confidence": 0.5075827702552939
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958005,
@@ -5253,7 +5253,7 @@
         "confidence": 0.550448838717113
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955937,
@@ -5287,6 +5287,258 @@
       "btts": {
         "class": 1,
         "confidence": 0.5850341082097542
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 961810,
+    "date": "28/09/2025",
+    "time": "16:30",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Real Sociedad",
+    "odds": {
+      "home": 1.38,
+      "draw": 5.25,
+      "away": 7.9
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8369990099583853
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6475163834179366
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8529121236688715
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.943196916792037
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5148929220298964
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 954041,
+    "date": "04/10/2025",
+    "time": "16:00",
+    "league": "Serie A",
+    "home_team": "Inter Milan",
+    "away_team": "Cremonese",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.6,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8055418992226118
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6919712608392531
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8642967036685298
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9103814621796505
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5191861541767044
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955956,
+    "date": "05/10/2025",
+    "time": "10:15",
+    "league": "Eredivisie",
+    "home_team": "Twente",
+    "away_team": "Heracles",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.4,
+      "away": 8.75
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7767949093618637
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6471330821203025
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8324582305530754
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9219956438761565
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5190898816086065
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955960,
+    "date": "05/10/2025",
+    "time": "14:45",
+    "league": "Eredivisie",
+    "home_team": "AZ",
+    "away_team": "Telstar",
+    "odds": {
+      "home": 1.25,
+      "draw": 6.0,
+      "away": 10.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7572938451992357
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6721959557093844
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8917607086928429
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8840582747925632
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5608972147453322
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964134,
+    "date": "29/09/2025",
+    "time": "19:00",
+    "league": "Primeira Liga",
+    "home_team": "Arouca",
+    "away_team": "Porto",
+    "odds": {
+      "home": 8.3,
+      "draw": 4.85,
+      "away": 1.36
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7532311345624381
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5674329608413821
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.767991965278271
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7338521103574561
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5479220322485936
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954029,
+    "date": "28/09/2025",
+    "time": "13:00",
+    "league": "Serie A",
+    "home_team": "Roma",
+    "away_team": "Verona",
+    "odds": {
+      "home": 1.43,
+      "draw": 4.35,
+      "away": 8.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7247938374993608
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5806919753543799
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7737539762660933
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8881318027925275
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5181591255327708
+      }
+    },
+    "finished": true
+  },
+  {
+    "match_id": 955952,
+    "date": "04/10/2025",
+    "time": "18:00",
+    "league": "Eredivisie",
+    "home_team": "PEC Zwolle",
+    "away_team": "PSV",
+    "odds": {
+      "home": 7.5,
+      "draw": 5.1,
+      "away": 1.37
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6961402444340439
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6487675905297939
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8453714479793623
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.6940406934545781
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5952184943407819
       }
     },
     "finished": false
