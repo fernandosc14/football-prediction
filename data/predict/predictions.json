@@ -1,77 +1,5 @@
 [
   {
-    "match_id": 961810,
-    "date": "28/09/2025",
-    "time": "16:30",
-    "league": "La Liga",
-    "home_team": "Barcelona",
-    "away_team": "Real Sociedad",
-    "odds": {
-      "home": 1.38,
-      "draw": 5.25,
-      "away": 7.9
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.8369990099583853
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6475163834179366
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8529121236688715
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.943196916792037
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5148929220298964
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954041,
-    "date": "04/10/2025",
-    "time": "16:00",
-    "league": "Serie A",
-    "home_team": "Inter Milan",
-    "away_team": "Cremonese",
-    "odds": {
-      "home": 1.22,
-      "draw": 6.6,
-      "away": 13.0
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.8055418992226118
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6919712608392531
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8642967036685298
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.9103814621796505
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5191861541767044
-      }
-    },
-    "finished": false
-  },
-  {
     "match_id": 955956,
     "date": "05/10/2025",
     "time": "10:15",
@@ -86,23 +14,95 @@
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7767949093618637
+        "confidence": 0.7999084182439411
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6471330821203025
+        "confidence": 0.6288567450440264
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8324582305530754
+        "confidence": 0.8269590684762982
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9219956438761565
+        "confidence": 0.9328911596178205
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5190898816086065
+        "confidence": 0.514559773922539
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954041,
+    "date": "04/10/2025",
+    "time": "16:00",
+    "league": "Serie A",
+    "home_team": "Inter Milan",
+    "away_team": "Cremonese",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.5,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7777029481132799
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6776584370669301
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8763658839371946
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9030095938808812
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5372201777028
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964134,
+    "date": "29/09/2025",
+    "time": "19:00",
+    "league": "Primeira Liga",
+    "home_team": "Arouca",
+    "away_team": "Porto",
+    "odds": {
+      "home": 9.0,
+      "draw": 5.15,
+      "away": 1.33
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7562183713250968
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.579672915660367
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.791311582846562
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7657532599791841
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.540526041426374
       }
     },
     "finished": false
@@ -117,100 +117,28 @@
     "odds": {
       "home": 1.25,
       "draw": 6.0,
-      "away": 10.0
+      "away": 10.5
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7572938451992357
+        "confidence": 0.7263095478253312
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6721959557093844
+        "confidence": 0.672779354021397
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8917607086928429
+        "confidence": 0.8828787076658906
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8840582747925632
+        "confidence": 0.8709532560746824
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5608972147453322
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 964134,
-    "date": "29/09/2025",
-    "time": "19:00",
-    "league": "Primeira Liga",
-    "home_team": "Arouca",
-    "away_team": "Porto",
-    "odds": {
-      "home": 8.3,
-      "draw": 4.85,
-      "away": 1.36
-    },
-    "predictions": {
-      "winner": {
-        "class": 1,
-        "confidence": 0.7532311345624381
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5674329608413821
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.767991965278271
-      },
-      "double_chance": {
-        "class": 1,
-        "confidence": 0.7338521103574561
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5479220322485936
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 954029,
-    "date": "28/09/2025",
-    "time": "13:00",
-    "league": "Serie A",
-    "home_team": "Roma",
-    "away_team": "Verona",
-    "odds": {
-      "home": 1.43,
-      "draw": 4.35,
-      "away": 8.25
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.7247938374993608
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.5806919753543799
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.7737539762660933
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.8881318027925275
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5181591255327708
+        "confidence": 0.5397363335041091
       }
     },
     "finished": false
@@ -223,30 +151,102 @@
     "home_team": "PEC Zwolle",
     "away_team": "PSV",
     "odds": {
-      "home": 7.5,
+      "home": 7.2,
       "draw": 5.1,
-      "away": 1.37
+      "away": 1.38
     },
     "predictions": {
       "winner": {
         "class": 1,
-        "confidence": 0.6961402444340439
+        "confidence": 0.6758941060182825
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6487675905297939
+        "confidence": 0.6322044809672269
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8453714479793623
+        "confidence": 0.8432724716883001
       },
       "double_chance": {
         "class": 1,
-        "confidence": 0.6940406934545781
+        "confidence": 0.6591538053258345
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5952184943407819
+        "confidence": 0.590453653162539
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 957355,
+    "date": "30/09/2025",
+    "time": "18:45",
+    "league": "Championship",
+    "home_team": "Birmingham City",
+    "away_team": "Sheffield Wednesday",
+    "odds": {
+      "home": 1.4,
+      "draw": 4.5,
+      "away": 8.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6721553609494467
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5807755630318039
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.800537897174479
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.831058638556162
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5251574708059811
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954433,
+    "date": "04/10/2025",
+    "time": "14:00",
+    "league": "Premier League",
+    "home_team": "Arsenal",
+    "away_team": "West Ham United",
+    "odds": {
+      "home": 1.25,
+      "draw": 6.0,
+      "away": 12.07
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6609548464711823
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5691812118359043
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8582741127070733
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8592643831428809
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5263135640339565
       }
     },
     "finished": false
