@@ -1,28 +1,28 @@
 {
   "winner": {
     "correct": 127,
-    "total": 147,
-    "percent": 86.39
+    "total": 150,
+    "percent": 84.67
   },
   "over_2_5": {
-    "correct": 88,
-    "total": 147,
-    "percent": 59.86
+    "correct": 91,
+    "total": 150,
+    "percent": 60.67
   },
   "over_1_5": {
-    "correct": 122,
-    "total": 147,
-    "percent": 82.99
+    "correct": 125,
+    "total": 150,
+    "percent": 83.33
   },
   "double_chance": {
-    "correct": 147,
-    "total": 147,
+    "correct": 150,
+    "total": 150,
     "percent": 100.0
   },
   "btts": {
-    "correct": 59,
-    "total": 147,
-    "percent": 40.14
+    "correct": 62,
+    "total": 150,
+    "percent": 41.33
   },
   "best_type": "double_chance"
 }
