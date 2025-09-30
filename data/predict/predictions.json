@@ -36,42 +36,6 @@
     "finished": false
   },
   {
-    "match_id": 964134,
-    "date": "29/09/2025",
-    "time": "19:00",
-    "league": "Primeira Liga",
-    "home_team": "Arouca",
-    "away_team": "Porto",
-    "odds": {
-      "home": 11.5,
-      "draw": 6.05,
-      "away": 1.25
-    },
-    "predictions": {
-      "winner": {
-        "class": 1,
-        "confidence": 0.7734494025575767
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6245019324617604
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.767518710614791
-      },
-      "double_chance": {
-        "class": 1,
-        "confidence": 0.7785989147033254
-      },
-      "btts": {
-        "class": 0,
-        "confidence": 0.5348286074921024
-      }
-    },
-    "finished": false
-  },
-  {
     "match_id": 955956,
     "date": "05/10/2025",
     "time": "10:15",
@@ -79,9 +43,9 @@
     "home_team": "Twente",
     "away_team": "Heracles",
     "odds": {
-      "home": 1.33,
+      "home": 1.34,
       "draw": 5.3,
-      "away": 8.33
+      "away": 8.3
     },
     "predictions": {
       "winner": {
@@ -90,11 +54,11 @@
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.622231767210705
+        "confidence": 0.6186756174780846
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8210246665276464
+        "confidence": 0.8200016435046232
       },
       "double_chance": {
         "class": 0,
@@ -187,7 +151,7 @@
     "home_team": "Birmingham City",
     "away_team": "Sheffield Wednesday",
     "odds": {
-      "home": 1.42,
+      "home": 1.41,
       "draw": 4.45,
       "away": 7.8
     },
@@ -206,7 +170,7 @@
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8269666922340988
+        "confidence": 0.8275252374187343
       },
       "btts": {
         "class": 1,
@@ -247,6 +211,42 @@
       "btts": {
         "class": 1,
         "confidence": 0.6081262309854738
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954433,
+    "date": "04/10/2025",
+    "time": "14:00",
+    "league": "Premier League",
+    "home_team": "Arsenal",
+    "away_team": "West Ham United",
+    "odds": {
+      "home": 1.23,
+      "draw": 6.1,
+      "away": 12.18
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6595888444749478
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5626037733099921
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.866959766067216
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8444791512508953
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.519780997722024
       }
     },
     "finished": false
