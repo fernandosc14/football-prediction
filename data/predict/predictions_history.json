@@ -6550,5 +6550,257 @@
       }
     },
     "finished": false
+  },
+  {
+    "match_id": 954041,
+    "date": "04/10/2025",
+    "time": "16:00",
+    "league": "Serie A",
+    "home_team": "Inter Milan",
+    "away_team": "Cremonese",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.55,
+      "away": 12.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7612969359953806
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6914500680923975
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8664054807446293
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9295474735134238
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5210738334592745
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955956,
+    "date": "05/10/2025",
+    "time": "10:15",
+    "league": "Eredivisie",
+    "home_team": "Twente",
+    "away_team": "Heracles",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.4,
+      "away": 8.3
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7575212235288997
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6272440537967875
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7910515603631231
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9390428801432332
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5206923862454925
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955960,
+    "date": "05/10/2025",
+    "time": "14:45",
+    "league": "Eredivisie",
+    "home_team": "AZ",
+    "away_team": "Telstar",
+    "odds": {
+      "home": 1.28,
+      "draw": 5.8,
+      "away": 9.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7189538316375884
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6591246481189258
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8735270451393565
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9115767788499981
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5802265430568666
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954433,
+    "date": "04/10/2025",
+    "time": "14:00",
+    "league": "Premier League",
+    "home_team": "Arsenal",
+    "away_team": "West Ham United",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.5,
+      "away": 13.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6747993935089027
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5570704758942148
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8096678817077716
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8728167822136059
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.6008787546141752
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955952,
+    "date": "04/10/2025",
+    "time": "18:00",
+    "league": "Eredivisie",
+    "home_team": "PEC Zwolle",
+    "away_team": "PSV",
+    "odds": {
+      "home": 6.94,
+      "draw": 5.0,
+      "away": 1.4
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.666179361826784
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6189104642670472
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8747417558133462
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.686228151751869
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.6371453505984149
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955958,
+    "date": "05/10/2025",
+    "time": "12:30",
+    "league": "Eredivisie",
+    "home_team": "Feyenoord",
+    "away_team": "Utrecht",
+    "odds": {
+      "home": 1.45,
+      "draw": 4.5,
+      "away": 6.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6640831470509327
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5995196238915675
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8392106984819507
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8559719007372887
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5994598857564718
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964140,
+    "date": "05/10/2025",
+    "time": "18:15",
+    "league": "Primeira Liga",
+    "home_team": "Sporting Lisbon",
+    "away_team": "Sporting Braga",
+    "odds": {
+      "home": 1.47,
+      "draw": 4.5,
+      "away": 6.4
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6321746015831863
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6515551747123499
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8372768002045441
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.867513249314445
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5733128220989143
+      }
+    },
+    "finished": false
   }
 ]
