@@ -5397,7 +5397,7 @@
         "confidence": 0.5190898816086065
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -5433,7 +5433,7 @@
         "confidence": 0.5608972147453322
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964134,
@@ -5577,7 +5577,7 @@
         "confidence": 0.514559773922539
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954041,
@@ -5685,7 +5685,7 @@
         "confidence": 0.5397363335041091
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -5901,7 +5901,7 @@
         "confidence": 0.5188579823504884
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -5937,7 +5937,7 @@
         "confidence": 0.5274039761829203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -6045,7 +6045,7 @@
         "confidence": 0.6081262309854738
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954041,
@@ -6117,7 +6117,7 @@
         "confidence": 0.5188579823504884
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -6153,7 +6153,7 @@
         "confidence": 0.5274039761829203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -6261,7 +6261,7 @@
         "confidence": 0.6081262309854738
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954433,
@@ -6333,7 +6333,7 @@
         "confidence": 0.5319233011311886
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954041,
@@ -6405,7 +6405,7 @@
         "confidence": 0.5596004776930136
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -6513,7 +6513,7 @@
         "confidence": 0.5868101407027774
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961824,
@@ -6621,7 +6621,7 @@
         "confidence": 0.5206923862454925
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -6657,7 +6657,7 @@
         "confidence": 0.5802265430568666
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954433,
@@ -6765,7 +6765,7 @@
         "confidence": 0.5994598857564718
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964140,
@@ -6801,7 +6801,7 @@
         "confidence": 0.5733128220989143
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954041,
@@ -6873,7 +6873,7 @@
         "confidence": 0.5206923862454925
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -6909,7 +6909,7 @@
         "confidence": 0.58606085854534
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954433,
@@ -6981,7 +6981,7 @@
         "confidence": 0.5994598857564718
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -7053,7 +7053,7 @@
         "confidence": 0.5547182832083363
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954041,
@@ -7125,7 +7125,7 @@
         "confidence": 0.5131457363174978
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954433,
@@ -7197,7 +7197,7 @@
         "confidence": 0.569712114434605
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960536,
@@ -7233,7 +7233,7 @@
         "confidence": 0.5395215521339735
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964140,
@@ -7269,7 +7269,7 @@
         "confidence": 0.5849299231165278
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955952,
@@ -7341,7 +7341,7 @@
         "confidence": 0.515727953529544
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960536,
@@ -7377,7 +7377,7 @@
         "confidence": 0.5088751650362459
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964140,
@@ -7413,7 +7413,7 @@
         "confidence": 0.5724700365597143
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955960,
@@ -7449,7 +7449,7 @@
         "confidence": 0.5452250190170955
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955958,
@@ -7485,7 +7485,7 @@
         "confidence": 0.6012905903672501
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954044,
@@ -7521,7 +7521,7 @@
         "confidence": 0.5186831694198835
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954435,
@@ -7557,6 +7557,6 @@
         "confidence": 0.5786430642321704
       }
     },
-    "finished": false
+    "finished": true
   }
 ]
