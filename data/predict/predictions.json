@@ -7,18 +7,18 @@
     "home_team": "Barcelona",
     "away_team": "Girona",
     "odds": {
-      "home": 1.18,
-      "draw": 8.0,
-      "away": 14.5
+      "home": 1.2,
+      "draw": 7.5,
+      "away": 13.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.8586640919049684
+        "confidence": 0.8577338593468289
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.7046900178665839
+        "confidence": 0.6931183266863487
       },
       "over_1_5": {
         "class": 1,
@@ -29,8 +29,8 @@
         "confidence": 0.8747176097614694
       },
       "btts": {
-        "class": 1,
-        "confidence": 0.506161241592809
+        "class": 0,
+        "confidence": 0.5004458408300826
       }
     },
     "finished": false
@@ -79,14 +79,14 @@
     "home_team": "Marseille",
     "away_team": "Le Havre",
     "odds": {
-      "home": 1.33,
-      "draw": 5.3,
-      "away": 8.9
+      "home": 1.32,
+      "draw": 5.5,
+      "away": 9.5
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7966592746132574
+        "confidence": 0.7950464800004627
       },
       "over_2_5": {
         "class": 1,
@@ -94,11 +94,11 @@
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.818167485160643
+        "confidence": 0.8270475149223819
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8916345957412998
+        "confidence": 0.8928208702511037
       },
       "btts": {
         "class": 1,
@@ -116,17 +116,17 @@
     "away_team": "Strasbourg",
     "odds": {
       "home": 1.3,
-      "draw": 5.75,
-      "away": 9.27
+      "draw": 5.9,
+      "away": 9.25
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7355539346639586
+        "confidence": 0.7390925883712574
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6825450097966869
+        "confidence": 0.6850471909970359
       },
       "over_1_5": {
         "class": 1,
@@ -138,7 +138,7 @@
       },
       "btts": {
         "class": 1,
-        "confidence": 0.565336001243355
+        "confidence": 0.5641661832229378
       }
     },
     "finished": false
@@ -151,7 +151,7 @@
     "home_team": "Utrecht",
     "away_team": "Volendam",
     "odds": {
-      "home": 1.37,
+      "home": 1.38,
       "draw": 4.95,
       "away": 7.4
     },
@@ -224,8 +224,8 @@
     "away_team": "Borussia Dortmund",
     "odds": {
       "home": 1.33,
-      "draw": 5.6,
-      "away": 7.8
+      "draw": 5.5,
+      "away": 7.9
     },
     "predictions": {
       "winner": {
