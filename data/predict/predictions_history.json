@@ -9070,5 +9070,257 @@
       }
     },
     "finished": false
+  },
+  {
+    "match_id": 961829,
+    "date": "18/10/2025",
+    "time": "14:15",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Girona",
+    "odds": {
+      "home": 1.18,
+      "draw": 7.5,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8577338593468289
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7040473406044481
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8571180767250453
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8747176097614694
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5054236400131021
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955968,
+    "date": "18/10/2025",
+    "time": "16:45",
+    "league": "Eredivisie",
+    "home_team": "PSV",
+    "away_team": "Go Ahead Eagles",
+    "odds": {
+      "home": 1.23,
+      "draw": 6.8,
+      "away": 9.4
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8391100696716431
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7388445622277758
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8879727406971984
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9520976994229312
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.556578824656203
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958029,
+    "date": "18/10/2025",
+    "time": "19:05",
+    "league": "Ligue 1",
+    "home_team": "Marseille",
+    "away_team": "Le Havre",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.4,
+      "away": 8.8
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7966592746132574
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6987242310492364
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.818167485160643
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8917522428001231
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5681326102376718
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958025,
+    "date": "17/10/2025",
+    "time": "18:45",
+    "league": "Ligue 1",
+    "home_team": "PSG",
+    "away_team": "Strasbourg",
+    "odds": {
+      "home": 1.34,
+      "draw": 5.6,
+      "away": 8.75
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7355539346639586
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6815336240089853
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8608807636632295
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9065513931692464
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5685555338611521
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961828,
+    "date": "18/10/2025",
+    "time": "19:00",
+    "league": "La Liga",
+    "home_team": "Atletico Madrid",
+    "away_team": "Osasuna",
+    "odds": {
+      "home": 1.36,
+      "draw": 4.85,
+      "away": 8.83
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6792136974341828
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6389335628410682
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7985338948204991
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8710791211232731
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5173108936010075
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955966,
+    "date": "18/10/2025",
+    "time": "16:45",
+    "league": "Eredivisie",
+    "home_team": "Utrecht",
+    "away_team": "Volendam",
+    "odds": {
+      "home": 1.38,
+      "draw": 4.95,
+      "away": 7.2
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6726091355615316
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6452398028162848
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8300254209528367
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8547533906568107
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5585563468196391
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958035,
+    "date": "18/10/2025",
+    "time": "17:00",
+    "league": "Ligue 1",
+    "home_team": "Angers",
+    "away_team": "Monaco",
+    "odds": {
+      "home": 5.25,
+      "draw": 4.2,
+      "away": 1.62
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6710269210238571
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5441564238752307
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.753661009697697
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.6082349563723171
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5007701111340508
+      }
+    },
+    "finished": false
   }
 ]
