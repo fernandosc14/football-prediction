@@ -7629,7 +7629,7 @@
         "confidence": 0.5546378323679085
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -7953,7 +7953,7 @@
         "confidence": 0.5579370157944924
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -8205,7 +8205,7 @@
         "confidence": 0.5591068338149097
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -8457,7 +8457,7 @@
         "confidence": 0.565336001243355
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -8709,7 +8709,7 @@
         "confidence": 0.5641661832229378
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -8961,7 +8961,7 @@
         "confidence": 0.5559803288644013
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -9213,7 +9213,7 @@
         "confidence": 0.5685555338611521
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961828,
@@ -9319,6 +9319,258 @@
       "btts": {
         "class": 1,
         "confidence": 0.5007701111340508
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961829,
+    "date": "18/10/2025",
+    "time": "14:15",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Girona",
+    "odds": {
+      "home": 1.22,
+      "draw": 7.4,
+      "away": 11.47
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8471762887215297
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6973532586195944
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.904259912812998
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9281597427757233
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5310978438826399
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955968,
+    "date": "18/10/2025",
+    "time": "16:45",
+    "league": "Eredivisie",
+    "home_team": "PSV",
+    "away_team": "Go Ahead Eagles",
+    "odds": {
+      "home": 1.25,
+      "draw": 7.0,
+      "away": 9.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8239730913184014
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7630278078114927
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8834052206715204
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9490119647912924
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5685249001398343
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958029,
+    "date": "18/10/2025",
+    "time": "19:05",
+    "league": "Ligue 1",
+    "home_team": "Marseille",
+    "away_team": "Le Havre",
+    "odds": {
+      "home": 1.35,
+      "draw": 5.45,
+      "away": 8.9
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.816399832874343
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6951871013308558
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8659867947937583
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9306867928969992
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5757162648354391
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955966,
+    "date": "18/10/2025",
+    "time": "16:45",
+    "league": "Eredivisie",
+    "home_team": "Utrecht",
+    "away_team": "Volendam",
+    "odds": {
+      "home": 1.37,
+      "draw": 5.18,
+      "away": 7.6
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7216725092175621
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6383585594753272
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8231993038397776
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.870879738453073
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5702289372444493
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960564,
+    "date": "18/10/2025",
+    "time": "16:30",
+    "league": "Bundesliga",
+    "home_team": "Bayern Munich",
+    "away_team": "Borussia Dortmund",
+    "odds": {
+      "home": 1.37,
+      "draw": 5.7,
+      "away": 7.63
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7040593575669054
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.599490915135046
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8615020163321095
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8842693351465247
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5235689757993964
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961828,
+    "date": "18/10/2025",
+    "time": "19:00",
+    "league": "La Liga",
+    "home_team": "Atletico Madrid",
+    "away_team": "Osasuna",
+    "odds": {
+      "home": 1.37,
+      "draw": 4.94,
+      "away": 9.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6879533520186336
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6101789107573579
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8082080158341433
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8858330125779372
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5159886931025924
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960572,
+    "date": "25/10/2025",
+    "time": "15:00",
+    "league": "Bundesliga",
+    "home_team": "Borussia M'gladbach",
+    "away_team": "Bayern Munich",
+    "odds": {
+      "home": 9.4,
+      "draw": 6.55,
+      "away": 1.28
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6768231818038568
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6960458435403369
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8154152115745217
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7264084909792571
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5251694154103131
       }
     },
     "finished": false
