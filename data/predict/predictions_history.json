@@ -7593,7 +7593,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -7665,7 +7665,7 @@
         "confidence": 0.563819314075507
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -7701,7 +7701,7 @@
         "confidence": 0.5094542921251817
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954448,
@@ -7737,7 +7737,7 @@
         "confidence": 0.5897886511071332
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954449,
@@ -7809,7 +7809,7 @@
         "confidence": 0.5713204819302065
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -7845,7 +7845,7 @@
         "confidence": 0.5029732768169762
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -7881,7 +7881,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -7917,7 +7917,7 @@
         "confidence": 0.5671879818344343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -7989,7 +7989,7 @@
         "confidence": 0.563819314075507
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -8025,7 +8025,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -8061,7 +8061,7 @@
         "confidence": 0.5094542921251817
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -8097,7 +8097,7 @@
         "confidence": 0.5029732768169762
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -8133,7 +8133,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -8169,7 +8169,7 @@
         "confidence": 0.5671879818344343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -8241,7 +8241,7 @@
         "confidence": 0.563819314075507
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -8277,7 +8277,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -8313,7 +8313,7 @@
         "confidence": 0.5094542921251817
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -8349,7 +8349,7 @@
         "confidence": 0.506161241592809
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -8385,7 +8385,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -8421,7 +8421,7 @@
         "confidence": 0.5671879818344343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -8493,7 +8493,7 @@
         "confidence": 0.5611302384452547
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -8529,7 +8529,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -8565,7 +8565,7 @@
         "confidence": 0.5094542921251817
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -8601,7 +8601,7 @@
         "confidence": 0.5004458408300826
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -8637,7 +8637,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -8673,7 +8673,7 @@
         "confidence": 0.5671879818344343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -8745,7 +8745,7 @@
         "confidence": 0.5611302384452547
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -8781,7 +8781,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -8817,7 +8817,7 @@
         "confidence": 0.5094542921251817
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -8853,7 +8853,7 @@
         "confidence": 0.5029732768169762
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -8889,7 +8889,7 @@
         "confidence": 0.5417531818170328
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -8925,7 +8925,7 @@
         "confidence": 0.5671879818344343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -8997,7 +8997,7 @@
         "confidence": 0.5611302384452547
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -9033,7 +9033,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961828,
@@ -9069,7 +9069,7 @@
         "confidence": 0.5205304262188046
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -9105,7 +9105,7 @@
         "confidence": 0.5054236400131021
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -9141,7 +9141,7 @@
         "confidence": 0.556578824656203
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -9177,7 +9177,7 @@
         "confidence": 0.5681326102376718
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958025,
@@ -9249,7 +9249,7 @@
         "confidence": 0.5173108936010075
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -9285,7 +9285,7 @@
         "confidence": 0.5585563468196391
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958035,
@@ -9321,7 +9321,7 @@
         "confidence": 0.5007701111340508
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961829,
@@ -9357,7 +9357,7 @@
         "confidence": 0.5310978438826399
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955968,
@@ -9393,7 +9393,7 @@
         "confidence": 0.5685249001398343
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958029,
@@ -9429,7 +9429,7 @@
         "confidence": 0.5757162648354391
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 955966,
@@ -9465,7 +9465,7 @@
         "confidence": 0.5702289372444493
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960564,
@@ -9501,7 +9501,7 @@
         "confidence": 0.5235689757993964
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961828,
@@ -9537,7 +9537,7 @@
         "confidence": 0.5159886931025924
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960572,
@@ -9571,6 +9571,258 @@
       "btts": {
         "class": 0,
         "confidence": 0.5251694154103131
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964149,
+    "date": "25/10/2025",
+    "time": "19:30",
+    "league": "Primeira Liga",
+    "home_team": "Benfica",
+    "away_team": "Arouca",
+    "odds": {
+      "home": 1.2,
+      "draw": 6.8,
+      "away": 12.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8152580720808992
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7127262852586697
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8811804638531301
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9478469371514556
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5327720836400196
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960572,
+    "date": "25/10/2025",
+    "time": "13:30",
+    "league": "Bundesliga",
+    "home_team": "Borussia M'gladbach",
+    "away_team": "Bayern Munich",
+    "odds": {
+      "home": 9.5,
+      "draw": 6.6,
+      "away": 1.27
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7217642557330904
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6585084852005398
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8410713065487053
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7301913247385211
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5220613073010248
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964683,
+    "date": "26/10/2025",
+    "time": "15:00",
+    "league": "Primeira Liga",
+    "home_team": "Moreirense",
+    "away_team": "Porto",
+    "odds": {
+      "home": 9.2,
+      "draw": 4.95,
+      "away": 1.32
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6962672182891971
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6697280473642206
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8437267762743436
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.677526597549783
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5394280976936092
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954462,
+    "date": "25/10/2025",
+    "time": "14:00",
+    "league": "Premier League",
+    "home_team": "Chelsea",
+    "away_team": "Sunderland",
+    "odds": {
+      "home": 1.43,
+      "draw": 4.8,
+      "away": 7.3
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6960257040452629
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5855778355809619
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8365264132646959
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8931716692094547
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5571285274256573
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961832,
+    "date": "19/10/2025",
+    "time": "19:00",
+    "league": "La Liga",
+    "home_team": "Getafe",
+    "away_team": "Real Madrid",
+    "odds": {
+      "home": 7.9,
+      "draw": 4.6,
+      "away": 1.45
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.6754604361319398
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6470646748045873
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8744993080486633
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.6360828810509616
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.6293839551772458
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958051,
+    "date": "26/10/2025",
+    "time": "15:00",
+    "league": "Ligue 1",
+    "home_team": "Lille",
+    "away_team": "Metz",
+    "odds": {
+      "home": 1.43,
+      "draw": 4.8,
+      "away": 7.28
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6494396593516
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5907582114167693
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8398808280352305
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8832581862677277
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.539766843920284
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954449,
+    "date": "19/10/2025",
+    "time": "15:30",
+    "league": "Premier League",
+    "home_team": "Liverpool",
+    "away_team": "Manchester United",
+    "odds": {
+      "home": 1.61,
+      "draw": 4.55,
+      "away": 5.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6376612873254742
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5940667513374939
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7934957793923614
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8730212211252233
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5425078884756647
       }
     },
     "finished": false
