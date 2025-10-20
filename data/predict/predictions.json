@@ -14,23 +14,59 @@
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.7703854386512866
+        "confidence": 0.7402640143538052
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.7438450786169978
+        "confidence": 0.7370611318280212
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8405311213944434
+        "confidence": 0.8616074315247725
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.9373108965013188
+        "confidence": 0.9184267778590435
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5011316610497141
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958051,
+    "date": "26/10/2025",
+    "time": "14:00",
+    "league": "Ligue 1",
+    "home_team": "Lille",
+    "away_team": "Metz",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.1,
+      "away": 8.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7208660383118394
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.609886156440336
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8436925351346416
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8946862000266979
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5262077369150129
+        "confidence": 0.5605310820992895
       }
     },
     "finished": false
@@ -50,23 +86,23 @@
     "predictions": {
       "winner": {
         "class": 1,
-        "confidence": 0.739628663856895
+        "confidence": 0.7175186138904733
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6338167758158744
+        "confidence": 0.6505258084327135
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.7707268492358739
+        "confidence": 0.78121942675171
       },
       "double_chance": {
         "class": 1,
-        "confidence": 0.7374495161947532
+        "confidence": 0.7771180043717546
       },
       "btts": {
-        "class": 0,
-        "confidence": 0.5569128337448839
+        "class": 1,
+        "confidence": 0.5042470648642704
       }
     },
     "finished": false
@@ -80,29 +116,29 @@
     "away_team": "Bayern Munich",
     "odds": {
       "home": 9.0,
-      "draw": 6.4,
-      "away": 1.26
+      "draw": 6.45,
+      "away": 1.27
     },
     "predictions": {
       "winner": {
         "class": 1,
-        "confidence": 0.6975718212363309
+        "confidence": 0.7010878161007922
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6550121111293938
+        "confidence": 0.6319725420002513
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8120820443831687
+        "confidence": 0.8084240408175125
       },
       "double_chance": {
         "class": 1,
-        "confidence": 0.7064446548561603
+        "confidence": 0.7287354993521588
       },
       "btts": {
         "class": 0,
-        "confidence": 0.5027549518254589
+        "confidence": 0.5547812811691477
       }
     },
     "finished": false
@@ -115,30 +151,30 @@
     "home_team": "Chelsea",
     "away_team": "Sunderland",
     "odds": {
-      "home": 1.42,
-      "draw": 4.67,
-      "away": 7.02
+      "home": 1.41,
+      "draw": 4.75,
+      "away": 7.2
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.6735211834781186
+        "confidence": 0.7010180697759466
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.601638641215968
+        "confidence": 0.6061114694019912
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8721645415281968
+        "confidence": 0.8517177596165637
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.847161505661026
+        "confidence": 0.8358919274573828
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5208529564733189
+        "confidence": 0.5607518167971349
       }
     },
     "finished": false
@@ -152,101 +188,65 @@
     "away_team": "Crystal Palace",
     "odds": {
       "home": 1.45,
-      "draw": 4.35,
+      "draw": 4.33,
       "away": 7.0
     },
     "predictions": {
       "winner": {
         "class": 0,
-        "confidence": 0.6557039392726288
+        "confidence": 0.6790313982525364
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6180051382806918
+        "confidence": 0.5863980587844146
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8168972176091441
+        "confidence": 0.8428596586391008
       },
       "double_chance": {
         "class": 0,
-        "confidence": 0.8983033941312335
+        "confidence": 0.9041982926217778
       },
       "btts": {
         "class": 1,
-        "confidence": 0.5406302580525596
+        "confidence": 0.5336383708963829
       }
     },
     "finished": false
   },
   {
-    "match_id": 958051,
+    "match_id": 964683,
     "date": "26/10/2025",
-    "time": "14:00",
-    "league": "Ligue 1",
-    "home_team": "Lille",
-    "away_team": "Metz",
-    "odds": {
-      "home": 1.41,
-      "draw": 4.79,
-      "away": 7.28
-    },
-    "predictions": {
-      "winner": {
-        "class": 0,
-        "confidence": 0.6519745687065179
-      },
-      "over_2_5": {
-        "class": 1,
-        "confidence": 0.6115246222373775
-      },
-      "over_1_5": {
-        "class": 1,
-        "confidence": 0.8142017449714737
-      },
-      "double_chance": {
-        "class": 0,
-        "confidence": 0.8671564529175028
-      },
-      "btts": {
-        "class": 1,
-        "confidence": 0.5493915429901841
-      }
-    },
-    "finished": false
-  },
-  {
-    "match_id": 958053,
-    "date": "25/10/2025",
     "time": "15:00",
-    "league": "Ligue 1",
-    "home_team": "Brest",
-    "away_team": "PSG",
+    "league": "Primeira Liga",
+    "home_team": "Moreirense",
+    "away_team": "Porto",
     "odds": {
-      "home": 6.2,
-      "draw": 4.73,
-      "away": 1.47
+      "home": 9.0,
+      "draw": 4.9,
+      "away": 1.32
     },
     "predictions": {
       "winner": {
         "class": 1,
-        "confidence": 0.6328732511414281
+        "confidence": 0.6768946520891597
       },
       "over_2_5": {
         "class": 1,
-        "confidence": 0.6013758410686079
+        "confidence": 0.6481566067344754
       },
       "over_1_5": {
         "class": 1,
-        "confidence": 0.8055216331905622
+        "confidence": 0.8402877656037342
       },
       "double_chance": {
         "class": 1,
-        "confidence": 0.612009163213366
+        "confidence": 0.689535989843199
       },
       "btts": {
         "class": 1,
-        "confidence": 0.538584217972068
+        "confidence": 0.525871146093988
       }
     },
     "finished": false
