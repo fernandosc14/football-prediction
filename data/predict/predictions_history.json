@@ -10582,5 +10582,257 @@
       }
     },
     "finished": false
+  },
+  {
+    "match_id": 964148,
+    "date": "26/10/2025",
+    "time": "18:00",
+    "league": "Primeira Liga",
+    "home_team": "Tondela",
+    "away_team": "Sporting Lisbon",
+    "odds": {
+      "home": 9.78,
+      "draw": 5.55,
+      "away": 1.27
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7772163776122208
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6119304800911025
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8143849503983037
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7964316694298778
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5461890788345916
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964149,
+    "date": "25/10/2025",
+    "time": "19:30",
+    "league": "Primeira Liga",
+    "home_team": "Benfica",
+    "away_team": "Arouca",
+    "odds": {
+      "home": 1.19,
+      "draw": 6.8,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.768252394814659
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7430875307598047
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8428519811375486
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9193084395582489
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.527113091090733
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958067,
+    "date": "29/10/2025",
+    "time": "15:00",
+    "league": "Ligue 1",
+    "home_team": "Marseille",
+    "away_team": "Angers",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.35,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7283714273298407
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6936330310569105
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8252816951980126
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9239979617274607
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5285108846147029
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958051,
+    "date": "26/10/2025",
+    "time": "14:00",
+    "league": "Ligue 1",
+    "home_team": "Lille",
+    "away_team": "Metz",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.4,
+      "away": 8.5
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7112157692251193
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6439605416159044
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8037270577595278
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9033274634569592
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5241688065890239
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958053,
+    "date": "25/10/2025",
+    "time": "15:00",
+    "league": "Ligue 1",
+    "home_team": "Brest",
+    "away_team": "PSG",
+    "odds": {
+      "home": 6.7,
+      "draw": 5.0,
+      "away": 1.44
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7043737498846524
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5946398586935964
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8013385201222412
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7205347745160401
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5534646854497527
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960572,
+    "date": "25/10/2025",
+    "time": "13:30",
+    "league": "Bundesliga",
+    "home_team": "Borussia M'gladbach",
+    "away_team": "Bayern Munich",
+    "odds": {
+      "home": 10.0,
+      "draw": 6.9,
+      "away": 1.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.7032187068105544
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6581161175806477
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8273914431127389
+      },
+      "double_chance": {
+        "class": 1,
+        "confidence": 0.7452341737141981
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5097487252113391
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 954074,
+    "date": "29/10/2025",
+    "time": "07:00",
+    "league": "Serie A",
+    "home_team": "Inter Milan",
+    "away_team": "Fiorentina",
+    "odds": {
+      "home": 1.4,
+      "draw": 4.9,
+      "away": 7.7
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.6995734880733905
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6698187311263177
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.7999853988388714
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.8897017057508644
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5490517337842734
+      }
+    },
+    "finished": false
   }
 ]
