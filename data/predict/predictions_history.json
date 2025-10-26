@@ -9573,7 +9573,7 @@
         "confidence": 0.5251694154103131
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964149,
@@ -9609,7 +9609,7 @@
         "confidence": 0.5327720836400196
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960572,
@@ -9645,7 +9645,7 @@
         "confidence": 0.5220613073010248
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964683,
@@ -9717,7 +9717,7 @@
         "confidence": 0.5571285274256573
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 961832,
@@ -9861,7 +9861,7 @@
         "confidence": 0.5262077369150129
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964148,
@@ -9933,7 +9933,7 @@
         "confidence": 0.5027549518254589
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954462,
@@ -9969,7 +9969,7 @@
         "confidence": 0.5208529564733189
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954461,
@@ -10077,7 +10077,7 @@
         "confidence": 0.538584217972068
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964149,
@@ -10113,7 +10113,7 @@
         "confidence": 0.5011316610497141
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958051,
@@ -10221,7 +10221,7 @@
         "confidence": 0.5547812811691477
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954462,
@@ -10257,7 +10257,7 @@
         "confidence": 0.5607518167971349
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954461,
@@ -10365,7 +10365,7 @@
         "confidence": 0.5048470251426077
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964148,
@@ -10473,7 +10473,7 @@
         "confidence": 0.5678936761097804
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960572,
@@ -10509,7 +10509,7 @@
         "confidence": 0.5386946512645381
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958053,
@@ -10545,7 +10545,7 @@
         "confidence": 0.5489011768927435
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964683,
@@ -10653,7 +10653,7 @@
         "confidence": 0.527113091090733
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958067,
@@ -10761,7 +10761,7 @@
         "confidence": 0.5534646854497527
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960572,
@@ -10797,7 +10797,7 @@
         "confidence": 0.5097487252113391
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 954074,
@@ -10869,7 +10869,7 @@
         "confidence": 0.5296142082378246
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960578,
@@ -10905,7 +10905,7 @@
         "confidence": 0.5342891522334342
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958067,
@@ -11049,7 +11049,7 @@
         "confidence": 0.5468196806361163
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964683,
@@ -11121,7 +11121,7 @@
         "confidence": 0.5257071323639968
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960578,
@@ -11157,7 +11157,7 @@
         "confidence": 0.5342891522334342
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958067,
@@ -11265,7 +11265,7 @@
         "confidence": 0.5468196806361163
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 964148,
@@ -11445,7 +11445,7 @@
         "confidence": 0.5111062637185458
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 960578,
@@ -11481,7 +11481,7 @@
         "confidence": 0.5407465654159
       }
     },
-    "finished": false
+    "finished": true
   },
   {
     "match_id": 958051,
@@ -11587,6 +11587,258 @@
       "btts": {
         "class": 1,
         "confidence": 0.520965518552349
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 955999,
+    "date": "31/10/2025",
+    "time": "19:00",
+    "league": "Eredivisie",
+    "home_team": "PSV",
+    "away_team": "Fortuna Sittard",
+    "odds": {
+      "home": 1.12,
+      "draw": 9.0,
+      "away": 18.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8936851342705872
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.72207255653783
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.885597075001809
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9611967302285119
+      },
+      "btts": {
+        "class": 0,
+        "confidence": 0.5409825983013559
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 956003,
+    "date": "01/11/2025",
+    "time": "19:00",
+    "league": "Eredivisie",
+    "home_team": "Feyenoord",
+    "away_team": "Volendam",
+    "odds": {
+      "home": 1.13,
+      "draw": 8.5,
+      "away": 17.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8280390576536868
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7496268526743417
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8878959174011767
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9193801586244352
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5198148149531846
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961851,
+    "date": "01/11/2025",
+    "time": "20:00",
+    "league": "La Liga",
+    "home_team": "Real Madrid",
+    "away_team": "Valencia",
+    "odds": {
+      "home": 1.23,
+      "draw": 6.69,
+      "away": 11.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.8072955288881016
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.7072085062803997
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8532155254069907
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9268855137081435
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5919770761453266
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 964160,
+    "date": "31/10/2025",
+    "time": "20:15",
+    "league": "Primeira Liga",
+    "home_team": "Sporting Lisbon",
+    "away_team": "Alverca",
+    "odds": {
+      "home": 1.13,
+      "draw": 9.0,
+      "away": 19.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7718593910460876
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.69505475684871
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8500324046685729
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9206801923299907
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5072997560084488
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 961847,
+    "date": "02/11/2025",
+    "time": "17:00",
+    "league": "La Liga",
+    "home_team": "Barcelona",
+    "away_team": "Elche",
+    "odds": {
+      "home": 1.22,
+      "draw": 6.25,
+      "away": 13.0
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.768696418789314
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6863586947277021
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8818736295710033
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9357032081951754
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5126990171343097
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 958051,
+    "date": "26/10/2025",
+    "time": "14:00",
+    "league": "Ligue 1",
+    "home_team": "Lille",
+    "away_team": "Metz",
+    "odds": {
+      "home": 1.33,
+      "draw": 5.5,
+      "away": 9.21
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7459857791236445
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6435539402639675
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8114206455388367
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9130201230476986
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.557445743313799
+      }
+    },
+    "finished": false
+  },
+  {
+    "match_id": 960600,
+    "date": "01/11/2025",
+    "time": "17:30",
+    "league": "Bundesliga",
+    "home_team": "Bayern Munich",
+    "away_team": "Bayer Leverkusen",
+    "odds": {
+      "home": 1.25,
+      "draw": 6.5,
+      "away": 10.25
+    },
+    "predictions": {
+      "winner": {
+        "class": 0,
+        "confidence": 0.7345098097749062
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.6821944126970675
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8582529836298484
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.9061453558189254
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.6132198798114386
       }
     },
     "finished": false
