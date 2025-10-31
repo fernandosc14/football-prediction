@@ -12598,5 +12598,41 @@
       }
     },
     "finished": false
+  },
+  {
+    "match_id": 960592,
+    "date": "02/11/2025",
+    "time": "16:30",
+    "league": "Bundesliga",
+    "home_team": "Wolfsburg",
+    "away_team": "Hoffenheim",
+    "odds": {
+      "home": 2.8,
+      "draw": 3.8,
+      "away": 2.32
+    },
+    "predictions": {
+      "winner": {
+        "class": 1,
+        "confidence": 0.3612213385046543
+      },
+      "over_2_5": {
+        "class": 1,
+        "confidence": 0.5691305936931811
+      },
+      "over_1_5": {
+        "class": 1,
+        "confidence": 0.8047234056559631
+      },
+      "double_chance": {
+        "class": 0,
+        "confidence": 0.6519137107391174
+      },
+      "btts": {
+        "class": 1,
+        "confidence": 0.5622125751740821
+      }
+    },
+    "finished": false
   }
 ]
