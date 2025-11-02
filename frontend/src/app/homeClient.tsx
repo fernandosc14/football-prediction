@@ -131,15 +131,19 @@ export default function HomeClient() {
             <StatsAverage stats={stats} />
           </div>
         )}
-        {topMatch && (
+
+        {/* API OFFLINE  */}
+
+        {/* {topMatch && (
           <TopPredictionCard
             team1={topMatch.team1}
             team2={topMatch.team2}
             tips={topMatch.tips}
             date={topMatch.date}
           />
-        )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        )} */}
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {matches.map((match, idx) => (
             <PredictionCard
               key={idx}
@@ -149,7 +153,10 @@ export default function HomeClient() {
               tips={match.tips}
             />
           ))}
-        </div>
+        </div> */}
+
+        {/* */}
+
         <div className="w-full text-center mt-10">
           {lastUpdate && (
             <span className="text-xs text-gray-400">Last Update: {lastUpdate}</span>
